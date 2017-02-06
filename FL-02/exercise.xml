@@ -1,0 +1,154 @@
+<exercise>
+<exercisename> Föreläsning 02,03  </exercisename>
+<h2> Stelkropps rörelse : 5.4, 5.5, 5.6 </h2>
+<h3> 5.4 - Relativ  hastighet </h3>
+<img src="fig1.png" width="70%" />
+Vi noterar enligt figuren att 
+\[ A(t) = B(t) + ( A(t)- B(t) ) 
+\] 
+<p>
+I boken betecknas vector $ A-B $ som $ R_{A/B} $ men det naturliga är ju
+et självklart vektor uttryck. $ B(t) $ betecknar axelns läge runt vilken
+kroppen roterar.
+</p>
+<p> Om vi nu diffrentierar detta uttryck får vi
+\[ v_A \equiv \dot{A} = \dot{B} + \frac{d}{dt} ( A(t) - B(t) ) 
+\]
+Det relativa koordinatet $ A(t) - B(t) $  är enbart en rotation,
+varvid $ \frac{d}{dt} ( A(t) - B(t) )  = \omega \times  ( A(t) - B(t) ) $.
+Vi finner därför att
+\[
+v_A = v_B +  \omega \times  ( A(t) - B(t) )  \; \equiv  \; v_B + \omega  \times r_{A/B} 
+\]
+</p>
+
+<p> 
+<img src="fig2.png" width="70%" />
+</p>
+<question key='2' type='linalgebra'>
+<text>
+Vad blir hastigheten av kolven om vevaxeln som en funktion av $ \theta $ har en vinkelhastighet $ \omega $. 
+</text>
+</question>
+
+<p>
+<img src="fig3.png" width="70%" />
+</p>
+<question key='3' type='linalgebra'>
+<text>
+Vad blir vinkelhastigheten.
+</text>
+</question>
+
+<p>
+
+<img src="fig4.png" width="70%" />
+</p>
+<question key='4' type='linalgebra'>
+<text>
+Vad blir vinkelhastigheten. Ändra uppgiften så avståndet
+från hjucenter till skenan är given, samt radien,
+och längden av länken.
+</text>
+</question>
+<h3> 5.5 - Momentan läge för noll hastighet </h3>
+Hoppa över
+<h3> 5.6 - Relativ acceleration </h3>
+<p>
+Som tidigare can vi sönderlägga absolut acceleration till accelleration av 
+ett rotations centrum och sedan acceleration p.g.a. rotation.
+<img src="fig1.png" width="70%" />
+\[
+a_A = a_B + ( a_A - a_B )
+\]
+Eftersom $ a_A - a_B $ är acceleration enbarg pg.a. rotation får vi
+\[
+a_A = a_B + ( \alpha r  \hat{\theta}  + \omega \times ( \omega \times ( r_A - r_B) )  )
+\]
+
+</p>
+
+<h3> 5.7 - Rörelse relativt ett roterande koordinatsystem </h3>
+<p>
+Om en punkt förflyttar sig i ett roterande koordinatsystem gäller
+\[
+r_A = r_B + ( r_A - r_B ) == r_B + r_{A/B}
+\]
+Om nu $ r_{A/B} $ har en relativ komponent, erhålles
+\[
+v_A = v_B + \omega \times r_{A/B} + \dot{ \bar{r}}_{A/B} 
+\]
+Där $ \bar{r}_{A/B}   $ är de relativa koordinatiten i det roterande systemet.
+</p>
+<p>
+Detta kan man tydligöra såsom i boken;
+$ r_{A/B} = x \hat{x} + y \hat{y} $ där $ \hat{x} $ och $ \hat{y} $ är i det roterande koordinatsystemet.
+När vi nu tar tidsderivatan för detta måste vi komma att $ \hat{x} $ och $ \hat{y} $ också ändras.
+\[
+\frac{d}{dt} r_{A/B} = \dot{x} \hat{x} + \dot{y} \hat{y} + x \dot{ \hat{x}} + y \dot{\hat{y}}
+		 =   \dot{x} \hat{x} + \dot{y} \hat{y} + x \omega \times \hat{x} + y \omega \times \hat{y} =
+		 \dot{x} \hat{x} + \dot{y} \hat{y} + \omega \times( x \hat{x} + y \hat{y} )
+\]
+Eftersom tidsderivatan av en fixerad vector i roterande koordinatsystem anges genom kryssproducten med $ \omega $
+får vi
+\[
+\dot{r}_{A/B} =  (\dot{x} \hat{x} + \dot{y} \hat{y} ) + \omega \times r_{A/B} 
+\]
+Vi definierar $ \dot{ \bar{r} } =  (\dot{x} \hat{x} + \dot{y} \hat{y} ) $ vilket alltså
+är tidsderivatan av koordinatet för en observatör som är fixerad på den roterande kroppen.
+</p>
+<p>
+Hasighet och acceleration av $ B $ kan vi lägga till i alla dessa och låta kroppen rotera runt
+origo. Vi tecknar $ r_{A/B} \equiv r_{rel} $.
+\[
+r_{rel} \equiv x \hat{x} + y \hat{y} 
+\]
+och vi ser alltså att
+\[
+\dot{r}  = v_{rel} + \omega \times r_{rel} 
+\]
+Nu diffrentierar vi en gång till
+\[
+a \equiv \ddot{r} = \dot{v}_{rel} + \dot{\omega} \times r_{rel} + \omega \times v_{rel}  + \omega \times (  \dot{r}_{rel} + \omega \times r_{rel} )
+\]
+Vi får då det eleganta uttrycket:
+\[
+a \equiv a_{rel} + \dot{\omega} \times r_{rel} +  \omega \times ( \omega \times r_{rel}  ) + 2 \omega \times v_{rel} 
+\]
+</p>
+<p>
+Termerna heter i tur och ordning
+<ul>
+<li> relativ accelaration </li>
+<li> vinkelacceleration </li>
+<li> centripetal accelerationen </li>
+<li> Coriolis acceleration </li>
+</ul> 
+</p>
+<p>
+<img src="fig5.png" width="40%" />
+<img src="fig6.png" width="40%" />
+</p>
+<question key='5' type='linalgebra'>
+<text> Uppgift 5.162 </text>
+</question>
+
+<p>
+<img src="fig7.png" width="40%" />
+</p>
+<question key='7' type='linalgebra'>
+<text>
+Uppgift 5/173
+</text>
+</question>
+<p> 
+En projektil skjuts upp från jordens yta på norra breddgrader
+med minimal hastighet för att träffa en punkt  rakt norrut
+ett avstånd $ L $ bort. Vi kan anta att $ L $ är storleksordning
+km så vi kan försumma krökningen av jordens yta. Vad blir den
+avvikelsen i öst-väst led från det beräknade nerslaget pg.a.
+koriolis kraften. Förskuts den till öst eller till väst?
+  </p>
+  <question key='8' type='linalgebra'>
+</question>
+</exercise>

@@ -1,0 +1,2508 @@
+%\input mcamstex
+%\input amstex
+%\input phyzzx 
+\input templ
+%\input runningheads 
+%\input papersize
+%\input scr12
+\input epsf
+\input local.boxes
+\input local.black  
+%\input Bbb
+\input epsf
+
+\input figflow
+
+\frenchspacing
+
+%\loadbold
+\font\twelvecmmib=cmmib10 at 12pt
+\font\tencmmib=cmmib10
+\font\sevencmmib=cmmib7
+\font\fivecmmib=cmmib5
+\font\twelvecmbsy=cmbsy10 at 12pt
+\font\tencmbsy=cmbsy10
+\font\sevencmbsy=cmbsy7
+\font\fivecmbsy=cmbsy5
+\newfam\cmbsyfam
+\newfam\cmmibfam
+\textfont\cmmibfam\tencmmib
+\scriptfont\cmmibfam\sevencmmib \scriptscriptfont\cmmibfam\fivecmmib
+\textfont\cmbsyfam\tencmbsy
+\scriptfont\cmbsyfam\sevencmbsy \scriptscriptfont\cmbsyfam\fivecmbsy
+
+\def\bold{\fam\cmmibfam} 
+%\def\boldsymbol{\fam\cmbsyfam} 
+
+%\font\grb=cmgb10 at 12pt
+\def\torq{{\vec\tau}}
+
+
+\font\vector=bbm10
+\font\fiverm=cmr5
+
+%\def\vect#1{\hbox{\vector#1}}
+
+%\itemsize=0pt
+\nopagenumbers
+\def\exercises{\vskip6\parskip\centerline{\twelvecp Exercises}
+		\vskip2\parskip}
+
+%\runningheads{Martin Cederwall, ``An Introduction to Analytical Mechanics''}
+%\leftheadline={\hbox to \hsize{\tenrm\folio\hfill
+%				\tencp Martin Cederwall\hfill}}
+\headtext={``An introduction 
+				to analytical mechanics''}
+%\leftheadline=\rightheadline
+%\runningheads
+
+
+
+\line{
+\epsfxsize=18mm
+\epsffile{AvancezCHALMERSx.eps}%Bildmarke30mm.eps}
+\hfill}
+\vskip-12mm
+\line{\hfill}
+%\line{\hfill hep-th/yymmnnn}
+\line{\hfill March, {\old2010}}
+\line{\hrulefill}
+
+
+\vfill
+\vskip.5cm
+
+\centerline{\sixteenhelvbold
+An introduction to analytical mechanics} 
+
+
+%\centerline{\sixteenhelvbold
+%analytical mechanics} 
+
+\vfill
+
+\centerline{\twelvehelvbold
+Martin Cederwall}
+
+\vskip\baselineskip
+
+\centerline{\twelvehelvbold
+Per Salomonson}
+
+\vfill
+
+\centerline{\it Fundamental Physics}
+\centerline{\it Chalmers University of Technology}
+\centerline{\it SE 412 96 G\"oteborg, Sweden}
+
+
+\vfill
+
+
+\centerline{\fiverm 4th edition, G\"oteborg 2009, with small
+corrections 2010}
+
+\vfill
+
+\font\xxtt=cmtt6
+
+\vtop{\baselineskip=.6\baselineskip\xxtt
+\line{\hrulefill}
+\catcode`\@=11
+\line{email: martin.cederwall@chalmers.se, tfeps@chalmers.se\hfill}
+\catcode`\@=\active
+}
+
+\eject
+
+
+
+
+
+%           T or E_k for kinetic energy?
+
+%\def\F{{\vect F}}       %check conventions of KK!
+%\def\r{{\vect r}}
+%\def\v{{\vect v}}
+%\def\a{{\vect a}}
+%\def\p{{\vect p}}
+%\def\L{{\vect L}}
+   \def\komma{\,\,,}
+\def\punkt{\,\,.}
+\def\*{\partial} 
+
+\def\pa{{\phi_1}}
+\def\pb{{\phi_2}}
+\def\la{{l_1}}
+\def\lb{{l_2}}
+\def\ma{{m_1}}
+\def\mb{{m_2}}
+
+\def\l{\lambda}
+\def\o{\omega}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\w{\omega}
+\def\E{{\vec\varepsilon}}
+
+\def\Q{{\scr F}}
+
+\def\/{\over}
+
+\def\INT{\int_{t_0}^\infty dt} 
+
+\def\K{T}
+
+%\batchmode
+%\itemsize=40pt
+\newskip\nbskip
+\nbskip=\baselineskip
+
+\def\litet#1{\baselineskip=.85\nbskip\tenpoint #1 
+	\baselineskip=\nbskip\twelvepoint}
+
+%\def\example#1{\noindent\boxit{\noindent\sl\underbar{Example:} #1\brk}\brk}
+
+
+%\def\example#1{\line{\hskip\parindent\hrulefill}
+%\item{}{\noindent\sl\underbar{Example:}
+%#1}
+
+\newcount\examplecount
+\examplecount=1
+\def\example#1{\line{\hskip\parindent\hrulefill}
+\item{}{\noindent\underbar{Example {\old\the\examplecount}:}
+{\sl #1}
+\global\advance\examplecount by 1}
+
+
+\line{\hskip\parindent\hrulefill}
+}
+
+
+
+%\def\old#1{$\oldstyle #1$}
+
+%\pagenumber=1
+
+\def\endpage{\vfill\eject}
+
+\def\etc{\&c.}
+
+
+\newcount\exercisecount
+\exercisecount=1
+\newwrite\answerwrite
+
+\def\exer#1#2{
+\item{{\old\the\exercisecount}.}#1\ifnum\the\exercisecount=1\immediate\openout\answerwrite=\jobname.answers\fi\immediate\write\answerwrite{\item{{\old\the\exercisecount}.}
+    #2\hfill\par}
+\global\advance\exercisecount by 1
+}
+
+\def\exerName#1#2#3{\xdef#3{{\old\the\exercisecount}}
+\item{{\old\the\exercisecount}.}#1\ifnum\the\exercisecount=1\immediate\openout\answerwrite=\jobname.answers\fi\immediate\write\answerwrite{\item{{\old\the\exercisecount}.}
+    #2\hfill\par}
+\global\advance\exercisecount by 1
+}
+
+
+\def\exerFig#1#2#3{
+\item{{\old\the\exercisecount}.}#1\ifnum\the\exercisecount=1\immediate\openout\answerwrite=\jobname.answers\fi\immediate\write\answerwrite{\item{{\old\the\exercisecount}.}
+    #2\hfill\par}
+\global\advance\exercisecount by 1
+\par\vskip2\parskip
+%\hskip2cm
+\centerline{\epsffile{Fig/#3}}
+}
+
+\def\exerFigName#1#2#3#4{\xdef#4{{\old\the\exercisecount}}
+\item{{\old\the\exercisecount}.}#1\ifnum\the\exercisecount=1\immediate\openout\answerwrite=\jobname.answers\fi\immediate\write\answerwrite{\item{{\old\the\exercisecount}.}
+    #2\hfill\par}
+\global\advance\exercisecount by 1
+\par\vskip2\parskip
+%\hskip2cm
+\centerline{\epsffile{Fig/#3}}
+}
+
+\def\exerNA#1{
+\item{{\old\the\exercisecount}.}#1
+\global\advance\exercisecount by 1
+}
+
+\def\exerNAFig#1#2{
+\item{{\old\the\exercisecount}.}#1
+\global\advance\exercisecount by 1
+\par\vskip2\parskip
+\centerline{\epsffile{Fig/#2}}
+}
+
+
+
+\def\answerout{\catcode`\@=11
+        \immediate\closeout\answerwrite
+        \vskip2\baselineskip
+        {\noindent\twelvecp Answers to exercises}\hfill
+        \par\nobreak\vskip\baselineskip
+        %\vskip.25\baselineskip%%%%
+        %\parskip=.875\parskip
+        %\baselineskip=.8\baselineskip
+        %\baselineskip=.75\baselineskip
+        \input\jobname.answers
+        %\parskip=8\parskip \divide\parskip by 7
+        %\baselineskip=1.25\baselineskip
+        %\baselineskip=4\baselineskip \divide\baselineskip by 3
+        \catcode`\@=\active\rm}
+
+
+%\def\exer#1{
+%\item{{\oldsize\the\exercisecount}.}#1
+%\global\advance\exercisecount by 1
+%}
+
+
+\def\brk{\hfill\break}
+
+
+\def\nosection#1{\global\eqcount=0
+	\noindent
+        \line{\twelvecp #1\hfill}
+		\vskip.8\baselineskip\noindent
+        }
+
+
+\def\Chapter#1{Chapter {\old#1}}
+
+\def\a{\alpha}
+\def\b{\beta}
+\def\th{\theta}
+\def\vf{\varphi}
+\def\p{\psi}
+\def\W{\Omega}
+%\def\e{\epsilon}
+\def\w{\omega}
+\def\x{\xi}
+\def\t{\tau}
+
+
+
+
+\nosection{Preface}The present edition of this compendium is 
+intended to be a complement to the textbook
+``Engineering Mechanics''
+by J.L. Meriam and L.G. Kraige (MK) for the course
+"Mekanik F del 2" given in the first year of the Engineering physics
+(Teknisk fysik) programme
+at Chalmers University of Technology, Gothenburg.
+
+Apart from what is contained in MK, this course also encompasses
+an elementary understanding of analytical mechanics, especially
+the Lagrangian formulation. In order not to be too narrow, this
+text contains not only what is taught in the course, 
+but tries to give a somewhat more
+general overview of the subject of analytical mechanics.
+The intention is that an interested student should be able to
+read additional material that may be useful in more advanced courses
+or simply interesting by itself.
+
+The chapter on the Hamiltonian formulation is strongly
+recommended for the student who wants
+a deeper theoretical understanding of the subject and is very
+relevant for the connection between classical mechanics ("classical"
+here denoting both Newton's and Einstein's theories) and
+quantum mechanics.
+
+The mathematical rigour is kept at a minimum, hopefully for the
+benefit of physical understanding and clarity.
+Notation is not always consistent with MK; in the cases it differs our
+notation mostly conforms with generally accepted conventions.
+
+The text is organised as follows: In \Chapter1 a background is given. 
+Chapters {\old2}, {\old3} and {\old4} 
+contain the general setup needed for the Lagrangian
+formalism. In \Chapter5 Lagrange's equations are derived and \Chapter6
+gives their interpretation in terms of an action. Chapters {\old7} and 
+{\old8} contain
+further developments of analytical mechanics, namely the Hamiltonian
+formulation and a Lagrangian treatment of constrained systems. 
+Exercises are given at the end of each chapter. 
+Finally, a translation table
+from English to Swedish of some terms used is found.
+
+Many of the exercise problems are borrowed from material by Ture
+Eriksson, Arne Kihlberg and G\"oran Niklasson. The selection of
+exercises has been focused on \Chapter5, which is of greatest use for
+practical applications.
+
+
+\endpage
+
+
+\nosection{Table of contents}
+\vskip2\parskip
+
+\hbox to \hsize{\tenrm    	Preface{ \dotfill }
+				{2} }\vskip12pt
+\hbox to \hsize{\tenrm    	Table of contents{ \dotfill }
+				{3} }\vskip12pt
+\hbox to \hsize{\tencp 1. 	Introduction{ \dotfill }
+				{4} }\vskip12pt
+\hbox to \hsize{\tencp 2. 	Generalised coordinates{ \dotfill }
+				{6} }\vskip12pt
+\hbox to \hsize{\tencp 3. 	Generalised forces{ \dotfill }
+				{9} }\vskip12pt
+\hbox to \hsize{\tencp 4. 	Kinetic energy and generalised momenta
+				{ \dotfill }{13} }\vskip12pt
+\hbox to \hsize{\tencp 5. 	Lagrange's equations{ \dotfill }
+				{18} }
+\hbox to \hsize{\tencp 
+\hskip\parindent       5.1     A single particle{ \dotfill } 
+				{18} }
+\hbox to \hsize{\tencp 
+\hskip\parindent       5.2      Any number of degrees of freedom
+				{ \dotfill }{24} }\vskip12pt
+\hbox to \hsize{\tencp 6. 	The action principle{ \dotfill }
+				{43} }\vskip12pt
+\hbox to \hsize{\tencp 7. 	Hamilton's equations{ \dotfill }
+				{47} }\vskip12pt
+\hbox to \hsize{\tencp 8. 	Systems with constraints{ \dotfill }
+				{51} }\vskip12pt
+\hbox to \hsize{\tenrm    	Answers to exercises{ \dotfill }
+				{56} }\vskip12pt
+\hbox to \hsize{\tenrm    	References{ \dotfill }
+				{60} }\vskip12pt
+\hbox to \hsize{\tenrm    	Translation table{ \dotfill }
+				{61} }
+
+
+
+
+
+
+
+
+\endpage
+
+
+
+\section\Introduction{Introduction}In Newtonian mechanics, 
+we have encountered some different
+equations for the motions of objects of different kinds.
+The simplest case possible, a point-like particle moving
+under the influence of some force, is governed by the
+vector equation %$m\a=\F$, or more fundamentally,
+$${d{\vec p}\over dt}=\vec F\komma\Eqn\Fma$$
+where $\vec p=m\vec v$.
+This equation of motion can not be {\it derived} from some other
+equation. It is {\it postulated}, \ie, it is taken as an "axiom",
+or a fundamental truth of Newtonian mechanics (one can also
+take the point of view that it {\it defines} one of the three
+quantities $\vec F$, $m$ (the inertial mass) and $\vec a$ in terms of the
+other two).
+
+Equation (\Fma) is the fundamental equation in Newtonian mechanics.
+If we consider other situations, \eg\ the motion of a rigid
+body, the equations of motion
+$${d{\vec L}\over dt}=\vec\tau\Eqn\rigidem$$
+can be obtained from it by imagining
+the body to be put together of a great number of small, approximately
+point-like, particles whose relative positions are fixed (rigidity
+condition). If you don't agree here, you should go back and
+check that the only {\it dynamical} input in eq. (\rigidem) is eq. (\Fma).
+What more is needed for eq. (\rigidem) is the {\it kinematical}
+rigidity constraint and suitable definitions for the angular
+momentum $\vec L$ and the torque $\torq$.
+We have also seen eq. (\Fma) expressed in a variety of forms obtained
+by expressing its components in non-rectilinear bases (\eg\ polar 
+coordinates). Although
+not immediately recognisable as eq. (\Fma), these obviously 
+contain no additional information, but just represent a choice
+of coordinates convenient to some problem.
+Furthermore, we have encountered the principles of energy, momentum
+and angular momentum, which tell that under certain conditions some of these
+quantities (defined in terms of masses and velocities, \ie, {\it kinematical})
+do not change with time, or in other cases predict the rate at which
+they change. These are also consequences of eq. (\Fma) or its
+derivates, \eg\ eq. (\rigidem). Go back and check how the equations
+of motion are integrated to get those principles! It is very relevant
+for what will follow.
+
+Taken all together, we see that although a great variety of different
+equations have been derived and used, they all have a common root, the
+equation of motion of a single point-like particle.
+The issue for the subject of analytical mechanics is to put all
+the different forms of the equations of motion applying in all
+the different contexts on an equal footing. In fact, they will
+all be expressed as the same, identical, (set of) equation(s), Lagrange's
+equation(s), and, later, Hamilton's equations. In addition, these equations 
+will be {\it derived} from a fundamental principle, the {\it action principle},
+which then can be seen as the fundament of Newtonian mechanics (and
+indeed, although this is beyond the scope of this presentation, of a
+much bigger class of models, including \eg\ relativistic mechanics and
+field theories).
+
+We will also see one of the most useful and important properties of
+Lagrange's and Hamilton's equations, namely that they take the same form
+independently of the choice of coordinates. This will make them
+extremely powerful when dealing with systems whose degrees of freedom
+most suitably are described in terms of variables in which Newton's
+equations of motion are difficult to write down immediately, and
+they often dispense with the need of introducing forces
+whose only task is to make kinematical conditions fulfilled, such
+as for example the force in a rope of constant length ("constrained
+systems"). We will give several examples of these types of
+situations.\endpage
+
+\section\GenCoords{Generalised coordinates}A most 
+fundamental property of a physical system is its number
+of {\it degrees of freedom}. This is the minimal number of variables
+needed to completely specify the positions of all particles and
+bodies that are part of the system, \ie, its {\it configuration}, at a
+given time.
+If the number of degrees of freedom
+is $N$, any set of variables $q^1,\ldots,q^N$ specifying the
+configuration is called a set of {\it generalised coordinates}. Note
+that the manner in which the system moves is not included in the
+generalised coordinates, but in their time derivatives $\dot
+q^1,\ldots,\dot q^N$. 
+
+\example{A point particle moving on a line has one degree of freedom.
+A generalised coordinate can be taken as $x$, the coordinate along
+the line. A particle moving in three dimensions has three degrees
+of freedom. Examples of generalised coordinates are the usual
+rectilinear ones, $\vec r=(x,y,z)$, and the spherical ones,
+$(r,\theta,\phi)$, where $x=r\sin\theta\cos\phi$,
+$y=r\sin\theta\sin\phi$, $z=r\cos\theta$.}
+
+\example{A rigid body in two dimensions has three degrees of freedom ---
+two ``translational'' which give the position of some specified
+point on the body and one ``rotational'' which gives the orientation
+of the body. An example, the most common one, of generalised coordinates
+is $(x_c,y_c,\phi)$, where $x_c$ and $y_c$ are rectilinear components
+of the position of the center of mass of the body, and $\phi$ is the
+angle from the $x$ axis to a line from the center of mass to another
+point $(x_1,y_1)$ on the body.}
+
+\example{A rigid body in three dimensions has six degrees of freedom.
+Three of these are translational and correspond to the degrees of freedom
+of the center of mass. The other three are rotational and give the
+orientation of the rigid body. We will not discuss how to assign
+generalised coordinates to the rotational degrees of freedom (one way
+is the so called Euler angles), but the number should be clear from the
+fact that one needs a vector ${\vec\omega}$ with three components
+to specify the rate of change of the orientation.}
+
+The number of degrees of freedom is equal to the number of equations
+of motion one needs to find the motion of the system. Sometimes
+it is suitable to use a larger number of coordinates than the
+number of degrees of freedom for a system. Then the coordinates
+must be related via some kind of equations, called constraints.
+The number of degrees of freedom in such a case is equal to the
+number of generalised coordinates minus the number of constraints.
+We will briefly treat constrained systems in \Chapter8.
+
+\example{The configuration of a mathematical pendulum can be specified
+using the rectilinear coordinates $(x,y)$ of the mass with the
+fixed end of the string as origin. A natural generalised coordinate,
+however, would be the angle from the vertical. The number of degrees 
+of freedom is only one, and $(x,y)$ are subject to the constraint
+$x^2+y^2=l^2$, where $l$ is the length of the string.} 
+
+In general, the generalised coordinates are chosen according to
+the actual problem one is interested in. 
+If a body rotates around a fixed axis, the most natural choice for
+generalised coordinate is the rotational angle. If something moves
+rectilinearly, one chooses a linear coordinate, \etc\ For 
+composite systems, the natural choices for generalised coordinates
+are often mixtures of different types of variables, of which linear
+and angular ones are most common. 
+The strength of the Lagrangian
+formulation of Newton's mechanics, as we will soon see, is that
+the nature of the generalised coordinates is not reflected in
+the corresponding equation of motion. The way one gets to the equations
+of motion is identical for all generalised coordinates.
+
+{\it Generalised velocities} are defined from the generalised coordinates
+exactly as ordinary velocity from ordinary coordinates:
+
+$$v^i=\dot q^i\komma\quad i=1,\ldots,N\punkt\Eqn\genveloc$$
+
+Note that the dimension of a generalised velocity depends
+on the dimension of the corresponding generalised coordinate,
+so that \eg\ the dimension of a generalised velocity for an
+angular coordinate is $(\hbox{time})^{-1}$ --- it is an angular velocity.
+In general, $(v^1,\ldots,v^N)$ is not the velocity vector (in an
+orthonormal system).
+
+\example{With polar coordinates $(r,\phi)$ as generalised coordinates,
+the generalised velocities are $(\dot r,\dot\phi)$, while the 
+velocity vector is $\dot r\hat r+r\dot\phi\hat\phi$.}
+
+\exercises
+
+\exerName 	{Two masses $m_1$ and $m_2$ connected by a spring are sliding
+	on a frictionless plane. How many degrees of freedom does this
+	system have? Introduce a set of generalised
+        coordinates!}{Four. For example the center of mass
+        coordinates, the distance 
+	between the masses and an angle.}\MOneMTwo
+
+\exerNA{Try to invent a set of generalised coordinates for a rigid
+	body in three dimensions. (One possible way would be to argue
+	that the rotational degrees of freedom reside in an
+	orthogonal matrix, relating a fixed coordinate system to a
+	coordinate system attached to the body, and then try to
+	parametrise the space of orthogonal matrices. Check that this
+	is true in two dimensions.)}
+
+\exer{A thin straight rod (approximated as one-dimensional) moves in
+  three dimensions. How many are the 
+degrees of freedom for this system? Define suitable generalised coordinates.
+}{Five, for example three Cartesian coordinates for one endpoint, and
+  two spherical angular coordinates specifying the rod's direction.} 
+
+\exer{A system consists of two rods which can move in a plane, freely
+except that one end of the first rod is connected by a rotatory joint
+to one end of the second rod. Determine the number of degrees of
+freedom for the system, and suggest suitable generalised coordinates. 
+More generally, do the same for a chain of $n$ rods moving in a plane.
+}{$2+n$, for example 2 Cartesian coordinates for one endpoint of the
+  chain, and $n$ angles specifying the directions of its links.} 
+
+\exerFig{A thin rod hangs in a string, see figure. It can move in three
+  dimensional space. How many are the degrees of freedom for this
+  pendulum system? Define suitable generalised coordinates. 
+}{4, for example 2 spherical angular coordinates for the direction of
+  the string, and 2 for the direction of the rod.}{fg0.eps} 
+
+
+%\exer{}{}
+
+
+
+
+\endpage 
+
+\section\GenForces{Generalised forces}Suppose we have a system 
+consisting of a number of point particles
+with (rectilinear) coordinates $x^1,\ldots,x^N$, and that the configuration of
+the system also is described by the set of generalised coordinates
+$q^1,\ldots,q^N$. (We do not need or want to specify the
+number of dimensions the particles can move in, \ie, the number of
+degrees of freedom per particle. This may be coordinates for $N$
+particles moving on a line, for $n$ particles on a plane, with $N=2n$,
+or for $m$ particles in three dimensions, with $N=3m$.) 
+Since both sets of coordinates specify
+the configuration, there must be a relation between them:
+$$\eqalign{	x^1&=x^1(q^1,q^2,\ldots,q^N)=x^1(q)\komma\cr
+		x^2&=x^2(q^1,q^2,\ldots,q^N)=x^2(q)\komma\cr
+		&\vdots\cr
+		x^N&=x^N(q^1,q^2,\ldots,q^N)=x^N(q)\komma\cr}
+			\Eqn\coordrel$$
+compactly written as $x^i=x^i(q)$. To make the relation between the two
+sets of variable specifying the configuration completely general,
+the functions $x^i$ could also involve an explicit time dependence.
+We choose not to include it here. The equations derived in \Chapter5
+are valid also in that case.
+If we make a small (infinitesimal) displacement $dq^i$ in the variables $q^i$,
+the chain rule implies that the corresponding displacement in $x^i$ is 
+$$dx^i=\sum_{j=1}^N{\*x^i\/\*q^j}dq^j\punkt\Eqn\displacerel$$
+The infinitesimal work performed by a force during such a displacement
+is the sum of terms of the type $\vec F\cdot d\vec r$, \ie,
+$$dW=\sum_{i=1}^NF_idx^i=\sum_{i=1}^N\Q_idq^i\komma\Eqn\workrel$$
+where $\Q$ is obtained from eq. (\displacerel) as 
+$$\Q_i=\sum_{j=1}^NF_j{\*x^j\/\*q^i}\punkt\Eqn\genforcedef$$
+$\Q_i$ is the {\it generalised force} associated to the generalised 
+coordinate $q^i$. As was the case with the generalised velocities,
+the dimensions of the $\Q_i$'s need not be those of ordinary forces.
+
+\vfill\eject
+
+\example{Consider a mathematical pendulum with length $l$, the 
+generalised coordinate being $\phi$, the angle from the vertical.
+Suppose that the mass moves an angle $d\phi$ under the influence 
+of a force $\vec F$. The displacement of the mass is
+$d\vec r=ld\phi\hat\phi$ and the infinitesimal work becomes 
+$dW=\vec F\cdot d\vec r=F_\phi ld\phi$. 
+The generalised force associated with the angular
+coordinate $\phi$ obviously is $\Q_\phi=F_\phi l$, which is exactly
+the torque of the force.}
+
+The conclusion drawn in the example is completely general --- the generalised
+force associated with an angular variable is a torque. 
+
+If the force is conservative, we may get it from a potential $V$ as
+$$F_i=-{\*V\/\*x^i}\punkt\Eqn\potforce$$
+If we then insert this into the expression 
+(\genforcedef) for the generalised force, we get
+$$\Q_i=-\sum_{j=1}^N{\*V\/\*x^j}{\*x^j\/\*q^i}=-{\*V\/\*q^i}
+				\punkt\Eqn\consgenforce$$
+The relation between the potential and the generalised force looks
+the same whatever generalised coordinates one uses.
+
+\exercises
+
+\exer 	{A particle is moving without friction at the curve $y=f(x)$,
+	where $y$ is vertical and $x$ horizontal, under the influence of
+	gravity. What is the generalised force when $x$ is chosen 
+	as generalised coordinate?}{$\Q=-mgf'(x)$}
+
+\exerFig{A double pendulum consisting of two identical rods of length
+  $\ell$ can swing in a plane. The pendulum is hanging in
+  equilibrium when, in a collision, the lower rod is hit by a
+  horizontal force $F$ at a point $P$ a distance $a$ from its lower
+  end point, see figure. (This is a "plane" problem; 
+everything is suppose to happen in the $y=0$ plane.) Use the angles as
+generalised coordinates, and determine the generalised force
+components. 
+}{${\cal F}_{\varphi}=\ell F$, ${\cal F}_{\psi}=(\ell-a)F$}{fg1.eps}
+
+\exerFig{Five identical homogeneous rods, each of length $\ell$, are
+  connected by joints into a chain. The chain lies in a symmetric way
+  in the $x-y$ plane (it is invariant under reflection in the
+  $x$-axis). As long as this symmetry is preserved, only three
+  generalised coordinates are needed, $x_P,\alpha,\b$, with $P$ a fixed
+  point in the chain, see figure.  A force $Q$ acts on the middle
+  point of the chain, in the direction of the symmetry axis.  Find the
+  generalised force components of $Q$ if,\brk 
+a) $P=A$,\brk
+b) $P=B$,\brk
+c) $P=C$.
+}{a) $({\cal F}_x,{\cal F}_\a, {\cal F}_\b)=(F,0,0)$,\brk
+ b) $({\cal F}_x,{\cal F}_\a, {\cal F}_\b)=(F,\ell\cos\a,0)$,\brk
+ c) $({\cal F}_x,{\cal F}_\a, {\cal F}_\b)=(F,\ell\cos\a,\ell\cos\b)$.}{fg2.eps}
+
+\exer{A thin rod of length $2\ell$ moves in three dimensions. As
+  generalised coordinates, use Cartesian coordinates $(x,y,z)$ for its
+  center of mass, and standard spherical angles $(\theta,\varphi)$ for
+  its direction. 
+{\it I.e.}, the position vector for one end of the rod relative to the center
+of mass has spherical coordinates $(\ell,\theta,\varphi)$. 
+On this end of the rod acts a force
+$\vec{F}=F_x\hat{x}+F_y\hat{y}+F_z\hat{z}$. Determine its generalised
+force components and interpret them. 
+}{${\cal F}_x=F_x$, ${\cal F}_y=F_y$, ${\cal F}_z=F_z$,\brk
+${\cal F}_{\th}=\ell(F_x\cos\th\cos\vf+F_y\cos\th\sin\vf-F_z\sin\th$),
+\brk
+${\cal F}_{\vf}=\ell\sin\th(-F_x\sin\vf+F_y\cos\vf$).\brk
+Interpretation: The $x$, $y$, and $z$ components of the generalised force equal the Cartesian components of the force $\vec{F}$. ${\cal F}_{\vf}$ is the vertical ($z$) component of the torque of the force $\vec{F}$ with respect to the center of mass, ${\cal F}_{\th}$ is the component of the torque in a direction $\hat{\vf}$ perpendicular to the vertical and to the direction of the rod. 
+}
+
+\exer{A force $\vec{F}=F_x\hat{x}+F_y\hat{y}$ acts on a point $P$ of a
+  rigid body in two dimensions. The position vector of $P$ relative to
+  the center of mass of the rigid body is  
+$\vec{r}_P=x_P\hat{x}+y_P\hat{y}$. Introduce suitable generalised
+coordinates and determine the generalised force components. 
+}{If the generalised coordinates are Cartesian coordinates $x$ and $y$ for the center of mass, and an angle $\th$ describing counterclockwise rotation, the generalised force components are: 
+${\cal F}_x=F_x$, ${\cal F}_y=F_y$, 
+${\cal F}_{\th}=\bar{x}_P F_y-\bar{y}_P F_x$.}
+
+\exerFig{A rod $AD$ is steered by a machine. The machine has two
+  shafts connected by rotatory joints to the rod at $A$ and $B$. The
+  machine can move the rod by moving its shafts vertically. The joint
+  at $A$ is attached to a fixed point of the rod, at distances $a$ and
+  $b$ from its endpoints, see figure. The joint at $C$ can slide along
+  the rod so that the horizontal distance between the joints, $c$, is
+  kept constant. Use as generalised coordinates for the rod the
+  $y$-coordinates $y_1$ and $y_2$ of the joints. Determine the
+  generalised force components of the force
+  $\vec{F}=F_x\hat{x}+F_y\hat{y}$.} 
+{${\cal F}_1=F_y-{ac(cF_y-(y_1-y_2)F_x)\over(c^2+(y_1-y_2)^2)^{3/2}},
+\quad{\cal F}_2={ac(cF_y-(y_1-y_2)F_x)\over(c^2+(y_1-y_2)^2)^{3/2}}$.}{fg2b.eps}
+
+
+
+\endpage 
+
+\section\KinEn{Kinetic energy and generalised momenta}We will examine 
+how the kinetic energy depends on the generalised
+coordinates and their derivatives, the generalised velocities.
+Consider a single particle with mass $m$ moving in three dimensions, 
+so that $N=3$ in the description of the previous chapters.
+The kinetic energy is
+$$\K=\half m\sum_{i=1}^3(\dot x^i)^2\punkt\Eqn\rectikin$$
+Eq. (\displacerel) in the form
+$$\dot x^i=\sum_{j=1}^3{\*x^i\/\*q^j}\dot q^j\Eqn\velocityrel$$
+tells us that $\dot x^i$ is a function of the $q^j$'s, the $\dot q^j$'s and
+time (time enters only if the transition functions (\coordrel) involve
+time explicitly). We may write the kinetic energy in terms of the
+generalised coordinates and velocities as
+$$\K=\half m\sum_{i,j=1}^3A_{ij}(q)\dot q^i\dot q^j\Eqn\generkin$$
+(or in matrix notation $\K=\half m\dot q^tA\dot q$),
+where the symmetric matrix $A$ is given by
+$$A_{ij}=\sum_{k=1}^3{\*x^k\/\*q^i}{\*x^k\/\*q^j}\punkt\Eqn\kinmatrix$$
+It is important to note that although the relations between the
+rectilinear coordinates $x^i$ and the generalised coordinates $q^i$
+may be non-linear, the kinetic energy is always a bilinear form in
+the generalised velocities with coefficients ($A_{ij}$) that depend
+only on the generalised coordinates.
+
+\example{We look again at plane motion in polar coordinates. The relations
+to rectilinear ones are
+$$\eqalign{	&x=r\cos\phi\komma\cr
+		&y=r\sin\phi\komma\cr}\Eqn\rectipolarrel$$
+so the matrix $A$ becomes (after a little calculation)
+$$A=\left[\matrix{	A_{rr}	&A_{r\phi}\cr
+			A_{r\phi}&A_{\phi\phi}\cr}\right]
+	=\left[\matrix{	1	&0\cr
+			0	&r^2\cr}\right]\komma\Eqn\polarkinmatrix$$
+and the obtained kinetic energy is in agreement with the well known
+$$\K=\half m(\dot r^2+r^2\dot\phi^2)\punkt\Eqn\polarkinetic$$}
+
+If one differentiates the kinetic energy with respect to one of the
+(ordinary) velocities $v^i=\dot x^i$, one obtains
+$${\*\K\/\*\dot x^i}=m\dot x^i\komma\Eqn\diffkinwrtv$$
+\ie, a momentum. The {\it generalised momenta} are defined in the analogous 
+way as
+$$p_i={\*\K\/\*\dot q^i}\punkt\Eqn\genmomentumdef$$
+Expressions with derivatives with respect to a velocity, like
+$\*\/\*\dot x$, tend to cause some initial confusion, since there
+``seems to be some relation'' between $x$ and $\dot x$. A good advice is
+to think of a function of $x$ and $\dot x$ (or of any generalised
+coordinates and velocities) as a function of $x$ and $v$ (or to think
+of $\dot x$ as a different letter from $x$). The
+derivative then is with respect to $v$, which is considered as a
+variable completely 
+unrelated to $x$.
+
+\example{The polar coordinates again. Differentiating $\K$ of 
+eq. (\polarkinetic) with respect to $\dot r$ and $\dot\phi$ yields
+$$p_r=m\dot r\komma\quad p_\phi=mr^2\dot\phi\punkt\Eqn\polargenmomenta$$
+The generalised momentum to $r$ is the radial component of the ordinary
+momentum, while the one associated with $\phi$ is the angular momentum,
+something which by now should be no surprise.}
+
+The fact that the generalised momentum associated to an angular variable
+is an angular momentum is a completely general feature.
+
+We now want to connect back to the equations of motion, and formulate
+them in terms of the generalised coordinates. This will be done in the 
+following chapter.
+
+\endpage
+
+\exercises\noindent The generalised coordinates introduced in Chapters
+{\old2} and {\old3} were fixed relative to an inertial system,
+i.e. the coordinate transformation  
+(\coordrel) did not depend explicitly on time. But time dependent coordinate
+transformations, \ie, moving generalised coordinates, can also be
+used. 
+What is needed is that the kinetic energy is the kinetic energy
+relative to an inertial system. 
+In this case expressions (\displacerel) for displacements, and (\workrel) for
+generalised work, will contain additional terms with the time
+differential $dt$. But these terms do not affect the definition of
+generalised force. 
+Equation (\genforcedef), defining generalised force, is unchanged, except it
+should be specified that the partial derivatives must be evaluated at
+fixed time. Use this fact in some of the exercises below. 
+
+
+\exer 	{Find the expression for the kinetic energy of a particle with
+mass $m$ in terms of its spherical
+	coordinates $(r,\theta,\phi)$, $
+	(x,y,z)=(r\sin\theta\cos\phi\,,
+\,r\sin\theta\sin\phi\,,\,r\cos\theta)$.}{$\K=\half
+        m\bigl(\dot r^2+(r\dot\theta)^2+(r\dot\phi\sin\theta)^2
+					\bigr)$}
+
+\exer	{Find the kinetic energy for a particle moving at the curve
+	$y=f(x)$.}{$\K=\half m\dot x^2\bigl(1+f'(x)^2\bigr)$}
+
+\exerFig{Find the kinetic energy for a crank shaft--light rod--piston
+  system, see figure. Use $\theta$ as generalised coordinate. Neglect
+  the mass of the connecting rod.}{$T={1\over2}(\bar{I}+mr^2\sin^2{\th}
+(1+{r\cos\th\over\sqrt{b^2-(r\sin\th)^2}})^2)\dot{\th}^2$.}{fg4.eps}
+
+\exerFig{Find the kinetic energy, expressed in terms of suitable
+  generalised coordinates, for a plane double pendulum consisting of
+  two points of mass $m$ joint by massless rods of lengths
+  $\ell$. Interpret the generalised momenta. 
+}{$p_\p=m\ell^2(\dot{\vf}\cos(\vf-\p)+\dot{\p})$, 
+$p_{\vf}=m\ell^2(2\dot{\vf}+\dot{\p}\cos(\vf-\p)).$\brk
+Interpretation: $p_\p$ = angular momentum (of mass $B$) with respect 
+to point $A$, 
+$p_{\vf}+p_\p$ = angular momentum (of $A$ and $B$) with respect to $O$.
+}{fg3a.eps}
+	
+\exerFig{Find the kinetic energy, expressed in terms of suitable
+  generalised coordinates, for a plane double pendulum consisting of
+  two homogeneous rods, each of length $\ell$ and mass $m$, the upper one
+  hanging from a fixed point, and the lower one hanging from the lower
+  endpoint of the upper one.  Interpret the generalised momenta as
+  suitable angular momenta. 
+}{$p_\p=m\ell^2({1\over2}\dot{\vf}\cos(\vf-\p)+{1\over3}\dot{\p})$, 
+$p_{\vf}=m\ell^2({4\over3}\dot{\vf}+{1\over2}\dot{\p}\cos(\vf-\p))$.\brk
+Interpretation: $p_\p$ = angular momentum of rod $AB$ with respect to
+point $A$, $p_{\vf}+p_\p$ = angular momentum of the rods with respect
+to $O$. 
+}{fg3b.eps}
+	
+\exer{A system consists of two rods, each of mass $m$ and length $\ell\,$,
+which can move in a plane, freely
+except that one end of the first rod is connected by a rotatory joint
+to one end of the second rod. Introduce suitable generalised
+coordinates, express the kinetic energy of the system in them, and
+interpret the generalised momenta. 
+}{If as generalised coordinates are used Cartesian coordinates $(x,y)$
+  of the joint, and polar angles $(\th_1,\th_2)$ describing the
+  directions of the rods from the joints, measured counterclockwise
+  from the $x$-axis as usual, then\brk
+$\K=m(\dot{x}^2+\dot{y}^2)+
+{1\over2}m\ell(-\dot{x}\dot{\th}_1\sin\th_1-\dot{x}\dot{\th}_2\sin\th_2
++\dot{y}\dot{\th}_1\cos\th_1+\dot{y}\dot{\th}_2\cos\th_2)
++{1\over6}m\ell^2(\dot{\th}_1^2+\dot{\th}_2^2)$,\brk
+$p_x=2m\dot{x}-{1\over2}m\ell(\dot{\th}_1\sin\th_1+\dot{\th}_2\sin\th_2)$,\brk
+$p_y=2m\dot{y}+{1\over2}m\ell(\dot{\th}_1\cos\th_2+\dot{\th}_2\cos\th_2)$,\brk
+$p_{\th_1}={1\over3}m\ell^2\dot{\th}_1+
+{1\over2}m\ell(-\dot{x}\sin\th_1+\dot{y}\cos\th_1)$,\brk
+$p_{\th_2}={1\over3}m\ell^2\dot{\th}_2+
+{1\over2}m\ell(-\dot{x}\sin\th_2+\dot{y}\cos\th_2)$.\brk
+They are $x$ and $y$ components of the linear momentum of the system,
+and the angular momenta of the rods with respect to the joint, respectively.
+}
+	
+\exer{A person is moving on a merry-go-round which is rotating with
+  constant angular velocity $\Omega$. Approximate the person by a
+  particle and express its kinetic energy in suitable merry-go-round
+  fixed coordinates. 
+}{$\K={1\over2}m((\dot{x}-\W y)^2+(\dot{y}+\W x)^2)$,\brk
+$p_x=m(\dot{x}-\W y)$, $p_y=m(\dot{y}+\W x)$.}
+	
+\exerFigName{A particle is moving on a little flat horizontal piece of the
+  earth's surface at latitude $\theta$. Use Cartesian earth fixed
+  generalised coordinates. Find the particle's kinetic energy,
+  including the effect of the earth's rotation. 
+}{$\K={1\over2}m(\dot{x}^2+\dot{y}^2)+m\W\sin\th(x\dot{y}-y\dot{x})
++{1\over2}m\W^2(x^2+(R\cos\th-y\sin\th)^2)$.
+}{fg4c.eps}{\EarthExercise}
+
+
+	
+	
+\endpage
+	
+\section\LagrEq{Lagrange's equations}
+\vskip-2\baselineskip
+\subsection\SinglePart{A single particle}The equation of motion
+of a single particle, 
+as we know it so far, is given by eq. (\Fma).
+We would like to recast it in a form that is possible to generalise
+to generalised coordinates. Remembering how the momentum was obtained
+from the kinetic energy, eq. (\genmomentumdef), we rewrite (\Fma) in the form
+$${d\/dt}{\*\K\/\*\dot x^i}=F_i\punkt\Eqn\prellagreqn$$
+A first guess would be that this, or something very similar, holds
+if the coordinates are replaced by the generalised coordinates and
+the force by the generalised force. We therefore calculate the left hand
+side of (\prellagreqn) with $q$ instead of $x$ and see what we get:
+$$\eqalign{{d\/dt}{\*\K\/\*\dot q^i}&=
+    \sum_{j=1}^3{d\/dt}\left({\*\K\/\*\dot x^j}{\*\dot x^j\/\*\dot q^i}\right)=
+    \sum_{j=1}^3{d\/dt}\left({\*\K\/\*\dot x^j}{\*x^j\/\*q^i}\right)=\cr
+    &=\sum_{j=1}^3\left({\*x^j\/\*q^i}{d\/dt}{\*\K\/\*\dot x^j}+
+               {d\/dt}{\*x^j\/\*q^i}{\*\K\/\*\dot x^j}\right)=
+    \sum_{j=1}^3\left({\*x^j\/\*q^i}{d\/dt}{\*\K\/\*\dot x^j}+
+               {\*\dot x^j\/\*q^i}{\*\K\/\*\dot x^j}\right)=\cr
+    &=\sum_{j=1}^3{\*x^j\/\*q^i}{d\/dt}{\*\K\/\*\dot x^j}+
+               {\*\K\/\*q^i}\punkt\cr}\Eqn\lagrhaerledn$$
+Here, we have used the chain rule and the fact that $\K$ depends on $\dot x^i$
+and not on $x^i$ in the first step. Then, in the second step, we use the
+fact that $x^i$ are functions of the $q$'s and not the $\dot q$'s to
+get ${\*\dot x^j\/\*\dot q^i}={\*x^j\/\*q^i}$. The fourth step uses this 
+again to derive ${d\/dt}{\*x^j\/\*q^i}={\*\dot x^j\/\*q^i}$, and the last
+step again makes use of the chain rule on $\K$. Now we can insert the
+form (\prellagreqn) for the equations of motion of the particle:
+$${d\/dt}{\*\K\/\*\dot q^i}=\sum_{j=1}^3{\*x^j\/\*q^i}F_j+{\*\K\/\*q^i}
+    \komma\Eqn\onthewaytolagr$$
+and arrive at Lagrange's equations of motion for the particle:
+$${d\/dt}{\*\K\/\*\dot q^i}-{\*\K\/\*q^i}=\Q_i\punkt\Eqn\lagreqns$$
+\endpage
+\example{A particle moving under the force $\vec F$ using rectilinear
+coordinates. Here one must recover the known equation $m\vec a=\vec F$.
+Convince yourself that this is true.}
+\example{To complete the series of examples on polar coordinates, we
+finally derive the equations of motion. From \polarkinetic, we get
+$$\matrix{{\*\K\/\*\dot r}=m\dot r\komma\hfill
+		&{\*\K\/\*r}=mr\dot\phi^2\komma\hfill\cr
+          {\*\K\/\*\dot\phi}=mr^2\dot\phi\komma\hfill
+		&{\*\K\/\*\phi}=0\punkt\hfill\cr}
+                     \Eqn\dKdpolar$$
+Lagrange's equations now give 
+$$\eqalign{&m(\ddot r-r\dot\phi^2)=F_r\komma\cr
+           &m(r^2\ddot\phi+2r\dot r\dot\phi)=\tau\,\,
+		(=rF_\phi)\punkt\cr}
+                        \Eqn\polarlagrangeEq$$
+}
+
+The Lagrangian formalism is most useful in cases when there is a potential
+energy, \ie, when the forces are conservative and mechanical energy is
+conserved. Then the generalised forces can be written as
+$\Q_i=-{\*V\/\*q^i}$ and Lagrange's equations read
+$${d\/dt}{\*\K\/\*\dot q^i}-{\*\K\/\*q^i}+{\*V\/\*q^i}=0\punkt\Eqn\conslagreqns$$
+The potential $V$ can not depend on the generalised velocities, so
+if we form 
+$$L=\K-V\komma\Eqn\thelagrangian$$
+the equations are completely expressible in terms of $L$:
+$$
+{d\/dt}{\*L\/\*\dot q^i}-{\*L\/\*q^i}=0
+\Eqn\TheMostUsefulForm$$
+The function $L$ is called the {\it Lagrange function} or the {\it Lagrangian}.
+This form of the equations of motion is the one most often used
+for solving problems in analytical 
+mechanics. There will be examples in a little while.
+    
+\example{Suppose that one, for some strange reason, wants to
+solve for the motion of a particle with mass $m$ moving in a harmonic
+potential with spring constant $k$ using the generalised coordinate
+$q=x^{1/3}$ instead of the (inertial) coordinate $x$.
+In order to derive Lagrange's equation for $q(t)$, one first has to
+express the kinetic and potential energies in terms of $q$ and $\dot q$.
+One gets $\dot x={\* x\/\* q}\dot q=3q^2\dot q$ and thus
+$\K={9m\/ 2}q^4\dot q^2$. The potential is $V=\half kx^2=\half kq^6$,
+so that $L={9m\/ 2}q^4\dot q^2-\half kq^6$. Before writing down
+Lagrange's equations we need 
+${\* L\/\* q}=18mq^3\dot q^2-3kq^5$ and 
+${d\/ dt}{\* L\/\*\dot q}=
+ {d\/ dt}\left(9mq^4\dot q\right)=
+   9mq^4\ddot q+36mq^3\dot q^2$. Finally,
+$$\eqalign{0&={d\/ dt}{\* L\/\*\dot q}-{\* L\/\* q}=\cr
+			&=9mq^4\ddot q+36mq^3\dot q^2-18mq^3\dot q^2+3kq^5=\cr
+   &=9mq^4\ddot q+18mq^3\dot q^2+3kq^5=\cr
+    &=3q^2\left(3mq^2\ddot q+6mq\dot q^2+kq^3\right)\cr}
+         \punkt\Eqn\stupid$$
+If one was given this differential equation as an exercise in mathematics,
+one would hopefully end up by making the change of variables $x=q^3$,
+which turns it into 
+$$m\ddot x+kx=0\komma\Eqn\nonstupid$$
+which one recognises as the correct equation of motion for the
+harmonic oscillator.}
+
+The example just illustrates the fact that
+Lagrange's equations give the correct result for any choice of
+generalised coordinates. This is certainly not the case for Newton's
+equations. If $x$ fulfills eq. (\nonstupid), it certainly doesn't imply
+that any $q(x)$ fulfills the same equation!
+
+The derivation of Lagrange's equations above was based on a situation
+where the generalised coordinates $q^i$ are ``static'', \ie, when the
+transformation (\coordrel) between $q^i$ and inertial coordinates $x^i$ does not
+involve time. This assumption excludes many useful situations, such
+as linearly accelerated or rotating coordinate systems. However, it turns out
+that Lagrange's equations still hold in cases where the transformation
+between inertial and generalised coordinates has an explicit time
+dependence, $x^i=x^i(q;t)$. The proof of this statement is left as an
+exercise for the theoretically minded student. It involves generalising
+the steps taken in eq. (\lagrhaerledn) to the situation where the
+transformation also involves time. We will instead give two examples
+to show that Lagrange's equations, when applied in time-dependent
+situations, reproduce well known inertial forces, and hope that this
+will be as convincing as a formal derivation.
+
+The only thing one has to keep in mind when forming the Lagrangian, is
+that the kinetic energy shall be the kinetic energy relative an inertial system.
+
+The first example is about rectilinear motion in an accelerated frame,
+and the second concerns rotating coordinate systems.
+
+\example{Consider a particle with mass $m$ moving on a line. Instead
+  of using the 
+  inertial coordinate $x$, we want to using $q=x-x_0(t)$, where
+  $x_0(t)$ is some (given) function. (This could be \eg\ for the
+  purpose of describing physics inside a car, moving on a straight
+  road, where $x_0(t)$ is the inertial position of the car.) 
+We also define $v_0(t)=\dot x_0(t)$ and $a_0(t)=\ddot x_0(t)$. 
+The kinetic energy is
+$$
+T=\half m\left(\dot q+v_0(t)\right)^2\punkt\eqn
+$$
+In the absence of forces, one gets Lagrange's equation
+$$
+0={d\/dt}{\*T\/\*\dot q}=m(\ddot q+a_0(t))\punkt\Eqn\LinearAcc
+$$
+We see that the well known inertial force $-ma_0(t)$ is automatically
+generated. If there is some force acting on the particle, we note that
+the definition of generalised force tells us that $\Q_q=F_x$. The
+generalised force $\Q_q$ does not include the inertial force; the
+latter is generated from the kinetic energy as in eq. (\LinearAcc).
+} 
+
+\example{
+Let us take a look at particle motion in a plane using a rotating
+coordinate system. For simplicity, let the the rotation vector be
+constant and pointing in the $z$ direction, $\vec\omega=\omega\hat
+z$. The relation between inertial and rotating coordinates is
+$$
+\left\{\matrix{
+x=\xi\cos\w t-\eta\sin\w t\cr
+y=\xi\sin\w t+\eta\cos\w t\cr
+}\right.\eqn
+$$
+and the inertial velocities are
+$$
+\left\{\matrix{
+\dot x=\dot\xi\cos\w t-\dot\eta\sin\w t
+             -\w(\xi\sin\w t+\eta\cos\w t)\cr
+\dot y=\dot\xi\sin\w t+\dot\eta\cos\w t
+             +\w(\xi\cos\w t-\eta\sin\w t)\cr
+}\right.\eqn
+$$
+We now form the kinetic energy (again, relative to an inertial frame),
+which after a short calculation becomes
+$$
+T=\half m\left[\dot\xi^2+\dot\eta^2+2\w(\xi\dot\eta-\eta\dot\xi)
+         +\w^2(\xi^2+\eta^2)\right]\punkt\eqn
+$$
+Its derivatives with respect to (generalised) coordinates and
+velocities are
+$$
+\eqalign{
+p_\xi={\*T\/\*\dot\xi}&=m(\dot\xi-\omega\eta)\komma\cr
+p_\eta={\*T\/\*\dot\eta}&=m(\dot\eta+\omega\xi)\komma\cr
+{\*T\/\*\xi}&=m(\w\dot\eta+\w^2\xi)\komma\cr
+{\*T\/\*\eta}&=m(-\w\dot\xi+\w^2\eta)\punkt\cr
+}\eqn
+$$
+Finally, Lagrange's equations are formed:
+$$
+\eqalign{
+0&={d\/dt}{\*T\/\*\dot\xi}-{\*T\/\*\xi}=m(\ddot\xi-\omega\dot\eta)
+                                -m(\w\dot\eta+\w^2\xi)
+            =m(\ddot\xi-2\omega\dot\eta-\w^2\xi)\komma\cr
+0&={d\/dt}{\*T\/\*\dot\eta}-{\*T\/\*\eta}=m(\ddot\eta+\omega\dot\xi)
+                                -m(-\w\dot\xi+\w^2\eta)
+            =m(\ddot\eta+2\omega\dot\xi-\w^2\eta)\punkt\cr
+}\eqn
+$$
+Using vectors for the relative position, velocity and acceleration:
+$\vec\varrho=\xi\hat\xi+\eta\hat\eta$, 
+$\vec v_{\rm rel}=\dot\xi\hat\xi+\dot\eta\hat\eta$ and 
+$\vec a_{rel}=\ddot\xi\hat\xi+\ddot\eta\hat\eta$, we rewrite
+Lagrange's equations as
+$$
+0=m\left[\vec a_{rel}+2\vec\w\times\vec v_{rel}
++\vec\w\times(\vec\w\times\vec\varrho)\right]\punkt
+$$
+The second term is the Coriolis acceleration, and the third one the
+centripetal acceleration. Note that the centrifugal term comes from
+the term $\half m\w^2(\xi^2+\eta^2)$ in the kinetic energy, which can
+be seen as (minus) a ``centrifugal potential'', while the Coriolis
+term comes entirely from the velocity-dependent 
+term $m\w(\xi\dot\eta-\eta\dot\xi)$ in $T$.
+}
+
+
+\exercises
+%\noindent In some of the exercises below it is suitable to use moving
+%generalised coordinates. Lagrange's equations are valid also in this
+%case. And the Lagrangian still equals kinetic energy minus potential
+%energy. The only thing one must observe is that the kinetic energy
+%shall be the kinetic energy relative an inertial system. 
+ 
+
+\exer  {Write down Lagrange's equations for a freely moving particle
+	in spherical coordinates!}{$\ddot
+        r-r(\dot\theta^2+\dot\phi^2\sin^2\theta)=0$\brk 
+	${d\/dt}(r^2\dot\theta)-r^2\dot\phi^2\sin\theta\cos\theta=0$\brk
+	${d\/dt}(r^2\dot\phi\sin^2\theta)=0$}
+
+\exer 	{A particle is constrained to move on the sphere $r=a$. Find
+	the equations of motion in the presence of
+        gravitation.}{If standard spherical angles, corresponding to $z$- 
+axis pointing vertically down,
+are used as generalised ocordinates:\brk
+$\ddot\theta-\dot\phi^2\sin\theta\cos\theta
++{g\/a}\sin\theta=0$\brk 
+	${d\/dt}(\dot\phi\sin^2\theta)=0$}
+
+\exer	{A bead is sliding without friction along a massless string.
+	The endpoint of the string are fixed at $(x,y)=(0,0)$ and $(a,0)$
+	and the length of the string is $a\sqrt 2$. 
+	Gravity acts along the negative $z$-axis. Find the stable
+	equilibrium position and the frequency for small oscillations
+	around it!}{$\omega=\sqrt{g\/a}$}
+
+\exer	{Write down Lagrange's equations for a particle moving at the 
+	curve $y=f(x)$. The $y$ axis is vertical. 
+	Are there functions that produce harmonic 
+	oscillations? What is the angular frequency of small oscillations
+	around a local minimum $x=x_0$?}{$\ddot x(1+{f'}^2)+\dot
+        x^2f'f''+gf'=0$\brk 
+	No.\brk
+	$\omega=\sqrt{gf''(x_0)}$}
+
+\exerNA  {Show, without using any rectilinear coordinates $x$, that if
+  Lagrange's equations are valid using coordinates 
+  $\{q^i\}_{i=1}^N$, they are also valid using any other coordinates
+  $\{q'^i\}_{i=1}^N$.}{} 
+
+\exerFig{A particle is constrained to move on a circular cone with
+  vertical axis under  
+influence of gravity. Find equations of motion.
+}{$\ddot{r}-r\sin^2\th\dot{\vf}^2+g\cos\th=0$, 
+${d\over dt}(r^2\sin^2\th\dot{\vf})=0$.}{fg5.eps}
+
+\exer{A particle is constrained to move on a circular cone. There are
+  no other forces. Find the general solution to the equations of
+  motion. 
+}{$r={1\over\sqrt{2\e}\sin\th}\sqrt{\ell^2+(2\e\sin\th (t-t_0))^2}$, 
+$\vf=\vf_0+{1\over\sin\th}\arctan(2\e\sin\th (t-t_0)/\ell)$,\brk
+ where $\e=E/m$, $\ell = L/m$, $t_0$ and $\vf_0$ are the integration constants.}
+
+\exerFig{A bead slides without friction on a circular hoop of radius
+  $r$ with horizontal symmetry axis. The hoop rotates with constant
+  angular velocity $\Omega$ around a vertical axis through its
+  center. Determine equation of motion for the bead. Find the
+  equilibrium positions, 
+and decide whether they are stable or unstable.
+}{$\cos\th=-1$ is always an unstable equilibrium position. The
+  position $\cos\th=1$ is stable for $\W^2<g/r$, unstable for
+  $\W^2>g/r$. If $\W^2>g/r$ there are in addition two stable positions
+  $\cos\th={g\over r\W^2}$.}{fg6.eps} 
+
+\exer{A particle is sliding without friction on a merry-go-round which
+  is rotating with constant angular velocity $\Omega$. Find and solve
+  the equations of motion for merry-go-round fixed generalised
+  coordinates. 
+}{$
+x(t)=a\cos(\W t)+b\sin(\W t)+c\cos(\W t)t+d\sin(\W t)t,\brk
+y(t)=-a\sin(\W t)+b\cos(\W t)-c\sin(\W t)t+d\cos(\W t)t$.}
+
+\exer{A particle is sliding without friction on a little flat horizontal  
+piece of earth's surface at latitude $\th$, see illustration to  
+exercise \EarthExercise. 
+Approximate (a bit unrealistically) earth as a rotating  
+sphere, with gravitational acceleration $-g\hat{R}$ at its surface,  
+and find equations of motion for earth fixed coordinates, including  
+effects of earth's rotation.
+To what extent can they describe the behavior of a particle on the  
+surface of the real earth?
+}{$\ddot{x}=2\W\sin\th\;\dot{y}+\W^2\;x-gx/R\,,\brk
+\ddot{y}=-2\W\sin\th\;\dot{x}+\W^2\sin\th(\sin\th\;y-R\cos\th)-gy/R\,.$
+The next to last term describes a constant centrifugal acceleration $- 
+R\W^2\sin\th\cos\th\hat{y}\approx-\hat{y}\sin{2\th}\cdot0.017\;{\rm m/ 
+s^2}$.
+The real earth compensates (cancels) this term by tilting its  
+surface, so that the vertical does not point to the center of earth.  
+The equations also describe coriolis and centrifugal acceleration due  
+to the vertical component of earths rotation, $\W\sin\th$ (compare  
+with the previous problem). In addition the horizontal component of  
+earth's rotation produces a centrifugal acceleration $\W^2\cos^2\th\;x 
+\hat{x}$. The gravitation acceleration terms are present only because  
+the surface is assumed flat instead of spherical. The real earth  
+curves its surface in such a way that all these accelerations, except  
+the coriolis acceleration, are cancelled.}
+
+
+\exerNA{A free particle is moving in three dimensions. Find kinetic
+  energy, equations of motion, and their general solution, using a
+  system of Cartesian coordinates rotating with constant angular
+  velocity $\vec{\omega}$ (cf. Meriam \& Kraige's equation (5/14)). 
+}
+
+
+
+%\endpage
+ 
+\subsection\ManyDegs{Lagrange's equations with any number 
+of degrees of freedom}In a more general case, 
+the system under consideration can be any
+mechanical system: any number of particles, any number of rigid
+bodies etc. The first thing to do is to determine the number of degrees
+of freedom of the system. In three dimensions, we already know that
+a particle has three translational degrees of freedom and that a 
+rigid body has three translational and three rotational ones.
+This is true as long as there are no kinematical constraints that
+reduce these numbers. Examples of such constraints can be that a 
+mass is attached to the end of an unstretchable string, that a body
+slides on a plane, that a particle is forced to move on the surface
+of a sphere, that a rigid body only may rotate about a fixed axis,...
+
+Once the number $N$ of degrees of freedom has been determined, one tries
+to find the same number of variables that specify the configuration
+of the system, the "position". Then these variables are {\it generalised
+coordinates} for the system. Let us call them $q^1,q^2,\ldots,q^N$.
+The next step is to find an expression for the kinetic and potential
+energies in terms of the $q^i$'s and the $\dot q^i$'s (we confine
+to the case where the forces are conservative --- for dissipative forces
+the approach is not as powerful). Then the Lagrangian is formed as
+the difference $L=\K-V$. The objects $p_i={\* L\/\*\dot q^i}$ are called
+{\it generalised momenta} and $v^i=\dot q^i$ {\it generalised velocities} (if
+$q^i$ is a rectilinear coordinate, $p_i$ and $v^i$ coincide with the ordinary
+momentum and velocity components).
+Lagrange's equations for the systems are 
+$${d\/ dt}{\* L\/\*\dot q^i}-{\* L\/\* q^i}=0
+    \komma\quad\quad i=1,\ldots,N\komma\Eqn\lagrgen$$
+or, equivalently,
+$$\dot p_i-{\* L\/\* q^i}=0\punkt\Eqn\lagrgeni$$
+We state these equations without proof. The proof is completely along
+the lines of the one-particle case, only that some indices have
+to be carried around. Do it, if you feel tempted!
+
+In general, the equations (\lagrgen) lead to a system of $N$ coupled
+second order differential equations. We shall take a closer look
+at some examples.%\vskip5cm
+
+\example{A simple example of a constrained system is the
+"mathematical pendulum", consisting of a point mass moving under the 
+influence of
+gravitation and attached to the end of a massless unstretchable string whose
+other end is fixed at a point. 
+If we consider this system in two dimensions, the
+particle moves in a plane parametrised by two rectilinear coordinates that we
+may label $x$ and $y$. The number of degrees of freedom here is not
+two, however. The constant length $l$ of the rope puts a constraint
+on the position of the particle, which we can write as $x^2+y^2=l^2$ if
+the fixed end of the string is taken as origin.
+The number of degrees of freedom is {\rm one}, the original two minus
+one constraint.
+It is possible, but
+not recommendable, to write the equations of motion using these
+rectilinear coordinates. Then one has to introduce a string force
+that has exactly the right value to keep the string unstretched, and
+then eliminate it. A better way to proceed is to identify the single
+degree of freedom of the system as the angle $\phi$ from the vertical (or
+from some other fixed line through the origin). $\phi$ is now the
+generalised coordinate of the system. 
+In this and similar cases, Lagrange's equations provide a handy way of
+deriving the equations of motion.
+The velocity of the point mass is $v=l\dot\phi$, so its kinetic energy is
+$\K=\half ml^2\dot\phi^2$. The potential energy is $V=-mgl\cos\phi$.
+We form the Lagrangian as 
+$$L=\K-V=\half ml^2\dot\phi^2+mgl\cos\phi\punkt\Eqn\pendlagr$$
+We form 
+$$\eqalign{&{\* L\/\*\phi}=-mgl\sin\phi\komma\cr		
+	&p_\phi={\* L\/\*\dot\phi}=ml^2\dot\phi\komma\cr
+           &{d\/ dt}{\* L\/\*\dot\phi}=ml^2\ddot \phi\punkt\cr}\Eqn\pendvar$$
+Lagrange's equation for $\phi$ now gives
+$ml^2\ddot \phi+mgl\sin\phi=0$, \ie,
+$$\ddot \phi+{g\/ l}\sin\phi=0\punkt\Eqn\pendem$$
+This equation should be recognised as the correct equation of motion
+for the mathematical pendulum.
+In the case of small oscillations, one approximates $\sin\phi\approx\phi$
+and get harmonic oscillations with angular frequency $\sqrt{g/l}$.}
+
+Some comments can be made about this example that clarifies the 
+Lagrangian approach.
+First a dimensional argument: the Lagrangian always has the dimension
+of energy. The generalised velocity here is $v_\phi=\dot\phi$, the
+angular velocity, with dimension $(\hbox{time})^{-1}$. The generalised
+momentum $p_\phi$, being the derivative of $L$ with respect to
+$\dot\phi$, obviously hasn't the dimension of an ordinary momentum, but
+$(\hbox{energy})\times(\hbox{time})=(\hbox{mass})\times(\hbox{length})^2
+   \times(\hbox{time})^{-1}=(\hbox{mass})\times(\hbox{length})\times
+     (\hbox{velocity})$. This is the same dimension as an angular momentum
+component (recall ``$\vec L=m\vec r\times\vec v\,$''). 
+If we look back at eq. (\pendvar), 
+we see that $p_\phi$ is indeed the angular momentum with respect to
+the origin. This phenomenon is quite general: 
+{\it if the generalised coordinate
+is an angle, the associated generalised momentum is an angular momentum}.
+It is not difficult to guess that the generalised force should be
+the torque, and this is exactly what we find by inspecting 
+$-{\* V\/\*\phi}=-mgl\sin\phi$. 
+
+\figflow{-250pt}{225pt}{\vfill\noindent\epsffile{Fig/double.eps}
+\vfill\centerline{\sl The double pendulum of example {\old15}}\vfill
+}
+The example of the mathematical pendulum is still quite simple.
+It is easy to solve without the formalism of Lagrange, best by
+writing the equation for the angular momentum (which is what Lagrange's
+equation above achieves) or, alternatively, by writing the force equations
+in polar coordinates. By using Lagrange's equations one doesn't have
+to worry about \eg\ expressions for the acceleration in non-rectilinear
+coordinates. That comes about automatically.
+
+There are more complicated classes of situations, where the variables
+are not simply an angle or rectilinear coordinates or a combination
+of these. Then Lagrange's equations makes the solution much easier.
+We shall look at another example, whose equations of motion are cumbersome to
+derive using forces or torques, a coupled double pendulum.
+%\vskip2\parskip
+%\centerline{\epsffile{Fig/double.eps}}
+
+%\vfill\eject
+
+\example{Consider two mathematical pendulums
+one at the end of the other, with masses and lengths as indicated in the figure.
+The number of degrees of freedom of this system is two (as long as the
+strings are stretched), and we
+need to find two variables that completely specify the configuration of
+it, \ie, the positions of the two masses.
+The two angles $\pa$ and $\pb$ provide one natural choice, which we will
+use, although there are other possibilities, \eg\ to use instead of
+$\pb$ the angle $\pb'=\pb-\pa$ which is zero when the two strings are aligned.
+The only intelligent thing we have to perform now is to write down
+expressions for the kinetic and potential energies, then Lagrange does
+the rest of the work.
+We start with the kinetic energy, which requires knowledge of the
+velocities. The upper particle is straightforward, it has the speed
+$v_1=\la\dot\pa$. The lower one is trickier. The velocity gets two
+contributions, one from $\pa$ changing and one from $\pb$ changing.
+Try to convince yourselves that those have absolute values $\la\dot\pa$
+and $\lb\dot\pb$ respectively, and that the angle between them is
+$\pb-\pa$ as in the figure. The first of these contributions depend on
+$\pb$ being defined from the vertical, so that when only $\pa$ changes,
+the lower string gets parallel transported but not turned.
+Now the cosine theorem gives the square of the total speed for the
+lower particle:
+$${v_2}^2=\la^2\dot\pa^2+\lb^2\dot\pb^2+2\la\lb\dot\pa\dot\pb\cos(\pb-\pa)
+          \komma\Eqn\vtwo$$
+so that the kinetic energy becomes
+$$\K=\half\ma\la^2\dot\pa^2+
+\half\mb\left[\la^2\dot\pa^2+\lb^2\dot\pb^2+2\la\lb\dot\pa\dot\pb\cos(\pb-\pa)
+     \right]\punkt\Eqn\doublekin$$
+The potential energy is simpler, we just need the distances from the "roof"
+to obtain
+$$V=-\ma g\la\cos\pa-\mb
+g(\la\cos\pa+\lb\cos\pb)\punkt\Eqn\doublepot$$ 
+Now the intelligence is
+turned off, the Lagrangian is formed as 
+$L=\K-V$, and Lagrange's equations are written down.
+We leave the derivation as an exercise (a good one!) and state the
+result:
+$$\eqalign{&\ddot \pa+{\mb\/\ma+\mb}{\lb\/\la}
+      \left[\ddot \pb\cos(\pb-\pa)-\dot\pb^2\sin(\pb-\pa)\right]
+          +{g\/\la}\sin\pa=0\komma\cr
+      &\ddot \pb+{\la\/\lb}\left[\ddot \pa\cos(\pb-\pa)
+	+\dot\pa^2\sin(\pb-\pa)\right]
+          +{g\/\lb}\sin\pb=0\punkt\cr}
+              \Eqn\lagrdouble$$
+One word is at place about the way these equations are written. When one
+gets complicated expressions with lots of parameters hanging around in
+different places, it is good to try to arrange things as clearly as possible.
+Here, we have combined masses and lengths to get dimensionless factors as
+far as possible, which makes a dimensional analysis simple. This provides
+a check for errors --- most calculational errors lead to dimensional errors!
+The equations (\lagrdouble) are of course not analytically solvable.
+For that we need a computer simulation. What we can obtain analytically is
+a solution for small angles $\pa$ and $\pb$. We will do this calculation
+for two reasons. Firstly, it learns us something about how to linearise
+equations, and secondly, it tells us about interesting properties of
+coupled oscillatory systems.
+In order to linearise the equations, we throw away terms that are not linear
+in the angles or their time derivatives. To identify these, we use the
+Maclaurin expansions for the trigonometric functions. The lowest order
+terms are enough, so that $\cos x\approx 1$ and $\sin x\approx x$.
+The terms containing $\dot\pa^2$ or $\dot\pb^2$ go away (these can be seen
+to represent centrifugal forces, that do not contribute when the strings
+are approximately aligned or the angular velocities small). The linearised
+equations of motion are thus
+$$\eqalign{&\ddot \pa+{\mb\/\ma+\mb}{\lb\/\la}\ddot \pb+{g\/\la}\pa=0\komma\cr
+           &{\la\/\lb}\ddot \pa+\ddot \pb+{g\/\lb}\pb=0\punkt\cr}
+		\Eqn\doublelin$$
+We now have a system of two coupled linear second order differential
+equations. They may be solved by standard methods. It is important to
+look back and make sure that you know how that is done.
+The equations can be written on matrix form
+$$M\ddot \Phi+K\Phi=0\komma\Eqn\phimatrixeq$$
+where
+$$\Phi=\left[\matrix{\pa\cr\pb\cr}\right]\komma\quad\quad
+        M=\left[\matrix{1&{\mb\/\ma+\mb}{\lb\/\la}\cr
+                        \,\,{\la\/\lb}\,\,&1\cr}\right]\komma\quad\quad
+        K=\left[\matrix{{g\/\la}&0\cr
+                        0&{g\/\lb}\cr}\right]\punkt\Eqn\matrices$$
+The ansatz one makes is $\Phi=Ae^{\pm i\o t}$ with $A$ a column vector
+containing "amplitudes", which gives
+$$(-M\o^2+K)A=0\punkt\Eqn\motwookaiszero$$
+Now one knows that this homogeneous equation has non-zero 
+solutions for $A$ only
+when the determinant of the "coefficient matrix" $(-M\o^2+K)$ is zero, \ie,
+the rows are linearly dependent giving two copies of the same equation.
+The vanishing of the determinant gives a second order equation for $\o^2$
+whose solutions, after some work (do it!), are
+$$\eqalign{\o^2={g\/2\ma\la\lb}\biggl\{(&\ma+\mb)(\la+\lb)\pm\cr
+     &\pm\sqrt{(\ma+\mb)\bigl[\ma(\la-\lb)^2+\mb(\la+\lb)^2\bigr]}\biggr\}
+          \punkt\cr}\Eqn\omegatwodouble$$
+These are the {\rm eigenfrequencies} of the system. It is generic for
+coupled system with two degrees of freedom that there are two
+eigenfrequencies. If one wants, one can check what $A$ is in the two cases.
+It will turn out, and this is also generic, that the lower frequency
+corresponds to the two masses moving in the same direction
+ and the higher one to opposite directions. It is
+not difficult to imagine that the second case gives a higher frequency ---
+it takes more potential energy, and thus gives a higher ``spring constant''. 
+What is one to do with such a complicated answer? The first thing is
+the dimension control. Then one should check for cases where one knows
+the answer. One such instance is the {\rm single} pendulum, \ie,
+$\mb=0$. Then the expression (\omegatwodouble) should boil down
+to the frequency $\sqrt{g/\la}$ (see exercise below). 
+One can also use one's
+physical intuition to deduce what happens \eg\ when $\ma$ 
+is much smaller than
+$\mb$. After a couple of checks like this one can be almost sure that the
+expression obtained is correct. This is possible for virtually every problem.} 
+
+The above example is very long and about as complicated a calculation
+we will encounter. It may seem confusing, but give it some time, go
+through it systematically, and you will see that it contains many
+ingredients and methods that are useful to master. If you really understand
+it, you know most of the things you need to solve many-variable problems
+in Lagrange's formalism.
+
+The Lagrange function is the difference between kinetic and
+potential energy. This makes energy conservation a bit obscure in
+Lagrange's formalism. We will explain how it comes about, but this
+will become clearer when we move to Hamilton's formulation.
+Normally, in one dimension, one has the equation of motion
+$m\ddot x=F$. In the case where $F$ only depends on $x$, there is a 
+potential, and the equation of motion may be integrated using the trick
+$\ddot x=a=v{dv\/dx}$ which gives $mvdv=Fdx$, $\half mv^2-\int Fdx=C$,
+conservation of energy. It must be possible to do this in Lagrange's
+formalism too. If the Lagrangian does not depend on $t$, we observe that
+$$\eqalign{&{d\/dt}\left[\dot x{\*L\/\*\dot x}-L(x,\dot x)\right]=\cr
+	&=\ddot x{\*L\/\*\dot x}+\dot x{d\/dt}{\*L\/\*\dot x}-
+		\dot x{\*L\/\*x}-\ddot x{\*L\/\*\dot x}=\cr
+	&=\dot x\left[{d\/dt}{\*L\/\*\dot x}-{\*L\/\*x}\right]\cr}
+			\punkt\Eqn\lagrint$$
+Therefore, Lagrange's equation implies that the first quantity 
+in square brackets
+is conserved. As we will see in \Chapter7, it is actually the
+energy. In a case with more generalised coordinates, the energy takes
+the form
+$$E=\sum_i\dot q^i{\*L\/\*\dot q^i}-L=\sum_i\dot q^ip_i-L
+	\punkt\Eqn\energylagr$$
+It is only in one dimension that energy conservation can replace the
+equation of motion --- for a greater number of variables it contains
+less information.
+
+\exercises
+
+\exer	{Find and solve the equations of motion for a homogeneous
+	sphere rolling down a slope, assuming enough friction
+	to prevent sliding.}{$a={5\/7}g\sin\alpha$}
+
+\exerName	{A particle is connected to a spring whose other end is
+	fixed, and free to move in a horizontal plane.
+	Write down Lagrange's equations for the system, and describe
+	the motion qualitatively.}{$m\ddot r-mr\dot\phi^2+k(r-l)=0$\brk
+	${d\/dt}mr^2\dot\phi=0$}\ParticleSpringPolar
+
+\exerName	{Find Lagrange's equations for the system in exercise
+  \MOneMTwo.}{Translation + motion as in
+  exercise \ParticleSpringPolar. Note the appearance  
+	of the ``reduced mass''
+        $\mu={m_1m_2\/m_1+m_2}$.}\ParticleSpringPolarLagr 
+
+\exerFigName{Two masses are connected with a spring, 
+	and each is connected
+	with a spring to a fixed point. Find the equations
+	of motion, and describe the motion qualitatively.
+	Solve for the possible angular frequencies in the case
+	when the masses are equal and the spring constants are equal.
+	There is no friction.}{$\omega=\omega_0$ or $\omega_0\sqrt{3}$
+        where $\omega_0=\sqrt{k\/m}$}{13.eps}\MassesSpringsExer
+
+%\hskip2cm\epsffile{13.eps}
+
+\exerNA 	{Consider the double pendulum in the limit when either of the
+	masses is small compared to the other one, and interpret the result.}
+
+\exerNA{In the television show ``Fr\aa ga Lund'' in the 70's, an
+  elderly lady had a question answered by the physicist Sten von
+  Friesen. As a small child, she had on several occasions walked into
+  the family's dining room, where a little porcelain bird was hanging
+  from a heavy lamp in the ceiling. Suddenly the bird had seemed to
+  come alive, and start to swing for no apparent reason. Can this 
+phenomenon be
+  explained from what you know about double pendulums?}
+
+\exer  {Find the equations of motion for a particle moving on an
+        elliptic curve $({x\/a})^2+({y\/b})^2=1$ using a suitable
+        generalised coordinate. Check the case when $a=b$.}{$\ddot\phi
++{(a^2-b^2)\sin\phi\cos\phi\/a^2\sin^2\phi+b^2\cos^2\phi}\,{\dot\phi}^2
+		=0$}
+
+\exerFig  {Consider Atwood's machine. 
+	The two masses are $m_1$ and $m_2$
+        and the moment of inertia of the pulley is $I$.
+        Find the equation of motion using Lagrange's formulation.
+        Note the simplification that one never has to consider 
+        the internal forces.}{$a={m_1-m_2\/m_1+m_2+{I\/R^2}}g$}{16.eps}
+
+%\vskip\parskip
+%\hskip4cm\epsffile{16.eps}
+ 
+\exerFigName	{Calculate the accelerations
+	of the masses in the double Atwood machine.}{$a_1={1-\gamma\/1+\gamma}g$
+	(downwards), where $\gamma={4m_2m_3\/m_1(m_2+m_3)}$
+	\brk $a_2=-a_1+{2\/1+\gamma}{m_2-m_3\/m_2+m_3}$}
+{17.eps}\DoubleAtwoodExer
+
+%\vskip\parskip
+%\hskip3.5cm\epsffile{17.eps}
+
+\exerFig	{A particle of mass $m$ is
+	sliding on a wedge, which in turn is sliding
+	on a horizontal plane. No friction. Determine the relative acceleration
+	of the particle with respect to the
+        wedge.}{$a_{rel}={(M+m)\sin\alpha\/M+m\sin^2\alpha}g$}{18.eps} 
+
+%\vskip\parskip
+%\hskip1cm\epsffile{18.eps}
+
+\exer  {A pendulum is suspended from a point that moves horizontally
+	according to $x=a\sin\omega t$. Find the equation of
+	motion for the pendulum, and specialise to small
+        angles.}{$\phi\approx
+        0\,:\,\,\ddot\phi+{g\/l}\phi={a\omega^2\/l}\sin\omega t 
+		\,\,\,$ (forced oscillations)}
+
+\exer	{A particle slides down a stationary sphere without friction 
+	beginning at rest at the
+	top of the sphere. What is the reaction from the sphere
+	on the particle as a function of the angle $\theta$ from
+	the vertical? At what value of $\theta$ does the particle
+	leave the surface?}{$\arccos{2\/3}\approx 49^\circ$}
+
+\exerFig	{A small bead of mass $m$ is
+	sliding on a smooth circle of radius $a$ and mass $m$ which
+	in turn is freely moving in a vertical plane 
+	around a fixed point $O$ on its
+	periphery. Give the equations of motion for the system,
+	and solve them for small oscillations around the stable
+	equilibrium. How should the initial conditions be chosen
+	for the system to move as a rigid system? For the center
+	of mass not to leave the vertical through
+        $O$?}{$\phi=A\sin(\omega_1t+\alpha_1)+B\sin(\omega_2t+\alpha_2)$\brk 
+	$\theta=-2A\sin(\omega_1t+\alpha_1)+B\sin(\omega_2t+\alpha_2)$\brk
+	$A=0$\brk
+	$B=0$}{21.eps}
+  
+%\vskip\parskip
+%\hskip2cm\epsffile{21.eps}
+
+\exerNA{A plate slides without friction on a horizontal plane. Choose as
+  generalised coordinates Cartesian center of mass coordinates and a
+  twisting angle, $(\bar{x},\bar{y},\theta)$. What are the generalised
+  velocities? Write an expression for the kinetic energy. What are the
+  generalised momenta? Find the equations of motion. 
+}
+
+\exer{Calculate the accelerations of the masses in the double Atwood's
+  machine of exercise \DoubleAtwoodExer\ if there is an additional constant downwards directed force  
+$F$ acting on $m_3$.
+}{$a_1={(m_1m_2+m_1m_3-4m_2m_3)g-2m_2F\over m_1m_2+m_1m_3+4m_2m_3}$,\brk
+$a_2={(m_1m_2-3m_1m_3+4m_2m_3)g-m_1F\over m_1m_2+m_1m_3+4m_2m_3}$,\brk
+$a_3={(-3m_1m_2+m_1m_3+4m_2m_3)g+(m_1+4m_2)F\over m_1m_2+m_1m_3+4m_2m_3}$.}
+
+\exerFig{A homogeneous cylinder of radius $r$ rolls, without slipping, back and
+forth inside a fixed cylindrical shell of radius $R$. Find the
+equivalent pendulum length of this oscillatory motion, \ie, the length
+a mathematical pendulum must have in order to have the same
+frequency.}{${3\over2}(R-r)$}{fg7.eps} 
+
+\exerFig{A homogeneous circular cylinder of mass $m$ and radius $R$ is
+  coaxially mounted inside a cylindrical shell, of mass $m$ and radius
+  $2R$.  
+The inner cylinder can rotate without friction around the common
+symmetry axis, but there is a spring arrangement connecting the two
+cylinders, which gives a restoring moment $M=-k\a$ when the inner
+cylinder is rotated an angle $\a$ relative to the shell. 
+The cylindrical shell is placed on a horizontal surface, on which it
+can roll without slipping.  
+Determine the position of the symmetry axis as a function of time,
+if the system starts a rest, but with the inner cylinder rotated an
+angle $\a_0$ from equilibrium position.  
+}{$x(t)={2R\over25}\a_0(1-\cos(\sqrt{25k\over12mR^2}t))$}{fg8.eps}
+
+\exerFig{A flat homogeneous circular disc of mass $m$ and radius $R$
+  can rotate without friction in a horizontal plane around a vertical
+  axis through its center. At a point $P$ on this disc, at distance
+  $R/2$ from its center, another flat circular homogeneous disc, of
+  mass $\l m$ and radius $R/4$, is mounted so that it can rotate
+  without friction around a vertical axis through $P$. Rotation of the
+  small disc an angle $\alpha$ relative to the large disc is counteracted
+  by a moment of force  
+$M=-k\alpha$ by a spring mounted between the discs. The system is released
+at rest with the small disc rotated an angle $\alpha_0$ from it equilibrium
+position. Find the maximum rotation angle of the large disc in the
+ensuing motion.  
+}{Maximal rotation angle: ${2\l\a\over9\l+16}$}{fg9.eps}
+
+\exerFig{A circular cylindrical shell of mass $M$ and radius $R$ can
+  roll without slipping on a horizontal plane. Inside the shell is a
+  particle of mass $m$ which can slide without friction. The system
+  starts from rest with angle $\theta=\pi/2$. Find the position of the
+  cylinder axis, $O$, as a function of the angle $\theta$. 
+}{$x(\th)={2mR\over2m+3M}(1-\sin\th)$}{fg10.eps}
+
+\exerFig{A mass $m_3$ hangs in a massless thread which runs over a wheel of radius $r_2$ and moment of inertia $m_2k_2^2$, and whose other end is wound around a homogeneous cylinder of radius $r_1$ and mass $m_1$.
+Both wheel and cylinder are mounted so that they can rotate about their horizontal symmetry axes without friction. But there is friction between thread and wheel and cylinder enough to prevent slipping.
+The system is started from rest. Use Lagrange's equation to find the acceleration $\ddot{x}$ of the mass.
+}{$\ddot{x}={m_3g\over m_1/2+m_2k^2/r_2^2+m_3}$}{fg11.eps}
+
+\exerFig{A homogeneous cylinder of mass $M$ and radius $R$ rolls
+  without slipping on a horizontal surface. At each endpoints of the
+  cylinder axis is attached a light spring, whose other end is
+  attached to a vertical wall. The springs are horizontal and
+  perpendicular to the cylinder axis. Both have the same natural
+  length and spring constant $k$. Determine the period time for the
+  cylinder oscillations \brk 
+a) from the rigid body equations of motion,\brk
+b) from the energy law,\brk
+c) from Lagrange's equations.
+}{$T=\pi\sqrt{3M\over k}$}{fg12.eps}
+
+%\exerFig{A straight homogeneous rod of mass $m$ and length $2\ell$ can
+%  rotate around its endpoint $A$ without friction in a vertical plane
+%  . The point $A$ is given a constant acceleration of magnitude $g$
+%  along 
+%a straight horizontal line. Use angle $\theta$ as generalised
+%coordinate, and determine the generalised force, as function of
+%$\theta$, required, 
+%if the system starts at rest with $\theta=0$.}{}{fg13.eps}
+
+\exerFig{A homogeneous cylinder of mass $M$ and radius $R$ can roll
+  without slipping on a horizontal table. One end of the cylinder
+  reaches a  
+tiny bit out over the edge of the table. At a point on the periphery
+of the end surface of the cylinder, a homogeneous rod is attached by
+a frictionless joint. The rod has mass $m$ and length $\ell$. Find
+Lagrange's equations for the generalised coordinates $\varphi$ 
+and $\psi$ according to the figure, and determine the frequencies of the 
+eigenmodes of small oscillations.
+}{$\w_1=\sqrt{2mg\over3mR}$, $\w_2=\sqrt{3g\over2\ell}$}{fg14.eps}
+
+\exerFig{Two identical springs, $AB$ and $BC$, with spring constants
+  $k$ has end points $A$ and $C$ fixed while their common point $B$
+  can move without friction along the straight horizontal line
+  $AC$. At $B$ a light nonelastic thread of length $a$ is fastened. In
+  its other end hangs a pendulum bullet of mass $m$. Find the complete
+  equations of motion for the motion of the system in a vertical plane
+  through $AC$, 
+and solve them for small oscillations. 
+}{$m{d\over dt}(\dot{x}+a\dot{\th}\cos\th)=-2kx$,\brk
+$m{d\over dt}(a\dot{x}\cos\th+a^2\dot{\th})=-mga\sin\th$,\brk
+Small oscillations: $ x={mg\over2k}\th$, $\th=A\cos(\w t+\a)$,
+$\w=\sqrt{g\over a+{mg\over 2k}}$.}{fg15.eps}
+
+\exerFig{A wagon consists of a flat sheet of mass m and four wheels
+(homogeneous cylinders) of mass m/2 each. The wagon rolls down a slope 
+of $30^\circ$ inclination. Simultaneously, a homogeneous sphere of
+ mass $2m$ is rolling on the sheet. Find the acceleration $\ddot{\xi}$
+of the sphere relative to the wagon, and the acceleration $\ddot{x}$
+of the wagon relative to the ground.}{$\ddot{x}={25g\over64}$,
+$\ddot{\xi}={5g\over64}$.}{fg16.eps} 
+
+\exerFig{Two homogeneous cylinders, $A$ and $B$, of mass $m$ each, roll
+without slipping on a horizontal plane. The cylinder axes are parallel and connected by two springs, according to the figure. The springs are
+identical, each one has spring constant $k$.
+At time $t=0$ each spring has its natural length, cylinder $B$ is at
+rest, and cylinder $A$ is rolling towards $B$ with speed $v_0$. 
+Find Lagrange's equations of motion for the system, in terms of
+suitable coordinates, and determine the translational velocities of
+both cylinders as functions of time. Assume that the cylinders don't  
+collide.
+}{$\dot{x}_A={v_0\over2}(1+\cos(\sqrt{8k\over3m}t))$,
+$\dot{x}_B={v_0\over2}(1-\cos(\sqrt{8k\over3m}t))$.}{fg17.eps}
+
+\exerFig{Three homogeneous identical rods, $AB$, $BC$, and $CD$, of length 
+$a$ and mass $m$ each, are attached, by friction free joints, to each
+other and to a horizontal motionless beam. From the midpoint of rod  
+$BC$ hangs a mathematical pendulum of length $a$ and mass $2m$. Find
+the exact equations of motion of the system, and, in the case of small
+oscillations, their general solution. 
+}{Exact equations of motion:\brk
+${11\over6}\ddot{\vf}+\ddot{\p}\cos(\vf-\p)+\dot{\p}^2\sin(\vf-\p)+
+{2g\over a}\sin\vf=0$,\brk
+$\ddot{\vf}\cos(\vf-\p)+\ddot{\p}-\dot{\vf}^2\sin(\vf-\p)+
+{g\over a}\sin\p=0$.\brk
+Small oscillations:\brk
+${11\over6}\ddot{\vf}+\ddot{\p}+{2g\over a}\vf=0$,\brk
+$\ddot{\vf}+\ddot{\p}+{g\over a}\p=0$.\brk
+$\vf=2A\sin(\w_1t+\a_1)+3B\sin(\w_2t+\a_2)$,\brk
+$\p=3A\sin(\w_1t+\a_1)-4B\sin(\w_2t+\a_2)$,\brk
+with $\w_1=\sqrt{3g\over5a}$, $\w_2=\sqrt{4g\over a}$.}{fg18.eps}
+
+\exerFig{A weight of mass $m$ can slide on a horizontal beam $AB$ and
+  is attached to one end of a spiral spring, thread on the beam, and
+  whose other end is attached to the fixed point $A$. The spring force
+  is proportional to the prolongation of the spring, with constant of
+  proportionality $k=3mg/a$. From the mass hangs a homogeneous rod of
+  length $2a$ and mass $m$ which can swing in a vertical plane through
+  the beam. Neglect friction. Find Lagrange's equations of motion for
+  the the system. Specialise to small oscillations. Find the
+  eigenmodes, and $x$ and $\varphi$ as functions of time if the system
+  starts from rest. 
+}{$4a\ddot{\vf}+3\ddot{x}\cos\vf+3g\sin\vf=0$, $a\ddot{\vf}+2\ddot{x}-a\dot{\vf}^2\sin\vf+{3g\over a}x=0$,\brk
+$\vf=A\cos(\sqrt{3g\over a}t)+B\cos(\sqrt{3g\over5a}t)$, 
+$x=-aA\cos(\sqrt{3g\over a}t)+{aB\over3}\cos(\sqrt{3g\over5a}t)$.}{fg19.eps}
+
+\exerFig{A double pendulum consists of two identical homogeneous circular
+discs connected to each other by a friction free joint at points of
+their edges. The double pendulum hangs from the center of one of the
+discs, and is confined to a vertical plane. Find the lagrangian. Find
+the equations of motion for small oscillations, and their general solution.
+}{${3\over2}\ddot{\vf}+\ddot{\p}+{g\over a}\vf=0$, 
+$\ddot{\vf}+{3\over2}\ddot{\p}+{g\over a}\p=0$,
+$\w_1/\w_2=\sqrt{5}$.}{fg20.eps}
+
+\exerFig{A double pendulum consists of two small homogeneous rods,
+  suspended at their upper ends on a horizontal shaft $A$. The rods
+  are connected to each other by a spiral spring, wound on the
+  cylinder, but are otherwise freely twistable around the shaft. The
+  spring strives at keeping the rods parallel, by acting on them with
+  a torque $M_A=k(\varphi_1-\varphi_2)$, where $k$ is a constant and
+  $(\varphi_1-\varphi_2)$ is the angle between the rods (see
+  figure). On rod has mass $m$ and length $\ell$, the other one has
+  mass $16m$ and length $\ell/4$. \brk 
+a) Find Lagrange's equations for the generalised coordinates
+$\varphi_1$ and $\varphi_2$.\brk 
+b) Determine the eigenmodes for small oscillations around equilibrium
+in the special case $k=mg\ell$. 
+}{b) $\w_1=\sqrt{3g\over\ell}$, $\w_2=\sqrt{21g\over2\ell}$.}{fg21.eps}
+
+\exerFig{A two-atomic molecule is modeled as two particles, of mass
+  $m$ each, connected by a massless spring, with natural length $a$
+  and spring constant $k$. If the molecule is vibrating without
+  rotating it has vibration frequency $\sqrt{2k/m}$. If the molecule
+  is also rotating with angular momentum $L$ perpendicular to the
+  molecule's axis, the vibration frequencies are modified. Find
+  Lagrange's equations of motion for the coordinates $\x$ and
+  $\th$. Show that one equation expresses the constancy of the angular
+  momentum. Also determine the vibration frequency in the limit of
+  small vibration amplitude, and assuming that 
+$\x\ll a$, so that the equations of motion can be linearised in $\x$. 
+}{$\w^2\approx {2k\over m}+{12L^2\over m^2 a^4}$.}{fg22.eps}
+
+\exerFig{Six identical homogeneous rods, each of mass $m$ and length $2\ell$,
+are joint into an (initially) regular hexagon, lying on a friction
+free horizontal surface. At the middle of one of the joints a spring,
+with spring constant $k$, is attached. It is directed perpendicularly
+to the rod during the motion of the system, and has negligible mass. 
+Find the frequency of small (symmetric) oscillations of the
+system.}{$\w^2={10k\over33m}$.}{fg23.eps} 
+
+\exerFig{Three thin homogeneous rods, each of mass $m$ and length
+  $2\ell$, connected by friction free joints at $B$ and $C$. Initially
+  the rods lie at rest on a horizontal table such that the two outer
+  rods forms the same angle $\theta$ with the central rod. Then a
+  thrust is applied to the middle point of the central rod, directed
+  perpendicularly to the rod. The thrust gives the central rod a
+  velocity $V$. Express the magnitude of the momentum of the thrust in
+  terms of the other parameters mentioned.}{Momentum
+  $S=3m(1-{1\over2}\cos^2\th)v$.}{fg24.eps}  
+
+\exerFig{Three identical homogeneous rods $AB$, $BC$, and $CD$, each of mass 
+$m$ and length $\ell$, are connected by friction free joints at $B$
+and $C$. The rods rest on a horizontal plane so that they form three
+sides of a square. Endpoint $A$ is hit by a collision momentum $S$
+perpendicular to $AB$. Find the velocities of the rods immediately
+after the collision if they are at rest before it. Neglect friction
+between rods and table. 
+}{The central rods gets a velocity $\vec{v}=-{1\over3m}\vec{S}$.
+In addition the two other rods get counterclockwise angular velocities
+${7S\over2m\ell}$ and ${S\over2m\ell}$, respectively.}{fg25.eps}
+
+\exerFig{A homogeneous sphere of radius $R$ hangs in a massless thread
+  of length $L=6R/5$. One end of the thread is attached to a fixed
+  point, the other end to the surface of the sphere. Find Lagrange's
+  equations for small oscillations, and linearise to the case of small
+  oscillations. Show that by suitable choice of initial conditions it
+  is possible to make the system move in simple periodic oscillation,
+  and determine the period of oscillation. 
+}{$T_1=2\pi\sqrt{L\over6g}$, $T_2=2\pi\sqrt{2L\over g}$.}{fg26.eps}
+
+\exerFig{A homogeneous rod $AB$, of mass $m$ and length $2a$, hangs in a thread
+from a fixed point O. The thread is unstretchable and massless and of
+length $\l a$. See figure. The distance $AC$ is $2a/3$. The rod
+performs small oscillations in a vertical plane containing
+$O$. Determine lambda such that $AB$ perpetually forms an angle with
+the vertical twice as big as $OC$ does, if the system is started
+suitably.Treat the rod as one-dimensional,  
+and assume that it never collides with the thread.
+}{$\l=4/3$.}{fg27.eps}
+
+\exerFig{A double pendulum consists of a homogeneous rod $AB$, of mass
+  $m$ and length $2a$, which hangs in a thread from a fixed point
+  O. The thread is unstretchable and massless and of length $\l
+  a$. See figure. The distance $AC$ is $2a/3$. The pendulum can rotate
+  like a rigid body with angular velocity $\w$ about a vertical
+  axis. Try to find equations determining $\vf$ and $\p$. How big must
+  $\w$ be for $\vf$ and $\p$ to be nonzero?}{${g\over a\w^2}< 
+{\l\over2}+{2\over3}+\sqrt{({\l\over2}-{2\over3})^2+{\l\over3}}$.}{fg28.eps} 
+
+\exerFig{Three identical flat circular homogeneous plates, each of mass
+  $m$ and radius $R$, hang horizontally in three identical threads,
+  each with torsion constant $\tau$, (\ie, a thread resists twisting
+  an angle  
+$\varphi$  by a torque $M=-\tau\varphi$.) The system forms a chain,
+see figure. It is set into rotational motion about its vertical axis. 
+Derive an equation for the normal modes.
+}{$x^3-5x^2+6x-1=0$, with $x={mR^2\over2k}\w^2$.}{fg29.eps}
+
+\exerFig{You may try the following experiment: A key-ring hangs in a
+  light thread. If the thread is suitably twisted, and then the key
+  ring released from rest, the torque in the thread will make the key
+  ring rotate with slowly increasing angular velocity. At first the
+  symmetry axis of the key-ring will rotate in a horizontal plane. But
+  when the angular velocity is high enough the symmetry axis will
+  tilt. Investigate the system mechanically, explain the phenomenon,
+  and find a formula for the angle between the symmetry axis and the
+  vertical. 
+}{$\w_{\rm critical}=2g/r$.}{fg30.eps}
+
+\exerNA{Imagine an arrangement of masses and springs like the one in
+  exercise \MassesSpringsExer, but with $N$ masses and $N+1$
+  springs. Try to let $N\rightarrow\infty$ while letting the masses
+  and spring constants scale in an appropriate way, in order to derive
+  the wave equation. This is a model for longitudinal sound waves in a
+  solid.}
+
+
+
+
+
+
+\endpage
+
+
+
+
+\section\Action{The action principle}In this chapter 
+we will formulate a fundamental principle leading
+to the equations of motion for any mechanical system. It is the
+{\it action principle}. In order to understand it, we need some
+mathematics that goes beyond ordinary analysis, so called
+functional analysis. This is nothing to be afraid of, and the
+mathematical stringency of what we are doing will be minimal.
+
+Suppose we have a mechanical system --- for simplicity we can think of
+a particle moving in a potential --- and we do not yet know what
+the path $\vec r(t)$ of it will be, once the initial conditions are given
+(it is released at a certain time $t_0$ with given position $\vec
+r(t_0)=\vec r_0$
+and velocity $\vec v(t_0)=\vec v_0$).
+For {\it any} path $\vec r(t)$ fulfilling the initial conditions we define
+a number $S$ by
+$$S=\INT\, L\komma\Eqn\actiondef$$ 
+where $L$ is the Lagrangian $\K-V$.
+This is the {\it action}. In the case of a single particle in a potential,
+the action is 
+$$S=\INT\Bigl[\half m\dot x(t)^2-V\bigl(x(t)\bigr)\Bigr]\punkt\Eqn\partaction$$
+
+
+\figflow{-245pt}{180pt}{\vfill\centerline{\epsffile{Fig/functional.eps}}\vfill}
+The action is a function whose argument is a function and whose
+value is a number (carrying dimension (energy)$\times$(time)).
+Such a function is called a {\it functional}. When the argument is
+written out, we we enclose it in square brackets, \eg\ "$S\left[x(t)\right]$",
+to mark the difference from ordinary functions.
+
+The action principle now states that {\it the path actually taken by
+the particle must be a stationary point of the action}. What does this
+mean? Recall how one determines when an ordinary function $f(x)$ has a local
+extremum. If we make an infinitesimal change $\d x$ in the argument of the
+function, the function itself does not change, 
+%FIGURE!!!!!
+so that $f(x+\d x)=f(x)$. This is the same as saying that the derivative
+is zero, since $f'(x)=\lim_{\e\rightarrow 0}{f(x+\e)-f(x)\/\e}$.
+When now the function we want to ``extremise'' is a functional instead of
+an ordinary function, we must in the same way demand that a small change in the
+argument $\vec r(t)$ of the functional does not change the functional.
+Therefore we chose a new path for the particle $\vec r(t)+\E(t)$
+(we have to take $\E(t_0)=\dot\E(t_0)=0$ not to change the given initial
+conditions)
+which differs infinitesimally from $\vec r(t)$ at every time, and see
+how the action $S$ is changed. For simplicity we consider rectilinear
+motion, so that there is only one coordinate $x(t)$.
+We get
+$$S[x(t)+\e(t)]-S[x(t)]=\INT \left[L\bigl(x(t)+\e(t),\dot x(t)+\dot\e(t)\bigr)
+             -L\bigl(x(t),\dot x(t)\bigr)\right]\punkt\Eqn\deltaS$$
+
+\figflow{90pt}{120pt}{\vfill\noindent\centerline{\epsffile{Fig/variation.eps}}}
+\vskip-2\parskip\noindent Taking $\e$ to be infinitesimally small, one
+can save parts linear in  
+$\e$ only, to obtain $L\bigl(x(t)+\e(t),\dot x(t)+\dot\e(t)\bigr)=
+L\bigl(x(t),\dot x(t)\bigr)+\e(t){\*L\/\*x}(t)+\dot\e(t){\*L\/\*\dot x}(t)$.
+Inserting this into eq. (\deltaS) gives
+$$\eqalign{S[x(t)+\e(t)]-S[x(t)]
+   &=\INT\left[\e(t){\*L\/\*x}(t)+\dot\e(t){\*L\/\*\dot x}(t)\right]\cr
+%   =[\hbox{partial integration}]=\cr
+   &=\INT\,\e(t)\left[{\*L\/\*x}(t)-{d\/dt}{\*L\/\*\dot x}(t)\right]\komma\cr}
+        \Eqn\deltaSS$$
+%\figflow{90pt}{160pt}{\vfill\noindent\centerline{\epsffile{Fig/variation.eps}}}
+where the last step is achieved by partial integration
+(some boundary term at infinity has been thrown away, but never mind).
+If the path $x(t)$ is to be a stationary point, this has to vanish for all
+possible infinitesimal changes $\e(t)$, which means that the entity
+inside the square brackets in the last expression in eq. (\deltaSS)
+has to vanish for all times. We have re-derived Lagrange's equations
+as a consequence of the action principle. The derivation goes the same
+way if there are more degrees of freedom (do it!).
+
+The above derivation actually shows that Lagrange's equations are true
+also for non-rectilinear coordinates. We will not present a rigorous
+proof of that, but think of the simpler analog where a function of a number
+of variables has a local extremum in some point. If we chose different
+coordinates, the function {\it itself} is of course not affected --- the
+solution to the minimisation problem is still that all derivatives
+of the function vanish at the local minimum. The only difference for our
+action {\it functional} is that the space in which we look for
+stationary points is infinite-dimensional. (The fact that Lagrange's
+equations also hold when the relation between inertial and generalised
+coordinates involves time, which we chose not to prove in \Chapter5,
+becomes almost obvious by this way of thinking.)
+
+One may say a word about the nature of the stationary points. Are they
+local minima or maxima? In general, they need not be either. The normal
+situation is that they are ``terrace points'', comparable to the
+behaviour of the function $x^3$ at $x=0$. Paths that are ``close'' to
+the actual solution may have either higher or lower value of the action.
+The only general statement one can make about the solution is that it
+is a stationary point of the action, \ie, that an infinitesimal change
+in the path gives no change in the action, analogously to the statement
+that a function has zero derivative in some point. 
+
+Analogously to the way one defines derivatives of functions,
+one can define {\it functional derivatives} of functionals. A functional
+derivative ${\d\/\d x(t)}$ is defined so that a change in the argument $x(t)$
+by an infinitesimal function $\e(t)$ gives a change in the functional 
+$F[x(t)]$:
+$$F[x+\e]-F[x]=\int dt\,\e(t){\d F\/\d x(t)}\punkt\Eqn\derdef$$ 
+The functional derivative of $F$
+is a functional with an explicit $t$-dependence. Compare this definition
+with what we did in eqs. (\deltaS) and (\deltaSS). We then see that the action
+principle can be formulated as 
+$${\d S\/\d x(t)}=0\Eqn\dsdxzerox$$
+in much the same way as an ordinary local extremum is given by
+${df\/dx}=0$. Using arbitrary generalised coordinates,
+$${\d S\/\d q^i(t)}=0\punkt\Eqn\dsdxzeroq$$
+Eq. (\dsdxzeroq) is Lagrange's equation.
+
+Variational principles are useful in many areas, not only in Newtonian
+mechanics. They (almost obviously) are important in optimisation
+theory.
+The action formulation of the dynamics of a system is the
+dominating one when one formulates {\it field theories}. Elementary
+particles are described by relativistic quantum fields, and their
+motion and interaction are almost always described in terms of an
+action.
+
+\exercises
+
+\exerNA 	{Using a variational method, find the shortest path between
+	two given points.}
+
+\exerNA 	{Find the shortest path between two points on a
+sphere. (Remark: Like in many variational calculus  
+problems, the best approach,
+choice of coordinates etc, is not obvious, and can have a big effect  
+on the solution. This actually
+makes them more interesting.)}
+
+\exerNAFig{Show that Snell's law is a consequence of Fermat's principle.\brk
+Hints: Snell's law, $n_1\sin\theta_1=n_2\sin\theta_2$, relate angle of
+incidence, $\theta_1$, and angle of reflection, $\theta_2$, for a
+light ray going from a medium of index of refraction $n_1$ into a
+medium of index of refraction $n_2$. Fermat's principle states that
+the path of a light ray between two points, $A$ and $B$, minimises the
+optical path length 
+$\int_A^B n(\vec{r})|d\vec{r}|$.
+}{fg31.eps}
+
+\exer{Fermat's principle in optics states that a light ray between two
+  points $(x_1,y_1)$ and $x_2,y_2$ follows a path $y(x)$, $y(x_1)=y_1,  
+y(x_2)=y_2$ for which the optical path length
+$$
+\int_{x_1}^{x_2}n(x,y)\sqrt{1+\left(dy\over dx\right)^2}\,dx
+$$
+is a minimum when $n$ is the index of refraction.
+For $y_2=y_1=1$ and $x_2=-x_1=1$ find the path if\brk
+a) $n=e^y$,\brk
+b) $n=y-y_0$, $ y>y_0$.
+}{a) $e^y={e\cos1\over\cos x}$.\brk
+b) $y=1-\cosh1+\cosh x$.}
+
+\exer{Motion sickness. A person who, at time $t=0$, is at rest at the
+  origin of an inertial frame is then accelerated so that he/she at
+  time $T$ is a distance $L$ from the origin, and moving with velocity
+  $V$ away from the origin. Determine how the person shall move in
+  order to minimise his/her motion sickness. Also determine this
+  minimal amount of motion sickness. \brk 
+Hint: In order to not make the problem too complicated, make the
+following simplified, and admittedly somewhat unrealistic model for
+motion sickness: A person who, at time $t$, is subject to an
+acceleration $\ddot{\vec{r}}$, experiences, under an infinitesimal
+time interval $dt$, a motion sickness increase  
+$dM= k |\ddot{\vec{r}}|^2\,dt$. Regard $k$, a parameter representing
+the person's susceptibility to motion sickness, as a constant. 
+}{$r(t)=(3L-VT)({t\over T})^2+(VT-2L)({t\over T})^3$, $M={k\over T} 
+\left((2V-3{L\over T})^2+3({L\over T})^2\right)$.}
+
+
+
+
+\endpage
+
+
+
+
+
+
+\section\Hamilton{Hamilton's equations}When we derived Lagrange's
+equations, 
+the variables we used
+were the generalised coordinates
+$q^1,\ldots,q^N$ and the generalised velocities $\dot q^1,\ldots,\dot q^N$.
+The Lagrangian $L$ was seen as a function of these, $L(q^i,\dot q^i)$.
+This set of variables is not unique, and there is one other important
+choice, that is connected to the {\it Hamiltonian} formulation of mechanics.
+Hamilton's equations, as compared to Lagrange's equations, do not
+present much, if any, advantage when it comes to problem solving
+in Newtonian mechanics. Some things become clearer, though, \eg\ 
+the nature of conserved quantities. Hamilton's formulation is often
+used in quantum mechanics, where it leads to a complementary and 
+equivalent picture to one that uses Lagrange's variables.
+
+We depart from the Lagrangian, as defined in \Chapter5,
+and define the generalised momenta corresponding to the coordinates
+$q^i$ according to
+$$p_i={\*L\/\*\dot q^i}\punkt\Eqn\momentumdef$$
+In a rectilinear coordinate system, $p_i$ are the usual momenta,
+$p_i=m\dot q^i$, but, as we have seen, this is not true
+for other types of generalised coordinates.
+
+Our situation now is that we want to change the fundamental variables 
+from (generalised) coordinates $q^i$ and velocities $v^i$ to coordinates 
+and momenta 
+$p_i$. We will soon see that it is natural to consider an other function 
+than the Lagrangian when this change of variables is performed.
+To illustrate this, consider a situation with only one coordinate $q$.
+The differential of the Lagrangian $L(q,v)$ is 
+$$dL={\*L\/\*q}dq+{\*L\/\*v}dv={\*L\/\*q}dq+pdv\punkt\Eqn\dLone$$
+In a framework where the fundamental variables are $q$ and $p$ we
+want the differential of a function to come out naturally as
+(something)$dq+$(something)$dp$. Consider the new function $H$ defined
+by 
+$$H=vp-L=\dot qp-L\punkt\Eqn\Hdef$$ 
+$H$ is the {\it Hamiltonian}. Its differential is
+$$dH=dvp+vdp-dL=dvp+vdp-{\*L\/\*q}dq-pdv=-{\*L\/\*q}dq+vdp
+\komma\Eqn\dHone$$
+so we have 
+$${\*H\/\*q}=-{\*L\/\*q}\komma\quad{\*H\/\*p}=v=\dot q
+\punkt\Eqn\dHdqdHdp$$
+The change of function of the type (\Hdef) associated with this kind of 
+change of variables as is called a {\it Legendre transform}.   
+It is important here to remember that when we change variables to $q$
+and $p$, we have to express the function $H$ in terms of the new variables
+in eq. (\Hdef) so that every occurrence of $v$ is eliminated.
+By using Lagrange's equation ${\*L\/\*q}=\dot p$ we find 
+{\it Hamilton's equations} from eq. (\dHdqdHdp):
+$$\dot q={\*H\/\*p}\komma\quad\dot p=-{\*H\/\*q}\punkt\Eqn\hamiltoneq$$
+The many-variable case is completely analogous, one just hangs an index
+$i$ on (almost) everything; the proof is almost identical.
+The general form is
+$$H=\sum_i\dot q^ip_i-L\komma\Eqn\Hdefi$$
+$$\dot q^i={\*H\/\*p_i}\komma\quad\dot p_i=-{\*H\/\*q^i}
+	\punkt\Eqn\hamiltoneq$$ 
+
+\example{In order to understand these equations, we examine what they say
+for a rectilinear coordinate, where we have $\K=\half m\dot x^2$ and
+$L=\half m\dot x^2-V(x)$. Then $p={\*L\/\*{\dot x}}=m\dot x$ and
+$$H=\dot xp-L={p^2\/m}-\half m({p\/m})^2+V(x)={p^2\/2m}+V(x)\komma\Eqn
+	\rectham$$ 
+which is
+the sum of kinetic and potential energy. This statement is actually 
+general (as long as there is no explicit time-dependence in $L$).
+Hamilton's equations take the form
+$$\dot x={\*H\/\*p}={p\/m}\komma\quad\dot p=-{dV\/dx}\punkt\Eqn\recthameq$$
+We notice that instead of one second order differential equation
+we get two first order ones. The first one can be seen as defining $p$,
+and when it is inserted in the second one one obtains
+$$m\ddot x=-{dV\/dx}\komma\Eqn\ddotxis$$
+which of course is the ``usual'' equation of motion.}
+
+Some things become very clear in the Hamiltonian framework. In particular,
+conserved quantities (quantities that do not change with time) emerge
+naturally. Consider, for example, the case where the Hamiltonian does not
+depend on a certain coordinate $q^k$. Then Hamilton's equations immediately
+tells us that the corresponding momentum is conserved, since
+$\dot p_k=-{\*H\/\*q^k}=0$.
+
+\example{For a rectilinear coordinate $q$, when the potential does not depend
+on it, we obtain the conserved quantity $p$ associated with $q$. This is
+not surprising --- we know that momentum is conserved in the absence 
+of force.} 
+
+\example{In polar coordinates, with a central potential, we have
+$$H={1\/2m}\bigl(p_r^2+{p_\phi^2\/r^2}\bigr)+V(r)\komma\Eqn\centralH$$
+which is independent of $\phi$, so that the associated momentum $p_\phi$,
+the angular momentum, is conserved. This is exactly what we are used to
+in the absence of torque. Note that ${p_\phi^2\/2mr^2}+V(r)$ is the
+``effective potential energy'' used for motion under a central force. }
+
+It should be mentioned that this also can be seen in Lagrange's framework ---
+if the Lagrangian does not depend on $q^k$, Lagrange's equation associated
+with that variable becomes ${d\/dt}{\*L\/\*\dot q^k}=0$, telling that
+$p_k={\*L\/\*\dot q^k}$ is conserved.
+
+We can also draw the conclusion that the Hamiltonian $H$ itself is conserved:
+$$\dot H=\sum_i\left({\*H\/\*q^i}\dot q^i+{\*H\/\*p_i}\dot p_i\right)=
+\sum_i\left({\*H\/\*q^i}{\*H\/\*p_i}
++{\*H\/\*p_i}\left(-{\*H\/\*q^i}\right)\right)=0 
+	\punkt\Eqn\Hconserved$$
+This states the conservation of energy, which is less direct in
+Lagrange's formulation.
+
+Finally, we will do some formal development in the Hamiltonian formalism.
+Exactly as we calculated the time derivative of the Hamiltonian in
+equation \Hconserved, the time derivative of any function on phase space
+$A(q^i,p_i)$ is calculated as
+$$\dot A=\sum_i\left({\*A\/\*q^i}\dot q^i+{\*A\/\*p_i}\dot p_i\right)=
+	\sum_i\left({\*A\/\*q^i}{\*H\/\*p_i}-{\*A\/\*p_i}{\*H\/\*q^i}\right)
+		\punkt\Eqn\dotA$$
+If one defines the {\it Poisson bracket} between two functions $A$ and $B$
+on phase space as
+$$\{A,B\}=\sum_i\left({\*A\/\*q^i}{\*B\/\*p_i}-{\*A\/\*p_i}{\*B\/\*q^i}\right)
+	\komma\Eqn\PBdef$$
+the equation of motion for any function $A$ is stated as
+$$\dot A=\{A,H\}\punkt\Eqn\PBEM$$
+The equations of motion for $q_i$ and $p_i$, Hamilton's equations
+\hamiltoneq, are special cases of this (show it!).
+The Poisson brackets for the phase space variables $q_i$ and $p_i$ are
+$$\eqalign{&\{q^i,q^j\}=0\komma\cr
+	&\{q^i,p_j\}=\delta^i_j\komma\cr
+	&\{p_i,p_j\}=0\punkt\cr}\Eqn\fundPBs$$
+
+This type of formal manipulations do not have much relevance to actual
+problem-solving in classical mechanics. It is very valuable, though, when
+analyzing the behavior of some given system in field or particle theory.
+It is also a powerful tool for handling systems with constraints.
+Here, it is mainly mentioned because it opens the door towards
+quantum mechanics. {\it One} way of going from a classical to a quantum
+system is to replace the Poisson bracket by $(-i)$ times the {\it commutator}
+$[A,B]=AB-BA$. This means that one has $xp-px=-i$, position and momentum
+no longer commute. The momentum can actually be represented as a
+space derivative, $p=i{\*\/\*x}$. The two variables become ``operators'',
+and their values can not be simultaneously given specific values, because
+ordinary numbers commute. This leads to Heisenberg's ``uncertainty principle'',
+stating the impossibility of performing measurements on both $x$ and $p$
+simultaneously beyond a maximal precision.
+
+\exercises
+
+\exerNA  {Any exercise from \Chapter5, with special emphasis on finding
+	the conserved quantities.}
+
+
+
+
+
+
+
+
+\endpage
+
+
+
+
+\section\constraints{Systems with constraints}In quite many
+applications 
+it happens that one does not simply want
+to minimise a certain functional, but to do it under certain conditions.
+We will investigate how this is done.
+
+\example{A mathematical pendulum is confined to move on constant
+radius from the attachment point of the string. It is then easy to
+choose just the angle from the vertical as a generalised coordinate and
+write down the Lagrangian. Another formulation of the problem would
+be to extremise the integral of the 
+Lagrangian $L=\half m(\dot r^2+r^2\dot\phi^2)
++mgr\cos\phi$ under the extra {\it constraint} that $r=a$.}
+
+In the above example, the formulation with a constraint was unnecessary,
+since it was easy to find a generalised coordinate for the only degree
+of freedom. Sometimes it is not so. Consider an other example.
+
+\example{A particle (a small bead) moves in two dimensions $(x,y)$, where
+$x$ is horizontal and $y$ vertical, and it slides on a track whose form
+is described by a function $y=f(x)$.
+A natural generalised coordinate would be the distance from one specific
+point on the curve measured along the track, the $x$-coordinate, or something
+else. This can all be done, but
+it is easier to formulate the problem the other way:
+extremise the action $S=\int dt\,L$ with $L=\half m(\dot x^2+\dot y^2)
+-mgy$ under the constraint that $y=f(x)$.}
+
+Let us turn to how these constraints are treated. We would like to have
+a new action that {\it automatically} takes care of the constraint, so that
+it comes out as one of the equations of motion.
+This can be done as follows: we introduce a new coordinate $\l$ that
+enters in the Lagrangian multiplying the constraint. The time derivative
+of $\l$ does not enter the Lagrangian at all. If we call the unconstrained
+Lagrangian $L_0$ and the constraint $\Phi=0$, this means that
+$$L=L_0+\l\Phi\punkt\Eqn\constrL$$
+The equation of motion for $\l$ then just gives the constraint:
+$$0={\d S\/\d\l}=-{d\/dt}{\*L\/\*\dot\l}+{\*L\/\*\l}={\*L\/\*\l}=\Phi
+		\punkt\Eqn\lambdaem$$
+The extra variable $\l$ is called a {\it Lagrange multiplier}.
+We can examine how this works in the two examples.
+\vfill\eject
+
+\example{For the pendulum, we get according to this scheme,
+$$L=\half m(\dot r^2+r^2\dot\phi^2)+mgr\cos\phi+\l(r-a)\komma\Eqn\constrpendL$$
+from which the equations of motion follow:
+$$\eqalign{r\,&:\quad m(\ddot r-r\dot\phi^2)-mg\cos\phi-\l=0\komma\cr
+	\phi\,&:\quad {d\/dt}(mr\dot\phi)+mgr\sin\phi=0\komma\cr
+	\l\,&:\quad r-a=0\punkt\cr}\Eqn\constrpendem$$
+This is not yet exactly the equations we want. By inserting the last
+equation (the constraint) in the other two we arrive at
+$$\eqalign{&\l=m(a\dot\phi^2+g\cos\phi)\komma\cr
+	&\ddot\phi+{g\/a}\sin\phi=0\punkt\cr}\Eqn\constrpendemsimpl$$
+The second of these equations is the equation of motion for $\phi$, the 
+only degree of freedom of the pendulum, and the first one gives no information
+about the motion, it only states what $\l$ is expressed in $\phi$.}
+
+The pattern in the example is completely general, the equation of motion
+for the Lagrange multiplier gives the constraint, and the equation of
+motion for the constrained variable gives an expression for the Lagrange
+multiplier in terms of the real degrees of freedom (in this case $\phi$).
+Let us also examine the other example.
+
+\example{In the same way as above, the new Lagrangian becomes
+$$L=\half m(\dot x^2+\dot y^2)-mgy+\l\bigl(y-f(x)\bigr)\komma\Eqn\slideL$$
+with the resulting equations of motion
+$$\eqalign{x\,&:\quad m\ddot x+\l f'(x)=0\komma\cr
+	y\,&:\quad m\ddot y+mg-\l=0\komma\cr
+	\l\,&:\quad y-f(x)=0\punkt\cr}\Eqn\slideem$$
+As before, we insert the constraint in the other equations, and get,
+using ${d^2\/dt^2}f(x)={d\/dt}(\dot xf'(x))=\ddot xf'(x)+\dot x^2f''(x)\,$:
+$$\eqalign{&\ddot x+{\l\/m}f'(x)=0\komma\cr
+	&\ddot xf'(x)+\dot x^2f''(x)+g-{\l\/m}=0\punkt\cr}\Eqn\slideemsimpl$$
+The second of these equations can be seen as solving $\l$. Inserting 
+back in the first one yields
+$$\ddot x+\bigl(\ddot xf'(x)+\dot x^2f''(x)+g\bigr)f'(x)=0\komma\Eqn\slideone$$
+or, equivalently,
+$$\ddot x+{f'(x)\/1+f'(x)^2}\bigl(g+\dot x^2f''(x)\bigr)\komma\Eqn\slidetwo$$
+which is the simplest form of the equation of motion for this system, and
+as far as we can get without specifying the function $f(x)$.} 
+	  
+There are often tricks for identifying degrees of freedom and writing
+the Lagrangian in terms of them. The Lagrange multiplier method makes
+that unnecessary --- one just has to use the same variational principle
+as usual on a modified Lagrangian, and everything comes out automatically.
+
+It turns out to be theoretically very fruitful to treat constrained 
+systems in a Hamiltonian formalism. We will not touch upon that formulation
+here.
+
+As a last example, we will solve a (classical) mechanical problem
+that is not a dynamical one. 
+
+\example{Consider a string whose ends are fixed in
+two given points. What shape will the string form? We suppose that
+the string is unstretchable and infinitely flexible (\ie, it takes an
+infinite amount of energy to stretch it and no energy to bend it).
+It is clearly a matter of minimising the potential energy of the string,
+under the condition that the length is some fixed number. The input
+for calculating the potential energy is the shape $y(x)$ of the string,
+so it is a functional. The principle for finding the solution must then be
+$${\d V\/\d y(x)}=0\komma\Eqn\stringprinc$$
+where $V[y(x)]$ is the potential energy. We need an explicit expression
+for V, and also for the length, that will be constrained to a certain 
+value $L$ using the Lagrange multiplier method.
+The length of an infinitesimal part of the string is 
+$$ds=\sqrt{(dx)^2+(dy)^2}=dx\sqrt{1+y'(x)^2}\komma\Eqn\dlength$$
+so that the total length and potential energy are
+$$\eqalign{&L=\int_a^bdx\sqrt{1+y'(x)^2}\komma\cr
+	&V=-\rho g\int_a^bdx\,y(x)\sqrt{1+y'(x)^2}\punkt\cr}\Eqn\lengthpot$$
+The technique is again to add a Lagrange multiplier term to V:
+$$\eqalign{&U=\int_a^bdxu(y,y')=\cr
+	&\,\,\,-\rho g\int_a^bdx\,y(x)\sqrt{1+y'(x)^2}+
+	\l\left(L-\int_a^bdx\sqrt{1+y'(x)^2}\right)
+	\punkt\cr}\Eqn\stringaltU$$
+Exactly as we recovered Lagrange's equations from ${\d S\/\d x(t)}=0$, 
+the variation of $U$ gives the equation for $y$
+$${d\/dx}{\*u\/\*y'}-{\*u\/\*y}=0\punkt\Eqn\lagrlengthone$$
+Since there is no explicit $x$-dependence one may use the integrated form
+of the equations as described in Chapter {\old5}.{\old2},
+$$0={d\/dx}\left[u-y'{\*u\/\*y'}\right]=
+	{d\/dx}\left[-(\l+\rho gy)\sqrt{1+{y'}^2}+
+	{(\l+\rho gy)y'^2\/\sqrt{1+{y'}^2}}\right]\punkt\Eqn\lagrlengthtwo$$
+We shift $y$ by a constant value to get the new 
+vertical variable $z=y+\rho g/\l$,
+and equation (\lagrlengthtwo) gives
+$${d\/dx}{z\/\sqrt{1+{z'}^2}}=0\quad\Longrightarrow\quad\sqrt{1+{z'}^2}=kz
+	\komma\Eqn\lagrlengththree$$
+so that $z'=\pm\sqrt{k^2z^2-1}$, and
+$${dx\/dz}=\pm{1\/\sqrt{k^2z^2-1}}\komma\Eqn\dxdzlength$$
+with the solutions
+$$x(z)+c=\pm\hbox{\rm arcosh}\,kz\komma\quad z=
+	{1\/k}\cosh k(x+c)\punkt\Eqn\lengthsol$$
+One may of course go back to the variable $y$ and solve for the Lagrange
+multiplier $\l$, but here we are only interested in the types of curves
+formed by the hanging string --- they are hyperbolic cosine curves.}
+
+\exercises
+	 
+\exer  {Show that the action
+	       $S=\int d\tau\,\lambda\,\dot x_\mu\dot x^\mu$
+        describes a massless relativistic particle.}{Consider the
+        meaning of the obtained constraint!} 
+ 
+\exerNA{Find the shortest path between two points on a sphere by using as 
+generalised coordinates all three Cartesian coordinates and imposing
+the constraint $x_1^2+x_2^2+x_3^3-r^2=0$ by a Lagrange multiplier. 
+}
+
+\exer{A cylindrical bucket of water rotates about its vertical
+  symmetry axis with constant angular velocity $\w$. After a while the
+  water comes to rest relative to the rotating reference frame. The
+  water surface minimises the potential energy in the combined
+  gravity-centrifugal potential field. Find the shape of this curved
+  water surface, using variational calculus, and a Lagrange multiplier
+  term enforcing constant water volume.  
+}{In cylinder coordinates,
+$z(r)={\w^2\over 2g}r^2+C$, where $C$ is a constant depending on the
+total amount of water etc.} 
+
+\exerNA{Show that the closed plane curve of a given length which
+  encloses the largest area is a circle. \brk 
+Hint: There are many ways do this. In order to employ the methods of
+variational calculus and constraints, use Cartesian coordinates, put
+the curve in the $z=0$ plane, and parametrise it as $\vec{r}(s)$,
+$0\le s\le 1$. The length can then be expressed as
+$\int|\dot{\vec{r}}|\,ds$, and the enclosed area as  
+$\int\hat{z}\cdot(\vec{r}\times\dot{\vec{r}})\,ds$, where overdot
+denotes $s$-derivative (show this!). Use the Lagrange multiplier
+method to enforce the constraint.}
+
+
+
+\endpage
+
+
+
+
+%\nosection{Answers to exercises}\vskip2\parskip
+%\newlist\Point=\Number&.&1.0\itemsize;
+
+\answerout
+
+%\endpage
+
+
+
+
+\vskip12\parskip
+
+\nosection{References}\vskip2\parskip
+
+\noindent There is a great number of good books
+relevant for the further study of analytical mechanics.
+We just list a few here.\vskip\parskip
+
+\item{}A.P.~Arya, {\it ``Introduction to Classical Mechanics''}
+	(Allyn and Bacon, Boston, 1990).
+
+\item{}E.T.~Whittaker, {\it ``A Treatise on the Analytical Dynamics
+	of Particles and Rigid Bodies''}
+	(Cambridge Univ. Press, 1988).
+
+\item{}F.~Eriksson, {\it ``Variationskalkyl''}
+	(kompendium, CTH).
+
+\item{}G.M.~Ewing, {\it ``Calculus of Variations with Applications''}
+	(Norton, New York, 1969).
+
+
+
+
+
+
+
+
+\endpage
+
+
+
+\nosection{Translation table}
+\vskip2\parskip
+
+%\batchmode
+\halign to \hsize{#\hfill&\quad\quad#\hfill&\quad\quad\hfill$#$\hfill\cr
+	\underbar{\sl English term}
+			&\underbar{\sl Swedish term}
+					&\hbox{\underbar{\sl Symbol}}\cr
+	&&\cr
+	acceleration	&acceleration		&\vec a		\cr
+	action	        &verkan		        &S		\cr
+	angular frequency&vinkelfrekvens	&\omega		\cr
+	angular momentum&r\"orelsem\"angdsmoment&\vec L		\cr
+	angular velocity&vinkelhastighet      &\omega\,,\,\vec\omega\cr
+	center of mass	&masscentrum		&\vec R	\cr
+	coefficient of friction&friktionskoefficient&\mu\,,\,f	\cr
+	collision	&st\"ot			&		\cr
+	\quad elastic	&\quad elastisk		&		\cr
+	\quad inelastic	&\quad oelastisk	&		\cr
+	conservation	&bevarande		&		\cr
+	constant of motion&r\"orelsekonstant	&		\cr
+	constraint	&tv\aa ng		&		\cr
+	cross section	&tv\"arsnitt		&		\cr
+	curl		&rotation		&\nabla\times\,,\,\,
+						\hbox{curl}	\cr
+	damping		&d\"ampning		&		\cr
+	density		&densitet		&\rho		\cr
+	derivative	&derivata		&		\cr
+	\quad partial	&\quad partiell		&		\cr
+	displacement	&f\"orskjutning		&		\cr
+	energy		&energi			&E		\cr
+	\quad kinetic	&\quad kinetisk, r\"orelse-&\K		\cr
+	\quad potential	&\quad potentiell, l\"ages-&U\,,\,V	\cr
+	equilibrium	&j\"amvikt		&		\cr
+	event		&h\"andelse		&		\cr
+	force		&kraft		 	&\vec F		\cr
+	\quad central	&\quad central-		&		\cr
+	\quad conservative&\quad konservativ	&		\cr
+	\quad fictitious&\quad fiktiv		&		\cr
+	\quad inertial	&\quad tr\"oghets-	&		\cr
+	\quad non-conservative&\quad ickekonservativ&		\cr
+	generalised	&generaliserad		&		\cr
+	gradient	&gradient		&\nabla\,,\,\hbox{grad}\cr
+	gravity		&tyngdkraft, gravitation&		\cr
+	interaction	&v\"axelverkan		&		\cr
+	Hamiltonian	&Hamiltonfunktion	&H		\cr
+	impulse		&impuls			&I\,,\,
+						\int_{t_1}^{t_2}{\vec F}dt\cr
+	inertia		&tr\"oghet		&		\cr
+	inertial system	&inertialsystem		&		\cr
+	initial conditions&begynnelsevillkor	&		\cr
+	interaction	&v\"axelverkan		&		\cr
+	Lagrangian	&Lagrangefunktion	&L		\cr
+	mass		&massa			&m		\cr
+	\quad gravitational&\quad tung		&		\cr
+	\quad inertial	&\quad tr\"og		&		\cr
+	\quad rest	&\quad vilo-		&		\cr
+	magnitude	&belopp			&|\,\,\,\,|	\cr
+	moment of inertia&tr\"oghetsmoment	&I		\cr
+	(linear) momentum&r\"orelsem\"angd	&\vec p		\cr
+	orbit		&omlopp, bana		&		\cr
+	oscillation	&sv\"angning		&		\cr
+	path		&v\"ag, bana			&		\cr
+	perturbation	&st\"orning		&		\cr
+	power		&effekt			&P		\cr
+	pulley		&talja			&		\cr
+	resonance	&resonans		&		\cr
+	rigid body	&stel kropp		&		\cr
+	scattering angle&spridningsvinkel	&		\cr
+	simultaneity	&samtidighet		&		\cr
+	speed		&fart			&v		\cr
+	spring		&fj\"ader		&		\cr
+	tension		&sp\"anning		&		\cr
+	tensor of inertia&tr\"oghetstensor/-matris&\tilde{\bold I}\cr
+	torque		&vridande moment	&\torq  	\cr
+	trajectory	&bana			&		\cr
+	velocity	&hastighet		&\vec v		\cr
+	wedge		&kil			&		\cr
+	weight		&tyngd			&		\cr
+	work		&arbete			&W		\cr}
+
+%\normalmode
+
+
+
+
+
+
+
+\end

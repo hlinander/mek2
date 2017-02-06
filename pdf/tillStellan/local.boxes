@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% macros which put boxes around things
+%
+%\unlock
+%\def\eightpoint{\relax
+%    \textfont0=\eightrm          \scriptfont0=\eightrm
+%    \scriptscriptfont0=\fiverm
+%    \def\rm{\fam0 \eightrm \f@ntkey=0 }\relax
+%    \textfont1=\eighti           \scriptfont1=\eighti
+%    \scriptscriptfont1=\fivei
+%    \def\oldstyle{\fam1 \eighti \f@ntkey=1 }\relax
+%    \textfont2=\eightsy          \scriptfont2=\eightsy
+%    \scriptscriptfont2=\fivesy
+%    \textfont3=\tenex          \scriptfont3=\tenex
+%    \scriptscriptfont3=\tenex
+%    \def\it{\fam\itfam \eightit \f@ntkey=4 }\textfont\itfam=\eightit
+%    \def\sl{\fam\slfam \eightsl \f@ntkey=5 }\textfont\slfam=\eightsl
+%    \def\bf{\fam\bffam \eightbf \f@ntkey=6 }\textfont\bffam=\eightbf
+%    \scriptfont\bffam=\eightbf     \scriptscriptfont\bffam=\fivebf
+%    \def\tt{\fam\ttfam \eighttt \f@ntkey=7 }\textfont\ttfam=\eighttt
+%    \setbox\strutbox=\hbox{\vrule height 4pt depth 3pt width\z@}
+%    \samef@nt}
+%\lock
+ 
+\def\boxit#1{\vbox{\hrule\hbox{\vrule\kern3pt
+             \vbox{\kern3pt#1\kern3pt}\kern3pt\vrule}\hrule}}
+ 
+\newdimen\str
+ 
+\def\cry{\cropen{-0.4pt}}
+\def\xstrut#1{\dimen\str = #1
+              \hbox{\vrule height .8dm\str depth .2dm\str width 0pt}}
+\def\fboxit#1#2{\vbox{\hrule height #1 \hbox{\vrule width #1
+           \kern3pt \vbox{\kern3pt#2\kern3pt}\kern3pt \vrule width #1 }
+           \hrule height #1 }}
+\def\yboxit#1#2{\vbox{\hrule height #1 \hbox{\vrule width #1
+           \vbox{#2}\vrule width #1 }\hrule height #1 }}
+\def\fillbox#1{\hbox to #1{\vbox to #1{\vfil}\hfil}}
+\def\dotbox#1{\hbox to #1{\vbox to 10pt{\vfil}\hss $\cdots$ \hss}}
+\def\ggenbox#1#2{\vbox to 10pt{\vss \hbox to #1{\hss #2  \hss} \vss}}
+\def\ybox{\yboxit{0.4pt}{\fillbox{10pt}}\hskip-0.4pt}
+\def\nbox{\yboxit{0pt}{\fillbox{10pt}}}
+\def\cdotbox{\yboxit{0.4pt}{\dotbox{24pt}}\hskip-0.4pt}
+\def\genbox#1#2{\yboxit{0.4pt}{\ggenbox{#1}{\eightpoint #2}}\hskip-0.4pt}
+\def\tableaux#1{\vcenter{\offinterlineskip
+             \halign{&\tabskip 0pt##\cr #1}}} 

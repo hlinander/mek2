@@ -1,0 +1,444 @@
+\input epsf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       FONT FAMILIES:                                          %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       Define script letters as rsfs                           %
+%               (or redefine as cal)                            %
+%                                                               %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newfam\scrfam
+\batchmode\font\tenscr=rsfs10 \errorstopmode
+\ifx\tenscr\nullfont
+        \message{rsfs script font not available. Replacing with calligraphic.}
+        \def\scr{\cal}
+\else   \font\eightscr=rsfs10 at 8pt
+        \font\sevenscr=rsfs7
+        \font\fivescr=rsfs5
+        \skewchar\tenscr='177 \skewchar\sevenscr='177 \skewchar\fivescr='177
+        \textfont\scrfam=\tenscr \scriptfont\scrfam=\sevenscr
+        \scriptscriptfont\scrfam=\fivescr
+        \def\scr{\fam\scrfam}
+        \def\cal{\scr}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       fraktur (or redefine as italic)		                %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\catcode`\@=11
+\newfam\frakfam
+\batchmode\font\tenfrak=eufm10 \errorstopmode
+\ifx\tenfrak\nullfont
+        \message{eufm font not available. Replacing with italic.}
+        \def\frak{\it}
+\else
+	\font\twelvefrak=eufm10 scaled\magstep1
+	\font\sevenfrak=eufm7 \font\fivefrak=eufm5
+        \font\eightfrak=eufm8
+	\textfont\frakfam=\tenfrak
+	\scriptfont\frakfam=\sevenfrak \scriptscriptfont\frakfam=\fivefrak
+	\def\frak{\fam\frakfam}
+\fi
+\catcode`\@=\active
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       Blackboard bold (or redefine as boldface)               %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newfam\msbfam
+\batchmode\font\twelvemsb=msbm10 scaled\magstep1 \errorstopmode
+\ifx\twelvemsb\nullfont\def\Bbb{\bf}
+        \font\fourteenbbb=cmb10 at 14pt
+	\font\eightbbb=cmb10 at 8pt
+	\message{Blackboard bold not available. Replacing with boldface.}
+\else   \catcode`\@=11
+        \font\tenmsb=msbm10 \font\sevenmsb=msbm7 \font\fivemsb=msbm5
+        \textfont\msbfam=\tenmsb
+        \scriptfont\msbfam=\sevenmsb \scriptscriptfont\msbfam=\fivemsb
+        \def\Bbb{\relax\expandafter\Bbb@}
+        \def\Bbb@#1{{\Bbb@@{#1}}}
+        \def\Bbb@@#1{\fam\msbfam\relax#1}
+        \catcode`\@=\active
+	\font\fourteenbbb=msbm10 at 14pt
+	\font\eightbbb=msbm8
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       More FONTS:                                             %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \font\fivemi=cmmi5
+        \font\sixmi=cmmi6
+        \font\eightrm=cmr8              \def\xrm{\eightrm}
+        \font\eightbf=cmbx8             \def\xbf{\eightbf}
+        \font\eightit=cmti10 at 8pt     \def\xit{\eightit}
+        \font\sixit=cmti8 at 6pt        \def\xxit{\sixit}
+%%%     \font\eightit=cmti8             \def\xit{\eightit}
+        \font\eighttt=cmtt8             \def\xtt{\eighttt}
+        \font\eightcp=cmcsc8
+        \font\eighti=cmmi8              \def\xold{\eighti}
+        \font\eightmi=cmmi8
+        \font\eightib=cmmib8             \def\xbold{\eightib}
+        \font\teni=cmmi10               \def\old{\teni}
+        \font\tencp=cmcsc10
+        \font\tentt=cmtt10
+        \font\twelverm=cmr12
+        \font\fourteenrm=cmr14
+        \font\twelvecp=cmcsc10 scaled\magstep1
+        \font\fourteencp=cmcsc10 scaled\magstep2
+        \font\sixrm=cmr6
+        \font\fiverm=cmr5
+        \font\twelvemath=cmmi12
+        \font\eightmath=cmmi8
+	\font\eightsym=cmsy8
+        \font\eightsy=cmsy8
+        \font\sixsy=cmsy6
+        \font\eightsl=cmsl8
+        \font\sixbf=cmbx6
+
+	\font\tenhelvbold=phvb at10pt	\def\helvbold{\tenhelvbold}
+	\font\twelvehelvbold=phvb at12pt
+	\font\fourteenhelvbold=phvb at14pt
+	\font\sixteenhelvbold=phvb at16pt
+	\font\sixteenhelvboldit=phvbo at16pt
+
+\def\noblackbox{\overfullrule=0pt}
+\noblackbox
+
+%=========================================================================
+% {\eightpoint\rm ...}  { all fonts will be 8 point including math fonts }
+% {\eightpoint $...$ }  { math only to be in 8 point font }
+%-------------------------------------------------------------------------
+\def\eightpoint{
+\def\rm{\fam0\eightrm}
+\textfont0=\eightrm \scriptfont0=\sixrm \scriptscriptfont0=\fiverm
+\textfont1=\eightmi  \scriptfont1=\sixmi  \scriptscriptfont1=\fivemi
+\textfont2=\eightsy \scriptfont2=\sixsy \scriptscriptfont2=\fivesy
+\textfont3=\tenex   \scriptfont3=\tenex \scriptscriptfont3=\tenex
+\textfont\itfam=\eightit \def\it{\fam\itfam\eightit}
+\textfont\slfam=\eightsl \def\sl{\fam\slfam\eightsl}
+\textfont\ttfam=\eighttt \def\tt{\fam\ttfam\eighttt}
+\textfont\bffam=\eightbf \scriptfont\bffam=\sixbf 
+                         \scriptscriptfont\bffam=\fivebf
+                         \def\bf{\fam\bffam\eightbf}
+\normalbaselineskip=10pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       HEADLINE:                                               %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtoks\headtext
+\headline={\ifnum\pageno=1\hfill\else
+	\ifodd\pageno{\eightcp\the\headtext}{ }\dotfill{ }{\old\folio}
+	\else{\old\folio}{ }\dotfill{ }{\eightcp\the\headtext}\fi
+	\fi}
+\def\makeheadline{\vbox to 0pt{\vss\noindent\the\headline\break
+\hbox to\hsize{\hfill}}
+        \vskip2\baselineskip}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       FOOTNOTES:                                              %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\infootnote
+\infootnote=0
+\newcount\footnotecount
+\footnotecount=1
+%\def\foot#1#2{\infootnote=1
+%\footnote{${}^{#1}$}{\vtop{\baselineskip=.75\baselineskip
+%\advance\hsize by
+%-\parindent{\eightpoint\rm\hskip-\parindent #2}\hfill\vskip\parskip}}\infootnote=0}
+\def\foot#1{\infootnote=1
+\footnote{${}^{\the\footnotecount}$}{\vtop{\baselineskip=.75\baselineskip
+\advance\hsize by
+-\parindent{\eightpoint\rm\hskip-\parindent
+#1}\hfill\vskip\parskip}}\infootnote=0\global\advance\footnotecount by
+1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       REFERENCES:                                             %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\refcount
+\refcount=1
+\newwrite\refwrite
+\def\oldsize{\ifnum\infootnote=1\xold\else\old\fi}
+\def\ref#1#2{
+	\def#1{{{\oldsize\the\refcount}}\ifnum\the\refcount=1\immediate\openout\refwrite=\jobname.refs\fi\immediate\write\refwrite{\item{[{\xold\the\refcount}]} 
+	#2\hfill\par\vskip-2pt}\xdef#1{{\noexpand\oldsize\the\refcount}}\global\advance\refcount by 1}
+	}
+\def\refout{\eightpoint\catcode`\@=11
+        \xrm\immediate\closeout\refwrite
+        \vskip2\baselineskip
+        {\noindent\twelvecp References}\hfill\vskip\baselineskip
+                                                %\vskip.25\baselineskip%%%%
+        %\parskip=.875\parskip
+        %\baselineskip=.8\baselineskip
+        \baselineskip=.75\baselineskip
+        \input\jobname.refs
+        %\parskip=8\parskip \divide\parskip by 7
+        %\baselineskip=1.25\baselineskip
+        \baselineskip=4\baselineskip \divide\baselineskip by 3
+        \catcode`\@=\active\rm}
+
+%\def\skipref#1{\batchmode\hbox to0pt{\phantom{#1}}\errorstopmode}
+\def\skipref#1{\hbox to15pt{\phantom{#1}\hfill}\hskip-15pt}
+
+
+\def\hepth#1{\href{http://xxx.lanl.gov/abs/hep-th/#1}{arXiv:\allowbreak
+hep-th\slash{\xold#1}}}
+\def\mathdg#1{\href{http://xxx.lanl.gov/abs/math.dg/#1}{arXiv:math.dg/{\xold#1}}}
+\def\matharx#1{\href{http://xxx.lanl.gov/abs/math/#1}{arXiv:math/{\xold#1}}}
+\def\arxiv#1#2{\href{http://arxiv.org/abs/#1.#2}{arXiv:\allowbreak
+{\xold#1}.{\xold#2}}} 
+\def\arxivmdg#1#2{\href{http://arxiv.org/abs/#1.#2}{arXiv:\allowbreak
+{\xold#1}.{\xold#2}} [math.DG]} 
+\def\jhep#1#2#3#4{\href{http://jhep.sissa.it/stdsearch?paper=#2\%28#3\%29#4}{J. High Energy Phys. {\xbold #1#2} ({\xold#3}) {\xold#4}}} 
+\def\AP#1#2#3{Ann. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\ATMP#1#2#3{Adv. Theor. Math. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\CMP#1#2#3{Commun. Math. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\CQG#1#2#3{Class. Quantum Grav. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\FP#1#2#3{Fortsch. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\GRG#1#2#3{Gen. Rel. Grav. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\IJMPA#1#2#3{Int. J. Mod. Phys. {\xbf A}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\IJMPCS#1#2#3{Int. J. Mod. Phys. Conf. Ser. {\xbf A}{\xbold#1} ({\xold#2}) {\xold#3}} 
+\def\JGP#1#2#3{J. Geom. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\JHEP{\jhep}
+\def\JMP#1#2#3{J. Math. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\JPA#1#2#3{J. Phys. {\xbf A}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\LMP#1#2#3{Lett. Math. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\MPLA#1#2#3{Mod. Phys. Lett. {\xbf A}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\NC#1#2#3{Nuovo Cimento {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\NPB#1#2#3{Nucl. Phys. {\xbf B}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\NPPS#1#2#3{Nucl. Phys. Proc. Suppl. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PLB#1#2#3{Phys. Lett. {\xbf B}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PR#1#2#3{Phys. Rept. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PRD#1#2#3{Phys. Rev. {\xbf D}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PRL#1#2#3{Phys. Rev. Lett. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PRSA#1#2#3{Proc. Royal Soc. {\xbf A}{\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PTP#1#2#3{Progr. Theor. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\PTPS#1#2#3{Progr. Theor. Phys. Suppl. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\TMP#1#2#3{Theor. Math. Phys. {\xbold#1} ({\xold#2}) {\xold#3}}
+\def\TMF#1#2#3{Teor. Mat. Fiz. {\xbold#1} ({\xold#2}) {\xold#3}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       SECTION NUMBERING:                                      %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\sectioncount
+\sectioncount=0
+\def\section#1#2{\global\eqcount=0
+	\global\subsectioncount=0
+        \global\advance\sectioncount by 1
+%        \goodbreak
+	\ifnum\sectioncount>1
+	        \vskip2\baselineskip
+	\fi
+\noindent{\twelvecp\the\sectioncount. #2}\par\nobreak
+       \vskip.5\baselineskip\noindent
+        \xdef#1{{\old\the\sectioncount}}}
+\newcount\subsectioncount
+\def\subsection#1#2{\global\advance\subsectioncount by 1
+\vskip.75\baselineskip\noindent\line{\tencp\the\sectioncount.\the\subsectioncount. #2\hfill}\nobreak\vskip.4\baselineskip\nobreak\noindent\xdef#1{{\old\the\sectioncount}.{\old\the\subsectioncount}}}
+\def\immediatesubsection#1#2{\global\advance\subsectioncount by 1
+\vskip-\baselineskip\noindent
+\line{\tencp\the\sectioncount.\the\subsectioncount. #2\hfill}
+	\vskip.5\baselineskip\noindent
+	\xdef#1{{\old\the\sectioncount}.{\old\the\subsectioncount}}}
+\newcount\subsubsectioncount
+\def\subsubsection#1#2{\global\advance\subsubsectioncount by 1
+\vskip.75\baselineskip\noindent\line{\tencp\the\sectioncount.\the\subsectioncount.\the\subsubsectioncount. #2\hfill}\nobreak\vskip.4\baselineskip\nobreak\noindent\xdef#1{{\old\the\sectioncount}.{\old\the\subsectioncount}.{\old\the\subsubsectioncount}}}
+\newcount\appendixcount
+\appendixcount=0
+\def\appendix#1{\global\eqcount=0
+        \global\advance\appendixcount by 1
+        \vskip2\baselineskip\noindent
+        \ifnum\the\appendixcount=1
+        {\twelvecp Appendix A: #1}\par\nobreak
+                        \vskip.5\baselineskip\noindent\fi
+        \ifnum\the\appendixcount=2
+        {\twelvecp Appendix B: #1}\par\nobreak
+                        \vskip.5\baselineskip\noindent\fi
+        \ifnum\the\appendixcount=3
+        {\twelvecp Appendix C: #1}\par\nobreak
+                        \vskip.5\baselineskip\noindent\fi}
+\def\acknowledgements{\vskip2\baselineskip\noindent
+        \underbar{\it Acknowledgements:}\ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       EQUATION NUMBERING                                      %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\eqcount
+\eqcount=0
+\def\Eqn#1{\global\advance\eqcount by 1
+\ifnum\the\sectioncount=0
+	\xdef#1{{\noexpand\oldsize\the\eqcount}}
+	\eqno({\oldstyle\the\eqcount})
+\else
+        \ifnum\the\appendixcount=0
+\xdef#1{{\noexpand\oldsize\the\sectioncount}.{\noexpand\oldsize\the\eqcount}}
+                \eqno({\oldstyle\the\sectioncount}.{\oldstyle\the\eqcount})\fi
+        \ifnum\the\appendixcount=1
+	        \xdef#1{{\noexpand\oldstyle A}.{\noexpand\oldstyle\the\eqcount}}
+                \eqno({\oldstyle A}.{\oldstyle\the\eqcount})\fi
+        \ifnum\the\appendixcount=2
+	        \xdef#1{{\noexpand\oldstyle B}.{\noexpand\oldstyle\the\eqcount}}
+                \eqno({\oldstyle B}.{\oldstyle\the\eqcount})\fi
+        \ifnum\the\appendixcount=3
+	        \xdef#1{{\noexpand\oldstyle C}.{\noexpand\oldstyle\the\eqcount}}
+                \eqno({\oldstyle C}.{\oldstyle\the\eqcount})\fi
+\fi}
+\def\eqn{\global\advance\eqcount by 1
+\ifnum\the\sectioncount=0
+	\eqno({\oldstyle\the\eqcount})
+\else
+        \ifnum\the\appendixcount=0
+                \eqno({\oldstyle\the\sectioncount}.{\oldstyle\the\eqcount})\fi
+        \ifnum\the\appendixcount=1
+                \eqno({\oldstyle A}.{\oldstyle\the\eqcount})\fi
+        \ifnum\the\appendixcount=2
+                \eqno({\oldstyle B}.{\oldstyle\the\eqcount})\fi
+        \ifnum\the\appendixcount=3
+                \eqno({\oldstyle C}.{\oldstyle\the\eqcount})\fi
+\fi}
+\def\multi{\global\advance\eqcount by 1}
+\def\multieqn#1{({\oldstyle\the\sectioncount}.{\oldstyle\the\eqcount}\hbox{#1})}
+\def\multiEqn#1#2{\xdef#1{{\oldstyle\the\sectioncount}.{\old\the\eqcount}#2}
+        ({\oldstyle\the\sectioncount}.{\oldstyle\the\eqcount}\hbox{#2})}
+\def\multiEqnAll#1{\xdef#1{{\oldstyle\the\sectioncount}.{\old\the\eqcount}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       Tables:                                               	%
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcount\tablecount
+\tablecount=0
+\def\Table#1#2{\global\advance\tablecount by 1
+       \xdef#1{\the\tablecount}
+       \vskip2\parskip
+       \centerline{\it Table \the\tablecount: #2}
+       \vskip2\parskip}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       Hyperrefs:                                        	%
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtoks\url
+\def\Href#1#2{\catcode`\#=12\url={#1}\catcode`\#=\active\special{html:<a href="\the\url">}#2\special{html:</a>}}
+\def\href#1#2{\special{html:<a href="#1">}{#2}\special{html:</a>}}
+\def\hhref#1{\special{html:<a href="#1">}{#1}\special{html:</a>}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       FORMAT:                                                 %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\parskip=3.5pt plus .3pt minus .3pt
+\baselineskip=14pt plus .1pt minus .05pt
+\lineskip=.5pt plus .05pt minus .05pt
+\lineskiplimit=.5pt
+\abovedisplayskip=18pt plus 4pt minus 2pt
+\belowdisplayskip=\abovedisplayskip
+\hsize=14cm
+\vsize=19cm
+\hoffset=1.5cm
+\voffset=1.8cm
+\frenchspacing
+\footline={}
+\raggedbottom
+
+\newskip\origparindent
+\origparindent=\parindent
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                               %
+%       VARIOUS DEFINITIONS                                     %
+%                                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ts{\textstyle}
+\def\ss{\scriptstyle}
+\def\sss{\scriptscriptstyle}
+\def\*{\partial}
+\def\punkt{\,\,.}
+\def\komma{\,\,,}
+\def\minus{\!-\!}
+\def\plus{\!+\!}
+\def\={\!=\!}
+\def\small#1{{\hbox{$#1$}}}
+\def\half{\small{1\over2}}
+\def\fraction#1{\small{1\over#1}}
+\def\fr{\fraction}
+\def\Fraction#1#2{\small{#1\over#2}}
+\def\Fr{\Fraction}
+\def\tr{\hbox{\rm tr}}
+\def\eg{{\it e.g.}}
+\def\Eg{{\it E.g.}}
+\def\ie{{\it i.e.}}
+\def\etal{{\it et al.}}
+
+\def\nl{\hfill\break\indent}
+\def\nlni{\hfill\break}
+
+\def\first{{\old1}${}^{st}$}
+\def\second{{\old2}${}^{nd}$}
+\def\third{{\old3}${}^{rd}$}
+
+\def\a{\alpha}
+\def\b{\beta}
+%\def\c{\gamma}
+\def\d{\delta}
+\def\e{\varepsilon}
+\def\g{\gamma}
+\def\l{\lambda}
+\def\o{\omega}
+\def\s{\sigma}
+\def\th{\theta}
+
+\def\G{\Gamma}
+\def\L{\Lambda}
+\def\O{\Omega}
+
+\def\Z{{\Bbb Z}}
+\def\C{{\Bbb C}}
+\def\R{{\Bbb R}}
+\def\H{{\Bbb H}}
+
+\def\M{{\cal M}}
+\def\Ham{{\cal H}}
+
+\def\w{\!\wedge\!}
+\def\id{1\hskip-3.5pt 1}
+\def\Int{\int\limits}
+\def\bra{\,<\!\!}
+\def\ket{\!\!>\,}
+\def\ra{\rightarrow}
+\def\cross{\!\times\!}
+\def\Tr{\hbox{Tr}\,}
+\def\ker{\hbox{ker}\,}
+\def\Re{\hbox{Re}\,}
+\def\ggr{\!\cdot\!}
+\def\Dslash{D\hskip-6.5pt/\hskip1.5pt}
+\def\dslash{\*\hskip-5.5pt/\hskip.5pt}
+\def\pslash{p\hskip-5.5pt/\hskip.5pt}
+
+\def\II{I\hskip-.8pt I}
+
+\def\lra{\longrightarrow}
+\def\lla{\longleftarrow}
+\def\ra{\rightarrow}
+\def\la{\leftarrow}
+
+
+\def\rarrowover#1{\vtop{\baselineskip=0pt\lineskip=0pt
+      \ialign{\hfill##\hfill\cr$\ra$\cr$#1$\cr}}}
+
+\def\larrowover#1{\vtop{\baselineskip=0pt\lineskip=0pt
+      \ialign{\hfill##\hfill\cr$\la$\cr$#1$\cr}}}
+
+\def\RR{{\Bbb R}}
+

@@ -1,0 +1,675 @@
+%!PS-Adobe-2.0
+%%Creator: dvipsk 5.66a Copyright 1986-97 Radical Eye Software (www.radicaleye.com)
+%%Title: 98aug.dvi
+%%Pages: 1
+%%PageOrder: Ascend
+%%BoundingBox: 0 0 596 842
+%%DocumentPaperSizes: A4
+%%EndComments
+%DVIPSCommandLine: dvips -z 98aug
+%DVIPSParameters: dpi=300, compressed
+%DVIPSSource:  TeX output 1999.01.11:1120
+%%BeginProcSet: texc.pro
+%!
+/TeXDict 250 dict def TeXDict begin /N{def}def /B{bind def}N /S{exch}N
+/X{S N}B /TR{translate}N /isls false N /vsize 11 72 mul N /hsize 8.5 72
+mul N /landplus90{false}def /@rigin{isls{[0 landplus90{1 -1}{-1 1}
+ifelse 0 0 0]concat}if 72 Resolution div 72 VResolution div neg scale
+isls{landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div
+hsize mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul
+TR[matrix currentmatrix{dup dup round sub abs 0.00001 lt{round}if}
+forall round exch round exch]setmatrix}N /@landscape{/isls true N}B
+/@manualfeed{statusdict /manualfeed true put}B /@copies{/#copies X}B
+/FMat[1 0 0 -1 0 0]N /FBB[0 0 0 0]N /nn 0 N /IE 0 N /ctr 0 N /df-tail{
+/nn 8 dict N nn begin /FontType 3 N /FontMatrix fntrx N /FontBBox FBB N
+string /base X array /BitMaps X /BuildChar{CharBuilder}N /Encoding IE N
+end dup{/foo setfont}2 array copy cvx N load 0 nn put /ctr 0 N[}B /df{
+/sf 1 N /fntrx FMat N df-tail}B /dfs{div /sf X /fntrx[sf 0 0 sf neg 0 0]
+N df-tail}B /E{pop nn dup definefont setfont}B /ch-width{ch-data dup
+length 5 sub get}B /ch-height{ch-data dup length 4 sub get}B /ch-xoff{
+128 ch-data dup length 3 sub get sub}B /ch-yoff{ch-data dup length 2 sub
+get 127 sub}B /ch-dx{ch-data dup length 1 sub get}B /ch-image{ch-data
+dup type /stringtype ne{ctr get /ctr ctr 1 add N}if}B /id 0 N /rw 0 N
+/rc 0 N /gp 0 N /cp 0 N /G 0 N /sf 0 N /CharBuilder{save 3 1 roll S dup
+/base get 2 index get S /BitMaps get S get /ch-data X pop /ctr 0 N ch-dx
+0 ch-xoff ch-yoff ch-height sub ch-xoff ch-width add ch-yoff
+setcachedevice ch-width ch-height true[1 0 0 -1 -.1 ch-xoff sub ch-yoff
+.1 sub]/id ch-image N /rw ch-width 7 add 8 idiv string N /rc 0 N /gp 0 N
+/cp 0 N{rc 0 ne{rc 1 sub /rc X rw}{G}ifelse}imagemask restore}B /G{{id
+gp get /gp gp 1 add N dup 18 mod S 18 idiv pl S get exec}loop}B /adv{cp
+add /cp X}B /chg{rw cp id gp 4 index getinterval putinterval dup gp add
+/gp X adv}B /nd{/cp 0 N rw exit}B /lsh{rw cp 2 copy get dup 0 eq{pop 1}{
+dup 255 eq{pop 254}{dup dup add 255 and S 1 and or}ifelse}ifelse put 1
+adv}B /rsh{rw cp 2 copy get dup 0 eq{pop 128}{dup 255 eq{pop 127}{dup 2
+idiv S 128 and or}ifelse}ifelse put 1 adv}B /clr{rw cp 2 index string
+putinterval adv}B /set{rw cp fillstr 0 4 index getinterval putinterval
+adv}B /fillstr 18 string 0 1 17{2 copy 255 put pop}for N /pl[{adv 1 chg}
+{adv 1 chg nd}{1 add chg}{1 add chg nd}{adv lsh}{adv lsh nd}{adv rsh}{
+adv rsh nd}{1 add adv}{/rc X nd}{1 add set}{1 add clr}{adv 2 chg}{adv 2
+chg nd}{pop nd}]dup{bind pop}forall N /D{/cc X dup type /stringtype ne{]
+}if nn /base get cc ctr put nn /BitMaps get S ctr S sf 1 ne{dup dup
+length 1 sub dup 2 index S get sf div put}if put /ctr ctr 1 add N}B /I{
+cc 1 add D}B /bop{userdict /bop-hook known{bop-hook}if /SI save N @rigin
+0 0 moveto /V matrix currentmatrix dup 1 get dup mul exch 0 get dup mul
+add .99 lt{/QV}{/RV}ifelse load def pop pop}N /eop{SI restore userdict
+/eop-hook known{eop-hook}if showpage}N /@start{userdict /start-hook
+known{start-hook}if pop /VResolution X /Resolution X 1000 div /DVImag X
+/IE 256 array N 0 1 255{IE S 1 string dup 0 3 index put cvn put}for
+65781.76 div /vsize X 65781.76 div /hsize X}N /p{show}N /RMat[1 0 0 -1 0
+0]N /BDot 260 string N /rulex 0 N /ruley 0 N /v{/ruley X /rulex X V}B /V
+{}B /RV statusdict begin /product where{pop false[(Display)(NeXT)
+(LaserWriter 16/600)]{dup length product length le{dup length product
+exch 0 exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}
+ifelse end{{gsave TR -.1 .1 TR 1 1 scale rulex ruley false RMat{BDot}
+imagemask grestore}}{{gsave TR -.1 .1 TR rulex ruley scale 1 1 false
+RMat{BDot}imagemask grestore}}ifelse B /QV{gsave newpath transform round
+exch round exch itransform moveto rulex 0 rlineto 0 ruley neg rlineto
+rulex neg 0 rlineto fill grestore}B /a{moveto}B /delta 0 N /tail{dup
+/delta X 0 rmoveto}B /M{S p delta add tail}B /b{S p tail}B /c{-4 M}B /d{
+-3 M}B /e{-2 M}B /f{-1 M}B /g{0 M}B /h{1 M}B /i{2 M}B /j{3 M}B /k{4 M}B
+/w{0 rmoveto}B /l{p -4 w}B /m{p -3 w}B /n{p -2 w}B /o{p -1 w}B /q{p 1 w}
+B /r{p 2 w}B /s{p 3 w}B /t{p 4 w}B /x{0 S rmoveto}B /y{3 2 roll p a}B
+/bos{/SS save N}B /eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: special.pro
+%!
+TeXDict begin /SDict 200 dict N SDict begin /@SpecialDefaults{/hs 612 N
+/vs 792 N /ho 0 N /vo 0 N /hsc 1 N /vsc 1 N /ang 0 N /CLIP 0 N /rwiSeen
+false N /rhiSeen false N /letter{}N /note{}N /a4{}N /legal{}N}B
+/@scaleunit 100 N /@hscale{@scaleunit div /hsc X}B /@vscale{@scaleunit
+div /vsc X}B /@hsize{/hs X /CLIP 1 N}B /@vsize{/vs X /CLIP 1 N}B /@clip{
+/CLIP 2 N}B /@hoffset{/ho X}B /@voffset{/vo X}B /@angle{/ang X}B /@rwi{
+10 div /rwi X /rwiSeen true N}B /@rhi{10 div /rhi X /rhiSeen true N}B
+/@llx{/llx X}B /@lly{/lly X}B /@urx{/urx X}B /@ury{/ury X}B /magscale
+true def end /@MacSetUp{userdict /md known{userdict /md get type
+/dicttype eq{userdict begin md length 10 add md maxlength ge{/md md dup
+length 20 add dict copy def}if end md begin /letter{}N /note{}N /legal{}
+N /od{txpose 1 0 mtx defaultmatrix dtransform S atan/pa X newpath
+clippath mark{transform{itransform moveto}}{transform{itransform lineto}
+}{6 -2 roll transform 6 -2 roll transform 6 -2 roll transform{
+itransform 6 2 roll itransform 6 2 roll itransform 6 2 roll curveto}}{{
+closepath}}pathforall newpath counttomark array astore /gc xdf pop ct 39
+0 put 10 fz 0 fs 2 F/|______Courier fnt invertflag{PaintBlack}if}N
+/txpose{pxs pys scale ppr aload pop por{noflips{pop S neg S TR pop 1 -1
+scale}if xflip yflip and{pop S neg S TR 180 rotate 1 -1 scale ppr 3 get
+ppr 1 get neg sub neg ppr 2 get ppr 0 get neg sub neg TR}if xflip yflip
+not and{pop S neg S TR pop 180 rotate ppr 3 get ppr 1 get neg sub neg 0
+TR}if yflip xflip not and{ppr 1 get neg ppr 0 get neg TR}if}{noflips{TR
+pop pop 270 rotate 1 -1 scale}if xflip yflip and{TR pop pop 90 rotate 1
+-1 scale ppr 3 get ppr 1 get neg sub neg ppr 2 get ppr 0 get neg sub neg
+TR}if xflip yflip not and{TR pop pop 90 rotate ppr 3 get ppr 1 get neg
+sub neg 0 TR}if yflip xflip not and{TR pop pop 270 rotate ppr 2 get ppr
+0 get neg sub neg 0 S TR}if}ifelse scaleby96{ppr aload pop 4 -1 roll add
+2 div 3 1 roll add 2 div 2 copy TR .96 dup scale neg S neg S TR}if}N /cp
+{pop pop showpage pm restore}N end}if}if}N /normalscale{Resolution 72
+div VResolution 72 div neg scale magscale{DVImag dup scale}if 0 setgray}
+N /psfts{S 65781.76 div N}N /startTexFig{/psf$SavedState save N userdict
+maxlength dict begin /magscale true def normalscale currentpoint TR
+/psf$ury psfts /psf$urx psfts /psf$lly psfts /psf$llx psfts /psf$y psfts
+/psf$x psfts currentpoint /psf$cy X /psf$cx X /psf$sx psf$x psf$urx
+psf$llx sub div N /psf$sy psf$y psf$ury psf$lly sub div N psf$sx psf$sy
+scale psf$cx psf$sx div psf$llx sub psf$cy psf$sy div psf$ury sub TR
+/showpage{}N /erasepage{}N /copypage{}N /p 3 def @MacSetUp}N /doclip{
+psf$llx psf$lly psf$urx psf$ury currentpoint 6 2 roll newpath 4 copy 4 2
+roll moveto 6 -1 roll S lineto S lineto S lineto closepath clip newpath
+moveto}N /endTexFig{end psf$SavedState restore}N /@beginspecial{SDict
+begin /SpecialSave save N gsave normalscale currentpoint TR
+@SpecialDefaults count /ocount X /dcount countdictstack N}N /@setspecial
+{CLIP 1 eq{newpath 0 0 moveto hs 0 rlineto 0 vs rlineto hs neg 0 rlineto
+closepath clip}if ho vo TR hsc vsc scale ang rotate rwiSeen{rwi urx llx
+sub div rhiSeen{rhi ury lly sub div}{dup}ifelse scale llx neg lly neg TR
+}{rhiSeen{rhi ury lly sub div dup scale llx neg lly neg TR}if}ifelse
+CLIP 2 eq{newpath llx lly moveto urx lly lineto urx ury lineto llx ury
+lineto closepath clip}if /showpage{}N /erasepage{}N /copypage{}N newpath
+}N /@endspecial{count ocount sub{pop}repeat countdictstack dcount sub{
+end}repeat grestore SpecialSave restore end}N /@defspecial{SDict begin}
+N /@fedspecial{end}B /li{lineto}B /rl{rlineto}B /rc{rcurveto}B /np{
+/SaveX currentpoint /SaveY X N 1 setlinecap newpath}N /st{stroke SaveX
+SaveY moveto}N /fil{fill SaveX SaveY moveto}N /ellipse{/endangle X
+/startangle X /yrad X /xrad X /savematrix matrix currentmatrix N TR xrad
+yrad scale 0 0 1 startangle endangle arc savematrix setmatrix}N end
+
+%%EndProcSet
+%%BeginProcSet: hps.pro
+%!
+/HPSdict 20 dict dup begin /braindeaddistill 50 def /rfch{dup length 1
+sub 1 exch getinterval}bind def /splituri{dup(#)search{exch pop}{()exch}
+ifelse dup(file:)anchorsearch{pop exch pop 3 -1 roll pop false}{pop 3 -1
+roll exch pop true}ifelse}bind def /lookuptarget{exch rfch dup
+/TargetAnchors where{pop TargetAnchors dup 3 -1 roll known{exch get true
+}{pop(target unknown:)print == false}ifelse}{pop pop
+(target dictionary unknown\012)print false}ifelse}bind def /savecount 0
+def /stackstopped{count counttomark sub /savecount exch store stopped
+count savecount sub 1 sub dup 0 gt{{exch pop}repeat}{pop}ifelse}bind def
+/tempstring 256 string def /targetvalidate{1 index dup length 255 gt
+exch dup(/)search{pop pop pop exch pop true exch}{pop}ifelse cvn
+tempstring cvs token pop pop length 0 ne or not}bind def
+/targetdump-hook where{pop}{/targetdump-hook{dup mark exch gsave initmat
+setmatrix{{mark /Dest 4 2 roll targetvalidate{aload pop exch pop /Page 3
+1 roll /View exch[exch /FitH exch]/DEST pdfmark}{cleartomark}ifelse}
+forall}stackstopped pop grestore}bind def}ifelse /baseurl{mark exch 1
+dict dup 3 -1 roll /Base exch put /URI exch /DOCVIEW{pdfmark}
+stackstopped pop}bind def /externalhack systemdict /PDF known def
+/oldstyle true def /initmat matrix currentmatrix def /actiondict 2 dict
+dup /Subtype /URI put def /weblinkhandler{dup 3 1 roll mark 4 1 roll
+/Title 4 1 roll splituri 3 -1 roll dup length 0 gt{cvn /Dest exch 4 2
+roll}{pop}ifelse{externalhack{/HTTPFile exch}{actiondict dup 3 -1 roll
+/URI exch put /Action exch}ifelse}{externalhack{/HTTPFile exch}{/File
+exch /Action /GoToR}ifelse}ifelse counttomark 2 sub -1 roll aload pop
+/Rect 4 1 roll /Border 3 1 roll /Color exch oldstyle{/LNK}{/Subtype
+/Link /ANN}ifelse gsave initmat setmatrix{pdfmark}stackstopped grestore}
+bind def /externalhandler where{pop}{/externalhandler{2 copy{
+weblinkhandler}exec{/externalhack externalhack not store 2 copy{
+weblinkhandler}exec{/externalhack externalhack not store /oldstyle false
+store 2 copy{weblinkhandler}exec{(WARNING: external refs disabled\012)
+print /externalhandler{pop pop}bind store externalhandler}{pop pop}
+ifelse}{pop pop /externalhack externalhack not store}ifelse}{pop pop
+/externalhandler{weblinkhandler pop}bind store}ifelse}bind def}ifelse
+/pdfmnew{dup type /stringtype eq{externalhandler}{exch dup rfch exch 3
+-1 roll lookuptarget{mark 4 1 roll /Title 4 1 roll aload pop exch pop
+/Page 3 1 roll /View exch[exch /FitH exch]5 -1 roll aload pop /Rect 4 1
+roll /Border 3 1 roll /Color exch /LNK gsave initmat setmatrix pdfmark
+grestore}{pop pop}ifelse}ifelse}bind def /pdfmold{dup type /stringtype
+eq{externalhandler}{exch dup rfch exch 3 -1 roll lookuptarget{mark 4 1
+roll /Title 4 1 roll aload pop exch pop /Page 3 1 roll /View exch[exch
+/FitH exch]5 -1 roll aload pop pop 0 3 getinterval /Rect 3 1 roll
+/Border exch /LNK gsave initmat setmatrix pdfmark grestore}{pop pop}
+ifelse}ifelse}bind def /pdfm where{pop}{/pdfm /currentdistillerparams
+where{pop currentdistillerparams dup /CoreDistVersion known{
+/CoreDistVersion get}{0}ifelse dup braindeaddistill le{
+(WARNING: switching to old pdfm because version =)print == /pdfmold}{
+pop /pdfmnew}ifelse load}{/pdfmark where{pop{dup type /stringtype eq{
+externalhandler}{2 copy mark 3 1 roll{pdfmnew}stackstopped{2 copy mark 3
+1 roll{pdfmold}stackstopped{(WARNING: pdfm disabled\012)print /pdfm{pop
+pop}store}{(WARNING: new pdfm failed, switching to old pdfm\012)print
+/pdfm /pdfmold load store}ifelse}{/pdfm /pdfmnew load store}ifelse pop
+pop}ifelse}}{{pop pop}}ifelse}ifelse bind def}ifelse end def
+
+%%EndProcSet
+TeXDict begin 39158280 55380996 1000 300 300 (98aug.dvi)
+@start
+%DVIPSBitmapFont: Fa cmr7 7 1
+/Fa 1 50 df<120C121C12EC120CAFEAFFC00A137D9211>49 D E
+%EndDVIPSBitmapFont
+%DVIPSBitmapFont: Fb cmmi7 7 1
+/Fb 1 116 df<1207EA1880EA19C0EA3180EA3800121E7EEA0380124112E1EAC1001282
+127C0A0D7E8C10>115 D E
+%EndDVIPSBitmapFont
+%DVIPSBitmapFont: Fc cmti10 10 31
+/Fc 31 128 df<123C12421281A212821284127808076C9D23>23
+D<13C0EA01E0A313C01203A21380A313005AA21206A31204120CA21208A2C7FCA5123012
+785A12600B1E7C9D0D>33 D<13031306130813181330136013C0A2EA0180EA0300A21206
+A25AA2121C1218A212381230A21270A21260A412E0A51260A51220123012107EA2102A7B
+9E11>40 D<1310A21308130C13041306A51307A51306A4130EA2130CA2131C1318A21338
+1330A21360A213C0A2EA0180EA0300A212065A5A121012605A102A809E11>I<12301278
+12F0126005047C830D>46 D<1418A21438A21478A214B8EB0138A2EB023C141C1304130C
+13081310A21320A2EB7FFCEBC01C1380EA0100141E0002130EA25A120C001C131EB4EBFF
+C01A1D7E9C1F>65 D<48B5FC39003C038090383801C0EC00E0A35B1401A2EC03C001E013
+80EC0F00141EEBFFFC3801C00E801580A2EA0380A43907000F00140E141E5C000E13F0B5
+12C01B1C7E9B1D>I<48B512F038003C00013813301520A35BA214081500495AA21430EB
+FFF03801C020A448485A91C7FCA348C8FCA45AEAFFF01C1C7E9B1B>70
+D<3A01FFC07F803A003C001E000138131815205D5DD97002C7FC5C5C5CEBE04014C013E1
+EBE2E0EA01C4EBD07013E013C048487EA21418141CEA070080A348130F39FFE07FC0211C
+7E9B20>75 D<3801FFFE39003C078090383801C015E01400A2EB7001A3EC03C001E01380
+EC0700141CEBFFE03801C03080141CA2EA0380A43807003C1520A348144039FFE01E80C7
+EA0F001B1D7E9B1E>82 D<EA01E3EA0717EA0C0F1218EA380E12301270A2EAE01CA41339
+A3EA6079EA319AEA1E0C10127C9115>97 D<13F8EA0304120EEA1C0EEA181CEA30001270
+A25AA51304EA60081310EA3060EA0F800F127C9113>99 D<EB07E01300A2EB01C0A4EB03
+80A43801E700EA0717EA0C0F1218EA380E12301270A2485AA41339A3EA6079EA319AEA1E
+0C131D7C9C15>I<13F8EA0704120CEA1802EA38041230EA7008EA7FF0EAE000A5EA6004
+1308EA30101360EA0F800F127C9113>I<EB03C0EB0670130CEB1C601400A25BA53803FF
+8038007000A55BA5485AA5485AA390C7FCA25A12C612E65A12781425819C0D>I<EB78C0
+EA01C5EA03031206000E1380120C121CA238380700A4130EA3EA181EEA0C7CEA079CEA00
+1CA25BA2EAC030EAE070EAC1C0007FC7FC121A7E9113>I<EA0FC01201A2485AA448C7FC
+A4EA0E3E13C3380F0380120E121E121CA338380700A3130E00701340A2131C1480EAE00C
+38600700121D7E9C15>I<EA01801203EA0100C7FCA7121C12261247A2128EA2120E5AA3
+5AA21271A31272A2123C091C7C9B0D>I<EA0FC01201A2485AA448C7FCA4380E07801308
+EB11C01321381C4180EB8000001DC7FC121EEA3FC0EA38E01370A2EA7071A31372EAE032
+EA601C121D7E9C13>107 D<EA1F801203A2EA0700A4120EA45AA45AA45AA412E2A312E4
+12641238091D7D9C0B>I<391C1E078039266318C0394683A0E0384703C0008E1380A212
+0EA2391C0701C0A3EC0380D8380E1388A2EC0708151039701C032039300C01C01D127C91
+22>I<EA383EEA4CC3384D0380124E129E129C121CA238380700A3130E00701340A2131C
+1480EAE00C3860070012127C9117>I<13F8EA030CEA0E06487E1218123000701380A238
+E00700A3130EA25BEA60185BEA30E0EA0F8011127C9115>I<380387803804C860EBD030
+13E0EA09C014381201A238038070A31460380700E014C0EB0180EB8300EA0E86137890C7
+FCA25AA45AB4FC151A809115>I<EA1C3CEA2642EA4687EA4707EA8E061300120EA25AA4
+5AA45A123010127C9112>114 D<EA01F0EA0608120C131CEA1818EA1C00121F13C0EA0F
+F01207EA00781338EA603012E012C0EA8060EA60C0EA1F000E127D9111>I<12035AA312
+0EA4EAFFE0EA1C00A35AA45AA4EAE080A2EAE100A2126612380B1A7C990E>I<381C0180
+EA2E03124EA2388E0700A2121CA2EA380EA438301C80A3EA383C38184D00EA0F8611127C
+9116>I<EA1C06EA2E0EEA4E06A2EA8E02A2121CA2EA3804A313081230A21310EA3820EA
+1840EA0F800F127C9113>I<381C0180EA2E03124EA2388E0700A2121CA2EA380EA4EA30
+1CA3EA383CEA1878EA0FB8EA003813301370EAE0605BEA81800043C7FC123C111A7C9114
+>121 D<EA70E012F1A2EA60C00B04759C15>127 D E
+%EndDVIPSBitmapFont
+%DVIPSBitmapFont: Fd cmmi10 10 17
+/Fd 17 113 df<13F8EA030C380E0604EA1C07383803080030138800701390A200E013A0
+A214C01480A3EA6007EB0B8838307190380F80E016127E911B>11
+D<0008130648130EA248130614025A1308131800801304A2EB300C140800C01318EBF030
+B512F0387F9FE0EB1FC0383E0F00171280911A>33 D<EA07E0EA1C38EA300CEA700EEA60
+06A2EAE007A8EA6006A2EA700EEA300CEA1C38EA07E010147E9215>48
+D<5A120F12F71207AFEAFFF80D137C9215>I<EA0FE0EA3038EA401C130EEAC00FEAE007
+1240EA000F130E131C1338137013C0EA01011206EA0803EA1FFE127F12FF10137E9215>
+I<EA07E0EA1838EA201CA2EA781E130E131E1230EA001CA213381360EA07C0EA0030131C
+A2130E130FA2126012F0A212E0EA800EEA401C1220EA1830EA07C0101C7E9215>I<130C
+A2131C133CA2135C139C1201131C1202120612041208121012301220124012C0B512C038
+001C00A73801FFC0121B7F9215>I<EA300CEA3FF813F013C0EA2000A6EA23E0EA2C38EA
+301CEA200CEA000E13061307A2126012F0A212E0EA8006EA400E130CEA2018EA1830EA07
+C0101C7E9215>I<13F0EA030CEA0404EA0C0EEA181E1230130CEA7000A21260EAE3E0EA
+E430EAE818EAF00C130EEAE0061307A51260A2EA7006EA300E130CEA1818EA0C30EA03E0
+101D7E9B15>I<EA07E0EA0C30EA1008EA300CEA6006A41270EA380CEA3C18EA1F30EA0F
+E01203EA07F0EA1878EA303CEA600E1306EAC0071303A4EA60021306EA300CEA1C18EA07
+E0101D7E9B15>56 D<EA07C0EA0C30EA1818EA300C1270EA600EEAE006A21307A4126013
+0F1230EA1817EA0C27EA07C7EA0006A2130EEA300C127813181270EA2030EA10E0EA0F80
+101C7E9215>I<3801FFC038003C001338A45BA45BA4485AA4485AA448C7FCA45AEAFFE0
+121C7E9B12>73 D<EB03F8EB0E0E90383803809038E001C0EA01C039038000E048C7FC48
+14F0121E121C123CA25AA348EB01E0A3EC03C0A2EC0780A2EC0F000070130E5C6C5B003C
+5B381C01C038070780D801FCC7FC1C1E7E9C20>79 D<EB07E01300A2EB01C0A4EB0380A4
+3801E700EA0717EA0C0F1218EA380E12301270A2485AA4EB3880A3EA607838319900EA1E
+0E131D7E9C16>100 D<EA0FC01201A2485AA448C7FCA4EA0E07EB0880EB11C01323381C
+4780EB8300001DC7FC121EEA3FC0EA38E01370A2EA7071A31372EAE032EA601C121D7E9C
+16>107 D<39381F81F0394E20C618394640E81CEB80F0EA8F00008E13E0120EA2391C01
+C038A315703938038071A215E115E23970070064D83003133820127E9124>109
+D<380787803809C8603808D03013E0EA11C014381201A238038070A31460380700E014C0
+EB0180EB8300EA0E86137890C7FCA25AA4123CB4FC151A819115>112
+D E
+%EndDVIPSBitmapFont
+%DVIPSBitmapFont: Fe cmr12 12 13
+/Fe 13 117 df<B512F8380F800E0007EB0780EC03C015E0140115F0A515E01403EC07C0
+EC0F80EC3E00EBFFFE9038800780EC03C0EC01E015F0140015F8A6EC01F0A2EC03E0EC07
+C0000FEB0F00B512FC1D227EA123>66 D<B612C0380F80070007130114001540A2156015
+20A314201500A3146014E013FF138014601420A491C7FCA9487EEAFFFE1B227EA120>70
+D<D8FFC0EB03FF000F15F0000715E0D805E01305A2D804F01309A301781311A36D1321A3
+6D1341A26D1381A39038078101A3EB03C2A2EB01E4A3EB00F8A31470120E001FEC03F03A
+FFE0203FFF28227EA12D>77 D<007FB512F839780780780060141800401408A300C0140C
+00801404A400001400B3A3497E3801FFFE1E227EA123>84 D<EA1FE0EA3038EA780C130E
+EA30071200A313FFEA07C7EA1E07123C1278127000F01308A3130FEA7817383C2390380F
+C1E015157E9418>97 D<14E0130F13011300ABEA01F8EA0704EA0C02EA1C01EA38001278
+127012F0A7127012781238EA1801EA0C0238070CF03801F0FE17237EA21B>100
+D<EA01FCEA0707380C0380381C01C01238007813E0EA700012F0B5FC00F0C7FCA5127000
+78132012386C13406C138038070300EA00FC13157F9416>I<121C123EA3121CC7FCA812
+0E127E121E120EB1EAFFC00A227FA10E>105 D<120E12FE121E120EABEB03FCEB01F014
+C01480EB02005B5B5B133813F8EA0F1CEA0E1E130E7F1480EB03C0130114E0EB00F014F8
+38FFE3FE17237FA21A>107 D<120E12FE121E120EB3ADEAFFE00B237FA20E>I<390E1FC0
+7F3AFE60E183803A1E807201C03A0F003C00E0A2000E1338AF3AFFE3FF8FFE27157F942A
+>I<380E1F8038FE60C0381E80E0380F0070A2120EAF38FFE7FF18157F941B>I<1202A412
+06A3120E121E123EEAFFFCEA0E00AB1304A6EA07081203EA01F00E1F7F9E13>116
+D E
+%EndDVIPSBitmapFont
+%DVIPSBitmapFont: Ff cmr10 10 64
+/Ff 64 128 df<137F3803C1E038070070001C131C003C131E0038130E0078130F00707F
+00F01480A50070140000785BA20038130E6C5BA26C5B00061330A20083EB608000811340
+A2394180C100007F13FFA3191D7E9C1E>10 D<EB7E1F3901C1B180390303E3C0000713C3
+000EEBC180903801C000A6B512FC380E01C0B0387F87FC1A1D809C18>I<137E3801C180
+EA0301380703C0120EEB018090C7FCA5B512C0EA0E01B0387F87F8151D809C17>I<120E
+A2121E1238127012E012800707779C15>19 D<123C12421281A31242123C0807759D1F>
+23 D<126012F0A71260AD1200A5126012F0A21260041E7C9D0C>33
+D<EA6060EAF0F0EAF8F8EA6868EA0808A3EA1010A2EA2020EA4040EA80800D0C7F9C15>
+I<1380EA0100120212065AA25AA25AA35AA412E0AC1260A47EA37EA27EA27E12027EEA00
+80092A7C9E10>40 D<7E12407E12307EA27EA27EA37EA41380AC1300A41206A35AA25AA2
+5A12205A5A092A7E9E10>I<126012F0A212701210A41220A212401280040C7C830C>44
+D<EAFFE0A20B0280890E>I<126012F0A2126004047C830C>I<5A1207123F12C71207B3A5
+EAFFF80D1C7C9B15>49 D<EA07C0EA1830EA201CEA400C130EEAF00F12F81307A21270EA
+000F130EA2131CA213381370136013C0EA0180EA0300EA0601120C1218EA1002EA3FFE12
+7F12FF101C7E9B15>I<130CA2131C133CA2135C13DC139CEA011C120312021204120C12
+08121012301220124012C0B512C038001C00A73801FFC0121C7F9B15>52
+D<126012F0A212601200AA126012F0A2126004127C910C>58 D<EA0FE0EA3038EA401CEA
+E00E12F0A3EA000C131C1330136013C0138012011300A6C7FCA51203EA0780A2EA03000F
+1D7E9C14>63 D<1306A3130FA3EB1780A2EB37C01323A2EB43E01341A2EB80F0A3380100
+78A2EBFFF83802003CA3487FA2000C131F80001E5BB4EBFFF01C1D7F9C1F>65
+D<B512C0380F00788080140E140FA4140E141E5C14F8EBFFF0EB003C8080801580A5EC0F
+00A2141E1478B512E0191C7F9B1D>I<90381F8080EBE0613801801938070007000E1303
+5A14015A00781300A2127000F01400A8007014801278A212386CEB0100A26C13026C5B38
+0180083800E030EB1FC0191E7E9C1E>I<B512C0380F00F0143C140E80A2EC038015C014
+01A215E0A815C0A21403158014071500140E5C1470B512C01B1C7E9B20>I<B512FC380F
+003C140C1404A214061402A213011400A35B13FF13037FA3140113001402A31406A2140C
+143CB512FC181C7E9B1C>I<B512F8380F007814181408A2140C1404A213011400A35B13
+FF13037FA490C7FCA8EAFFF8161C7E9B1B>I<90381F8080EBE061380180193807000700
+0E13035A14015A00781300A2127000F01400A6ECFFF0EC0F80007013071278A212387EA2
+7E6C130B380180113800E06090381F80001C1E7E9C21>I<39FFF0FFF0390F000F00AC90
+B5FCEB000FAD39FFF0FFF01C1C7F9B1F>I<EAFFF0EA0F00B3A8EAFFF00C1C7F9B0F>I<38
+07FF8038007C00133CB3127012F8A21338EA7078EA4070EA30E0EA0F80111D7F9B15>I<
+39FFF01FE0390F000780EC060014045C5C5C5C5C49C7FC13021306130FEB17801327EB43
+C0EB81E013016D7E1478A280143E141E80158015C039FFF03FF01C1C7F9B20>I<EAFFF8
+EA0F8090C7FCB01408A31418A2141014301470EB01F0B5FC151C7E9B1A>I<B46CEBFF80
+000FECF800A2390BC00178A33809E002A23808F004A3EB7808A3EB3C10A3EB1E20A3EB0F
+40A2EB0780A3EB0300121C3AFF8307FF80211C7E9B26>I<B51280380F00E01478143C14
+1C141EA5141C143C147814E0EBFF8090C7FCACEAFFF0171C7E9B1C>80
+D<B5FC380F01E0EB007880141C141EA4141C143C5CEB01E001FFC7FCEB01E0EB00701478
+80A61510A2141CA239FFF00E20C7EA03C01C1D7E9B1F>82 D<3807E080EA1C19EA300513
+03EA600112E01300A36C13007E127CEA7FC0EA3FF8EA1FFEEA07FFC61380130FEB07C013
+0313011280A300C01380A238E00300EAD002EACC0CEA83F8121E7E9C17>I<007FB512C0
+38700F010060130000401440A200C014201280A300001400B1497E3803FFFC1B1C7F9B1E
+>I<39FFF01FF0390F000380EC0100B3A26C1302138000035BEA01C03800E018EB7060EB
+0F801C1D7F9B1F>I<39FFE00FF0391F0003C0EC01806C1400A238078002A213C000035B
+A2EBE00C00011308A26C6C5AA213F8EB7820A26D5AA36D5AA2131F6DC7FCA21306A31C1D
+7F9B1F>I<39FFF003FC390F8001E00007EB00C06D13800003EB01006D5A000113026C6C
+5A13F8EB7808EB7C18EB3C10EB3E20131F6D5A14C06D5AABEB7FF81E1C809B1F>89
+D<EA0808EA1010EA2020EA4040A2EA8080A3EAB0B0EAF8F8EA7878EA30300D0C7A9C15>
+92 D<EA1FC0EA3070EA78387F12301200A2EA01FCEA0F1C12381270126000E01340A3EA
+603C38304E80381F870012127E9115>97 D<12FC121CAA137CEA1D87381E0180381C00C0
+14E014601470A6146014E014C0381E018038190700EA10FC141D7F9C17>I<EA03F8EA0C
+0CEA181E1230EA700CEA600012E0A61260EA70021230EA1804EA0C18EA03E00F127F9112
+>I<EB1F801303AAEA03F3EA0E0BEA1807EA30031270126012E0A6126012701230EA1807
+EA0E1B3803E3F0141D7F9C17>I<EA07E0EA0C30EA1818EA300CEA700EEA600612E0EAFF
+FEEAE000A41260EA70021230EA1804EA0C18EA03E00F127F9112>I<13F8EA018CEA071E
+1206EA0E0C1300A6EAFFE0EA0E00B0EA7FE00F1D809C0D>I<EB03803807C4C0EA1C7838
+38388038301800EA701CA4EA3018EA38386C5AEA27C00020C7FCA21230EA3FF86CB4FC14
+80EA2003386001C0EAC000A33860018038300300EA1C0EEA07F8121C7F9215>I<12FC12
+1CAA137C1387EA1D03001E1380121CAD38FF9FF0141D7F9C17>I<1218123CA21218C7FC
+A712FC121CB0EAFF80091D7F9C0C>I<13C0EA01E0A2EA00C01300A7EA07E01200B3A212
+60EAF0C012F1EA6180EA3E000B25839C0D>I<12FC121CAAEB0FE0EB0780EB06005B1310
+5B5B13E0121DEA1E70EA1C781338133C131C7F130F148038FF9FE0131D7F9C16>I<12FC
+121CB3A9EAFF80091D7F9C0C>I<39FC7E07E0391C838838391D019018001EEBE01C001C
+13C0AD3AFF8FF8FF8021127F9124>I<EAFC7CEA1C87EA1D03001E1380121CAD38FF9FF0
+14127F9117>I<EA03F0EA0E1CEA1806487E00701380EA600100E013C0A600601380EA70
+0300301300EA1806EA0E1CEA03F012127F9115>I<EAFC7CEA1D87381E0180001C13C0EB
+00E0A21470A614E0A2EB01C0001E1380381D0700EA1CFC90C7FCA7B47E141A7F9117>I<
+EAFCE0EA1D38EA1E78A2EA1C301300ACEAFFC00D127F9110>114
+D<EA1F90EA2070EA4030EAC010A212E0EAF800EA7F80EA3FE0EA0FF0EA00F8EA80381318
+12C0A2EAE010EAD060EA8FC00D127F9110>I<1204A4120CA2121C123CEAFFE0EA1C00A9
+1310A5120CEA0E20EA03C00C1A7F9910>I<38FC1F80EA1C03AD1307120CEA0E1B3803E3
+F014127F9117>I<38FF07E0383C0380381C0100A2EA0E02A2EA0F06EA0704A2EA0388A2
+13C8EA01D0A2EA00E0A3134013127F9116>I<39FF3FC7E0393C0703C0001CEB01801500
+130B000E1382A21311000713C4A213203803A0E8A2EBC06800011370A2EB803000001320
+1B127F911E>I<38FF0FE0381E0700EA1C06EA0E046C5AEA039013B0EA01E012007F1201
+1338EA021C1204EA0C0E487E003C138038FE1FF014127F9116>I<38FF07E0383C038038
+1C0100A2EA0E02A2EA0F06EA0704A2EA0388A213C8EA01D0A2EA00E0A31340A25BA212F0
+00F1C7FC12F312661238131A7F9116>I<B512F01401808B15>123
+D<EA6060EAF0F0A2EA60600C047C9C15>127 D E
+%EndDVIPSBitmapFont
+end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 300dpi
+TeXDict begin
+%%PaperSize: A4
+
+end
+HPSdict begin
+/TargetAnchors
+0 dict dup begin
+end targetdump-hook def
+TeXDict begin
+%%EndSetup
+%%Page: 1 1
+1 0 bop 0 19 a Ff(Institutionen)14 b(f\177)-21 b(or)14
+b(T)m(eoretisk)g(Fysik)g(o)q(c)o(h)g(Mek)n(anik)0 77
+y(Chalmers)f(T)m(eknisk)n(a)g(H\177)-21 b(ogsk)o(ola)13
+b(o)q(c)o(h)h(G\177)-21 b(oteb)q(orgs)14 b(Univ)o(ersitet)0
+135 y(Martin)g(Cederw)o(all)177 266 y Fe(T)l(en)o(tamen)h(i)h(Mek)m
+(anik)f(F)h(del)g(B)p 177 273 616 2 v 177 382 a Ff(Tid:)d(tisdagen)h
+(den)g Fd(25)g Ff(augusti)f Fd(1998)g Ff(kl.)g Fd(8)887
+366 y(45)930 382 y Ff(-)p Fd(12)986 367 y(45)1029 382
+y Ff(.)177 440 y(Lok)n(al:)f(MG)177 498 y(Jourha)o(v)n(ande)i(assisten)
+o(t:)g(Christian)g(F)m(orss)o(\023)-20 b(en,)14 b(ankn.)f
+Fd(3266)p Ff(.)177 557 y(Hj\177)-21 b(alpmedel:)12 b(TEFYMA,)i
+(Standard)g(Math)g(T)m(ables,)f(Beta,)h(Ph)o(ysics)g(Handb)q(o)q(ok,)g
+(v)n(alfri)e(r\177)-21 b(aknedosa)408 615 y(sam)o(t)12
+b(egenh\177)-21 b(andigt)14 b(skriv)o(en)g(A)p Fd(4)p
+Ff(-sida.)177 673 y(L\177)-21 b(osningarna)15 b(ansl)-5
+b(\027)-26 b(as)15 b(p)-5 b(\027)-26 b(a)15 b(institutionens)g
+(anslagsta)o(vla)f(i)g(Fysikums)g(trapph)o(us)i(sam)o(t)e(p)-5
+b(\027)-26 b(a)15 b(en)o(tr)o(\023)-20 b(ed\177)f(orren)17
+b(till)177 731 y(trapph)o(uset)e(omedelbart)e(efter)i(skrivningens)f
+(slut.)177 789 y(Resultatlistan)f(ansl)-5 b(\027)-26
+b(as)14 b(senast)h(fredagen)f(den)h Fd(11)e Ff(septem)o(b)q(er)i(kl.)e
+Fd(11)1291 774 y(00)1335 789 y Ff(.)177 876 y Fc(F\177)-21
+b(orklar)n(a)13 b(inf\177)-21 b(or)n(da)13 b(storheter)g(o)n(ch)h
+(motiver)n(a)f(ekvationer)h(o)n(ch)g(slutsatser!)e(Kontr)n(ol)r(ler)n
+(a)h(svar)g(me)n(d)h(avse)n(ende)177 934 y(p)-7 b(\027)-28
+b(a)14 b(dimension)g(o)n(ch)g(rimlighet)e(\(kr\177)-21
+b(avs)13 b(i)g(f\177)-21 b(or)n(ekommande)14 b(fal)r(l)e(f\177)-21
+b(or)13 b(ful)r(l)g(p)n(o\177)-21 b(ang\)!)1464 924 y(\177)1457
+934 y(Aven)14 b(skisser)n(ade)f(l\177)-21 b(osningar)177
+992 y(o)n(ch)15 b(fysikaliska)g(r)n(esonemang)g(kan)h(p)n(o\177)-21
+b(angs\177)g(attas.)15 b(Beskriv)g(vad)g(du)h(g\177)-21
+b(or!)14 b(R)o(ita!)177 1080 y Ff(V)m(arje)g(uppgift)f(ger)h(maxima)o
+(lt)d Fd(15)i Ff(p)q(o\177)-21 b(ang.)13 b(F\177)-21
+b(or)14 b(b)q(et)o(yg)g Fd(3)p Ff(,)f Fd(4)h Ff(resp.)g
+Fd(5)g Ff(kr\177)-21 b(avs)14 b Fd(30)p Ff(,)f Fd(40)g
+Ff(resp.)i Fd(50)e Ff(p)q(o\177)-21 b(ang.)1476 1694
+y @beginspecial 0 @llx 0 @lly 144 @urx 374 @ury 491 @rwi
+@setspecial%%BeginDocument: 1.eps
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: /tmp/xfig-fig006370
+%%Creator: fig2dev Version 2.1.8 Patchlevel 0
+%%CreationDate: Wed Aug 19 09:09:55 1998
+%%For: tfemc@wu (Martin Cederwall)
+%%Orientation: Portrait
+%%BoundingBox: 0 0 144 374
+%%Pages: 0
+%%EndComments
+/$F2psDict 200 dict def 
+$F2psDict begin
+$F2psDict /mtrx matrix put
+/l {lineto} bind def
+/m {moveto} bind def
+/s {stroke} bind def
+/n {newpath} bind def
+/gs {gsave} bind def
+/gr {grestore} bind def
+/clp {closepath} bind def
+/graycol {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
+4 -2 roll mul setrgbcolor} bind def
+/col-1 {} def
+/col0 {0 0 0 setrgbcolor} bind def
+/col1 {0 0 1 setrgbcolor} bind def
+/col2 {0 1 0 setrgbcolor} bind def
+/col3 {0 1 1 setrgbcolor} bind def
+/col4 {1 0 0 setrgbcolor} bind def
+/col5 {1 0 1 setrgbcolor} bind def
+/col6 {1 1 0 setrgbcolor} bind def
+/col7 {1 1 1 setrgbcolor} bind def
+/col8 {.68 .85 .9 setrgbcolor} bind def
+/col9 {0 .39 0 setrgbcolor} bind def
+/col10 {.65 .17 .17 setrgbcolor} bind def
+/col11 {1 .51 0 setrgbcolor} bind def
+/col12 {.63 .13 .94 setrgbcolor} bind def
+/col13 {1 .75 .8 setrgbcolor} bind def
+/col14 {.7 .13 .13 setrgbcolor} bind def
+/col15 {1 .84 0 setrgbcolor} bind def
+	end
+/$F2psBegin {$F2psDict begin /$F2psEnteredState save def} def
+/$F2psEnd {$F2psEnteredState restore end} def
+%%EndProlog
+
+$F2psBegin
+0 setlinecap 0 setlinejoin
+-144.0 432.0 translate 0.900 -0.900 scale
+1.000 setlinewidth
+% Polyline
+n 239 159 m 239 479 l  319 479 l  319 159 l  239 159 l gs col-1 s gr
+0.500 setlinewidth
+% Polyline
+n 279 159 m 279 319 l gs col-1 s gr
+% Polyline
+n 274 314 m 284 324 l gs col-1 s gr
+% Polyline
+n 274 324 m 284 314 l gs col-1 s gr
+	[4.000000] 0 setdash
+% Polyline
+n 174 319 m 279 319 l gs col-1 s gr
+	[] 0 setdash
+n 197.000 207.000 m 199.000 199.000 l 201.000 207.000 l gs 2 setlinejoin col-1 s gr
+	1 setlinecap [1 3.000000] 3.000000 setdash
+% Polyline
+n 199 199 m 199 319 l gs col-1 s gr
+	[] 0 setdash 0 setlinecap
+n 201.000 311.000 m 199.000 319.000 l 197.000 311.000 l gs 2 setlinejoin col-1 s gr
+% Polyline
+n 159 199 m 239 199 l gs col-1 s gr
+n 225.000 195.000 m 239.000 199.000 l 225.000 203.000 l gs 2 setlinejoin col-1 s gr
+% Polyline
+n 279 159 m 279 64 l gs col-1 s gr
+n 275.000 78.000 m 279.000 64.000 l 283.000 78.000 l gs 2 setlinejoin col-1 s gr
+/Times-Roman findfont 28.00 scalefont setfont
+189 189 m 
+gs 1 -1 scale (p) col-1 show gr
+/Times-Roman findfont 28.00 scalefont setfont
+174 269 m 
+gs 1 -1 scale (d) col-1 show gr
+/Symbol findfont 28.00 scalefont setfont
+289 109 m 
+gs 1 -1 scale (w) col-1 show gr
+$F2psEnd
+
+%%EndDocument
+ @endspecial 118 1250 a Fd(1)p Ff(.)26 b(En)14 b(rymdstation)d(som)h
+(\177)-21 b(ar)13 b(formad)e(som)h(en)h(cylinder)h(\(tr\177)-21
+b(oghetsmomen)o(t)177 1308 y Fd(I)195 1314 y Fb(s)228
+1308 y Ff(m.a.p.)11 b(symmetriaxeln,)h Fd(I)665 1314
+y Fa(1)698 1308 y Ff(m.a.p.)g(p)-5 b(\027)-26 b(a)14
+b(axlar)g(vink)o(elr\177)-21 b(ata)14 b(mot)f(sym-)177
+1366 y(metriaxeln\))f(roterar)h(med)f(en)h(vink)o(elhastighet)f
+Fd(!)i Ff(kring)e(sin)h(symmetri-)177 1424 y(axel,)g(n\177)-21
+b(ar)13 b(den)h(tr\177)-21 b(a\013as)13 b(a)o(v)g(en)h(meteorit.)e
+(Kollisionen)g(\177)-21 b(ager)13 b(rum)f(m)o(yc)o(k)o(et)177
+1482 y(snabbt)f(o)q(c)o(h)f(ger)g(rymdstationen)f(en)h(impuls)e
+Fd(p)i Ff(vink)o(elr\177)-21 b(att)10 b(mot)e(rotation-)177
+1540 y(saxeln)16 b(o)q(c)o(h)h(p)-5 b(\027)-26 b(a)16
+b(ett)h(a)o(vst)-5 b(\027)-26 b(and)16 b Fd(d)g Ff(fr)-5
+b(\027)-26 b(an)15 b(masscen)o(trum,)g(m\177)-21 b(att)15
+b(l\177)-21 b(angs)16 b(sym-)177 1598 y(metriaxeln.)c(Impulsens)i
+(riktning)f(\177)-21 b(ar)14 b(genom)e(symmetriaxeln.)f(Beskriv)177
+1656 y(den)h(efterf\177)-21 b(oljande)10 b(r\177)-21
+b(orelsen)12 b(i)f(termer)g(a)o(v)f(spinn-)h(o)q(c)o(h)g
+(precessionsr\177)-21 b(orelse)177 1714 y(sam)o(t)13
+b(translation!)118 1804 y Fd(2)p Ff(.)26 b(Ett)14 b(k)o(o)q
+(ordinatsystem)f(roterar)i(run)o(t)f(en)g(punkt)g Fd(O)h
+Ff(med)e(k)o(onstan)o(t)g(vink)o(elhastighet)h(\012.)f(Betrakta)h(en)h
+(par-)177 1862 y(tik)o(el)e(som)g(\(under)h(in)o(v)o(erk)n(an)f(a)o(v)h
+(en)g(cen)o(tralkraft\))g(r\177)-21 b(or)14 b(sig)f(p)-5
+b(\027)-26 b(a)14 b(en)g(cirk)o(elbana)f(run)o(t)h Fd(O)h
+Ff(med)e(k)o(onstan)o(t)g(fart.)177 1920 y(V)m(eri\014era,)f(t.ex.)f
+(genom)f(att)i(\014nna)g(ett)g(uttryc)o(k)g(f\177)-21
+b(or)12 b(kraftens)g(storlek,)g(att)f(r\177)-21 b(orelseekv)n(ationen)
+13 b(f\177)-21 b(or)11 b(partik)o(eln)177 1978 y(s\177)-21
+b(ager)18 b(samma)c(sak)j(oa)o(vsett)g(om)e(den)j(form)o(uleras)d(i)h
+(ett)i(inertialsystem)e(eller)h(med)f(\014ktiv)n(a)g(krafter)i(i)e(det)
+177 2036 y(roterande)f(systemet!)118 2123 y Fd(3)p Ff(.)26
+b(F\177)-21 b(orklara)14 b(med)g(enkla)g(ord)h(grunderna)h(i)e
+(Einsteins)i(relativitetsteori)f(f\177)-21 b(or)14 b(en)h(\\oin)o
+(vigd")e(\(med)h(kunsk)n(ap)q(er)177 2181 y(motsv)n(arande)f(t.ex.)g
+(gymnasiefysik\)!)f(1{2)h(A4-sidor)g(r\177)-21 b(ac)o(k)o(er.)118
+2268 y Fd(4)p Ff(.)26 b(Tv)-5 b(\027)-26 b(a)15 b(lik)n(a)g(massor)f
+Fd(m)i Ff(glider)g(friktionsfritt)e(p)-5 b(\027)-26 b(a)16
+b(ett)g(horison)o(tellt)f(underlag.)h(De)f(\177)-21 b(ar)16
+b(f\177)-21 b(astade)16 b(i)f(v)n(arsin)g(v\177)-21 b(agg)177
+2327 y(med)13 b(lik)n(adana)e(fj\177)-21 b(adrar)13 b(med)g(fj\177)-21
+b(aderk)o(onstan)o(t)13 b Fd(k)q Ff(.)g(Dessutom)g(sitter)i(mellan)c
+(fj\177)-21 b(adrarna)13 b(en)h(m)o(yc)o(k)o(et)f(sv)n(agare)177
+2385 y(fj\177)-21 b(ader,)12 b(v)n(ars)h(fj\177)-21 b(aderk)o(onstan)o
+(t)12 b(k)n(an)g(skriv)n(as)h Fd(\013k)q Ff(,)f(d\177)-21
+b(ar)12 b(allts)-5 b(\027)-26 b(a)12 b Fd(\013)g Ff(\177)-21
+b(ar)13 b(ett)g(m)o(yc)o(k)o(et)f(litet)g(tal.)g(An)o(v\177)-21
+b(and)13 b(Lagranges)177 2443 y(formalism)e(f\177)-21
+b(or)15 b(att)g(skriv)n(a)f(ned)i(r\177)-21 b(orelseekv)n(ationerna)16
+b(f\177)-21 b(or)14 b(systemet!)h(Diskutera)h(l\177)-21
+b(osningarnas)14 b(b)q(eteende,)177 2501 y(in)o(te)g(bara)g(egensv\177)
+-21 b(angningarna)13 b(utan)h(\177)-21 b(av)o(en)14 b(sup)q(erp)q
+(ositioner)h(a)o(v)e(dem!)g(Unders\177)-21 b(ok)15 b(sp)q(eciellt)f
+(f\177)-21 b(oljande:)12 b(om)177 2559 y(till)j(en)h(b\177)-21
+b(orjan)15 b(endast)i(den)f(ena)h(massan)d(sv\177)-21
+b(anger)17 b(fram)d(o)q(c)o(h)i(tillbak)n(a)e(medan)g(den)j(andra)e
+(\177)-21 b(ar)16 b(stilla,)e(h)o(ur)177 2617 y(l)-5
+b(\027)-26 b(ang)13 b(tid)h(tar)g(det)g(tills)f(f\177)-21
+b(orh)-5 b(\027)-26 b(allandet)13 b(\177)-21 b(ar)14
+b(det)g(motsatta?)295 2893 y @beginspecial 0 @llx 0 @lly
+432 @urx 108 @ury 2267 @rwi @setspecial%%BeginDocument: 4.eps
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: /tmp/xfig-fig004548
+%%Creator: fig2dev Version 2.1.8 Patchlevel 0
+%%CreationDate: Mon Aug 17 11:24:12 1998
+%%For: tfemc@wu (Martin Cederwall)
+%%Orientation: Portrait
+%%BoundingBox: 0 0 432 108
+%%Pages: 0
+%%EndComments
+/$F2psDict 200 dict def 
+$F2psDict begin
+$F2psDict /mtrx matrix put
+/l {lineto} bind def
+/m {moveto} bind def
+/s {stroke} bind def
+/n {newpath} bind def
+/gs {gsave} bind def
+/gr {grestore} bind def
+/clp {closepath} bind def
+/graycol {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
+4 -2 roll mul setrgbcolor} bind def
+/col-1 {} def
+/col0 {0 0 0 setrgbcolor} bind def
+/col1 {0 0 1 setrgbcolor} bind def
+/col2 {0 1 0 setrgbcolor} bind def
+/col3 {0 1 1 setrgbcolor} bind def
+/col4 {1 0 0 setrgbcolor} bind def
+/col5 {1 0 1 setrgbcolor} bind def
+/col6 {1 1 0 setrgbcolor} bind def
+/col7 {1 1 1 setrgbcolor} bind def
+/col8 {.68 .85 .9 setrgbcolor} bind def
+/col9 {0 .39 0 setrgbcolor} bind def
+/col10 {.65 .17 .17 setrgbcolor} bind def
+/col11 {1 .51 0 setrgbcolor} bind def
+/col12 {.63 .13 .94 setrgbcolor} bind def
+/col13 {1 .75 .8 setrgbcolor} bind def
+/col14 {.7 .13 .13 setrgbcolor} bind def
+/col15 {1 .84 0 setrgbcolor} bind def
+	end
+/$F2psBegin {$F2psDict begin /$F2psEnteredState save def} def
+/$F2psEnd {$F2psEnteredState restore end} def
+%%EndProlog
+
+$F2psBegin
+0 setlinecap 0 setlinejoin
+-144.0 252.0 translate 0.900 -0.900 scale
+1.000 setlinewidth
+% Polyline
+n 159 159 m 159 279 l  639 279 l  639 159 l gs col-1 s gr
+0.500 setlinewidth
+% Polyline
+n 279 179 m 279 274 l  359 274 l  359 179 l  279 179 l gs col-1 s gr
+% Polyline
+n 439 179 m 439 274 l  519 274 l  519 179 l  439 179 l gs col-1 s gr
+% Polyline
+n 159 219 m 279 219 l gs col-1 s gr
+% Polyline
+n 359 219 m 439 219 l gs col-1 s gr
+% Polyline
+n 519 219 m 639 219 l gs col-1 s gr
+7.000 setlinewidth
+% Polyline
+n 199 219 m 239 219 l gs col-1 s gr
+% Polyline
+n 379 219 m 414 219 l gs col-1 s gr
+% Polyline
+n 559 219 m 604 219 l gs col-1 s gr
+/Times-Roman findfont 28.00 scalefont setfont
+309 254 m 
+gs 1 -1 scale (m) col-1 show gr
+/Times-Roman findfont 28.00 scalefont setfont
+464 254 m 
+gs 1 -1 scale (m) col-1 show gr
+/Times-Roman findfont 28.00 scalefont setfont
+214 204 m 
+gs 1 -1 scale (k) col-1 show gr
+/Times-Roman findfont 28.00 scalefont setfont
+404 209 m 
+gs 1 -1 scale (k) col-1 show gr
+/Times-Roman findfont 28.00 scalefont setfont
+574 204 m 
+gs 1 -1 scale (k) col-1 show gr
+/Symbol findfont 28.00 scalefont setfont
+384 209 m 
+gs 1 -1 scale (a) col-1 show gr
+$F2psEnd
+
+%%EndDocument
+ @endspecial eop
+%%Trailer
+end 
+end
+
+userdict /end-hook known{end-hook}if
+%%EOF

@@ -1,0 +1,60 @@
+#FIG 3.2  Produced by xfig version 3.2.5
+Landscape
+Center
+Inches
+Letter  
+50.00
+Single
+-2
+1200 2
+2 2 0 1 0 0 50 -1 5 0.000 0 0 -1 0 0 5
+	 3600 2475 6600 2475 6600 4200 3600 4200 3600 2475
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 1 0 2
+	0 0 1.00 120.00 180.00
+	 1800 3300 2400 3300
+2 2 0 1 0 0 50 -1 5 0.000 0 0 -1 0 0 5
+	 3600 5400 6600 5400 6600 7125 3600 7125 3600 5400
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 0 0 2
+	 1200 6300 3600 6300
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 0 0 2
+	 6600 6300 9000 6300
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 0 0 2
+	 6600 3300 9000 3300
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 1 0 2
+	0 0 1.00 120.00 180.00
+	 1800 6300 2400 6300
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 1 0 2
+	0 0 1.00 120.00 180.00
+	 7200 3300 7800 3300
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 1 0 2
+	0 0 1.00 120.00 180.00
+	 7200 6300 7800 6300
+2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 0 0 2
+	 1200 3300 3600 3300
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/numberS.eps
+	 7575 5250 7575 5250 7575 5250 7575 5250 7575 5250
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/text-function.eps
+	 4350 4350 5767 4350 5767 4650 4350 4650 4350 4350
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/text-functional.eps
+	 4275 7275 6008 7275 6008 7575 4275 7575 4275 7275
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/number.eps
+	 1200 2850 2867 2850 2867 3150 1200 3150 1200 2850
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/function.eps
+	 1200 5733 3500 5733 3500 6150 1200 6150 1200 5733
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/numberf.eps
+	 7333 2767 9000 2767 9000 3150 7333 3150 7333 2767
+2 5 0 1 0 -1 50 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/numberS.eps
+	 7283 5850 9000 5850 9000 6150 7283 6150 7283 5850
+2 5 0 1 0 -1 40 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/fx.eps
+	 4650 3075 5383 3075 5383 3492 4650 3492 4650 3075
+2 5 0 1 0 -1 40 -1 -1 0.000 0 0 -1 0 0 5
+	0 /Users/martin/Desktop/Undervisning/Kompendier/AnalytiskMekanik2009/TeX/Sfx.eps
+	 4425 6075 5642 6075 5642 6492 4425 6492 4425 6075

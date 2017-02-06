@@ -1,0 +1,160 @@
+<exercise>
+<exercisename> Föreläsning 01  </exercisename>
+<h2> Stelkropps rörelse </h2>
+<p>
+En stel kropp består är ett partikelsystem där avstånden mellan alla punkter är fixerade.  
+I detta inledande kapitel betraktar vi dessutom  en idealiserad kropp som befinner sig och rör sig i ett enda (2D) plan.  
+Rörelsen som bevarar stelkroppen består alltså av.
+<em> translation </em> och <em> rotation </em> 
+</p>
+
+<h3> Kapitel 5.1 </h3>
+
+<h4> Enkelriktig Translation </h4>
+<p> I rektilinjär translation rör sig alla punkter i på parallela linjer; mer
+allmänt rör sig alla punkter i lika banor. 
+<img  src="fig2.png" width="40%"/>
+</p>
+<h4> Kroklinjig translation </h4>
+<p> Alla punkter rör sig med relativa koordinat bevarade </p>
+<img  src="fig3.png" width="40%"/>
+<h4>  Rotation </h4>
+<p> Det finns en rotations axel runt vilken alla punkter rör sig.  </p>
+<img  src="fig4.png" width="40%"/>
+<h4>  Allmän rörelse i planet  </h4>
+<img  src="fig5.png" width="40%"/>
+<h3> Kapitel 5.2 - Rotation </h3>
+<p>
+Under en rotation, rör sig alla punkter på en stel kropp i cirklar
+runt en gemensam axel.
+</p>
+<p>
+<img  src="fig6.png" width="20%"/>
+Vi definierar vinkelhastighet $ \theta $ och vinkelaccelleration $ \alpha $ med
+\[ \omega = \frac{d \theta}{ d t } = \dot{\theta} \]
+och
+\[ \alpha = \frac{d \omega }{d t} = \dot{\omega} = \frac{ d^2 \theta }{d t^2 } \]
+Kom ihåg härledningen  $ \frac{ dv }{dt} =  \frac{dv}{dx}\, \frac{dx}{dt}  = v \frac{dv}{dx} $ att
+$ v \, dv = a \, dx $ </p>
+<p> 
+Alla förhållanden mellan $ [ x, v, a ]  $ gäller  formellt $ [ \theta, \omega, \alpha ] $ och  vi drar
+slutsatsen 
+$ \alpha = \frac{ d \omega}{dt} = \frac{ d \omega}{d \theta } \frac{ d \theta }{d t } = \omega \frac{ d \omega }{ d \theta } $ varvid fås
+\[
+\alpha \; d \theta = \omega \; d \omega  
+\]
+</p>
+<p> Med konstant vinkelaccelleration får vi därför ekvationer analogt till de för endimensionell rörelse
+\[
+\begin{matrix} \omega  =  \omega_0 + \alpha \, t \\
+		\omega^2  =  \omega_0^2 +  2 \alpha ( \theta - \theta_0 ) \\
+		\theta = \theta_0 + \omega_0 t + \frac{1}{2} \alpha t^2 
+		\end{matrix}
+\]
+</p>
+
+<h4> Rotation runt en axel </h4>
+<p> 
+Notera i figuren nedan  att,
+$ \omega = \omega \hat{z} $, $ \vec{r} = r \hat{x} $ och att $ \vec{v} = \omega r \hat{y} $. 
+</p> 
+<p> 
+<img src="fig8.png" />
+Vi vet också att $ \hat{y} = \hat{z} \times \hat{x} $, så vi ser att vi kan skriva vektor
+identiteten som
+\[
+\omega r \hat{y} = \omega r { \hat{z}  \times \hat{ x} } = ( \omega \hat{z}  ) \times ( r \hat{x} ) 
+\]
+dvs 
+\[
+\vec{v} = \vec{ \omega  } \times \vec{r} 
+\]
+Trots att vi valt specifika axlar $ \hat{x}, \hat{y} $ och $ \hat{z}$ ser vi att ingenting
+beror på detta valet när vi skriver ekvationen helt i termer av 
+$ \vec{ \omega  }$, $\vec{  r } $ och $\vec{  \omega  }$ och ser att ekvationen ovan är ett allmänt uttryck oberoende
+val av koordinat. 
+
+Om vi nu diffrentierar denna ekvation en gång till med map tiden  finner vi 
+
+\[
+\frac{ d \vec{v} }{d t } = ( \frac{d}{dt } \vec{\omega}  ) \times \vec{r} + \vec{\omega} \times \frac{d}{dt} \vec{r} 
+\]
+Varvid fås
+\[
+\vec{a} = \vec{\alpha} \times \vec{r}  + \vec{\omega} \times \vec{v} = \vec{\alpha} \times \vec{r} +  \vec{\omega} \times ( \vec{\omega} \times \vec{r} )
+\]
+<em> Notera att dessa ekvationer förutsätter $ r =  konstant! $ </em>
+</p> 
+<p>
+Vi har sett dessa ekvationer tidigare: Vi noterar
+$ \vec{\alpha} \times  \vec{r} = \ddot{\theta} \, r \,  \hat{\theta} $ samt identiten
+$ \vec{\omega} = \omega \hat{omega } $
+
+\[
+A \times ( B \times C ) = B ( A \cdot C ) - C ( A \cdot B ) 
+\]
+varvid vi ser
+\[
+\vec{a} = \ddot{\theta} r \hat{\theta}  - \omega^2 r \hat{r} 
+\]
+eftersom $ \hat{\omega} \cdot \vec{r} = 0 $. 
+</p>
+<h4> Fördjupning och koppling till tidigare delar med polar koordinat </h4>
+<p>
+Notera att vi har haft liknande ekvationer tidigare i samband med polar koordinat.
+Vi härleder dessa med liknande argument. 
+</p>
+<p>
+Vi  har ekvationen $ \vec{r}(t) = r(t) \hat{r(t)} $. Tisderivata uppfyller
+$ \frac{d}{dt} r = \dot{r} $ och $ \frac{d}{dt} \hat{r} = \vec{\omega} \times \hat{r} $.
+Vi tar första derivatan på $\vec{r} $.
+\[
+\frac{d}{dt} \vec{r} = \dot{r} \hat{r}  + r \frac{d}{dt} \hat{r} = \dot{r} \hat{r} + r \vec{\omega} \times \hat{r} 
+\]
+Vi tar tisderivatan en gång till
+\[
+\vec{a} = \ddot{r} \hat{r} + \dot{r} \vec{\omega} \times \hat{r} + 
+\dot{r}  \vec{\omega} \times \hat{r}  + r ( \frac{d}{dt} \; \vec{\omega} ) \times \hat{r} + r \vec{\omega} \times ( \omega \times \hat{r} )
+\]
+Vi får alltså två termer till. $ 2 \dot{r} \omega \times \hat{r} $ vilket är koriolis termen,
+samt  $  r ( \frac{d}{dt} \; \vec{\omega} ) \times \hat{r}  $ som vi identifierar som $ r \alpha \hat{\omega} \times \hat{r} $. 
+Vi samlar ihop dessa till
+\[ 
+\vec{a} = ( \ddot{r} - \omega^2 r ) \hat{r} + ( 2 \omega \dot{r} + \alpha r ) \hat{\omega} \times \hat{r} 
+\]
+vilket motsvarar ekvationerna i Kap. 3.
+</p>
+<h3> Kapitel 5.3  - Absolut rörelse </h3>
+<p>
+Mer allmänt kan axeln position röra sig som $ R(t) = X(t) \hat{x} + Y(t)  \hat{y}  $. På kroppen
+använder man polar koordinat $ r $ och $ \theta $. Då anges det aboluta koordinatet av en punkt
+$ r, \theta $ på kroppen som
+\[ \begin{matrix} x(t)  &amp;  =  &amp; X(t) +  r \cos( \theta(t) - \theta_0 ) \\
+	          y(t)  &amp;  =  &amp; Y(t) +  r \sin( \theta(t) - \theta_0 ) \end{matrix} \]
+
+<img  src='fig9.png' />
+där  $ \theta_0 $ är polarkoordinatet fö® puntken vid $ t = 0 $.
+Notera vad som hålls fixerat för en given punkt; det är enbart $ r $ och $ \theta_0 $.
+</p>
+
+<h4> Se 5.36 i boken </h4> 
+<p>
+En axel rullar på bordet som i bilderna nedan. Axeln har en konstant fart $ v $.
+På axeln finns en skiva monterad. Vid $  t =  0 $ är konfiguration i bilden. Skriv ett
+uttryck för $ x_{A,B,C} (t) $ och $ y_{A,B,C} (t) $ osv i var och en av dessa fall som en funktion
+av $ r_{A,B,C}  $ för var och en av dessa fall och rita en bild av denna koordinat som en funktion
+av tiden.  Skriv en ekvation for punktens hastiget och acceleratation.  <it> i B sammanfaller
+punkterna </it> 
+</p>
+<img src='fig11.png' />
+<question key="abc" type="linalgebra">
+</question>
+<h4> Uppgift 5/30 (5.29 in 7'th Ed) </h4>
+<img  src='fig12.png' />
+<question key="def" type="linalgebra">
+</question>
+<h4> Uppgift 5/51 (5.51 in 7'th Ed) </h4>
+<img  src='fig13.png' />
+<question key="fgh" type="linalgebra">
+</question>
+</exercise>

@@ -1,0 +1,6 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For getting rid of the black error boxes 
+%
+\def\noblackbox{\overfullrule=0pt}
+\noblackbox
+%
