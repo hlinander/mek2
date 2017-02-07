@@ -1,9 +1,9 @@
 <exercise>
-<exercisename> Lecture 4 </exercisename>
-<h1> Kapitel  6 </h1>
-<h2> Stelkropps kinetik </h2>
-<h3>  6.1, 6.2 </h3>
-<h4> Rörelsekvationer </h4>
+<exercisename>Lecture 4</exercisename>
+<h1>Kapitel  6</h1>
+<h2>Stelkropps kinetik</h2>
+<h3>6.1, 6.2</h3>
+
 <p>
 Vi augmenterar rotationer till Newtown's ekationer
 <img src="fig1.png" width="40%" />
@@ -14,27 +14,27 @@ M_{tot} = \dot{H}_{tot}
 \]
 I dessa anteckningar använder vi mass-centrum som origo. 
 \[
-H_{tot} = \sum_i m_i \vec{r_i} \times v_i  \equiv \sum_i \vec{r_i} \times p_i
+H_{0} = \sum_i m_i \vec{r_i} \times v_i  \equiv \sum_i \vec{r_i} \times p_i
 \]
 där summan löper över alla massorna `i'  och $ p_i $ är rörelsemängden
 av massan p. Det går att göra om detta till en integral.
 \[
-H_{tot} = \int \;  \rho(r) \,  ( \vec{r} \times \vec{v}(r) )  \; d^3 r
+H_{0} = \int \;  \rho(r) \,  ( \vec{r} \times \vec{v}(r) )  \; d^3 r
 \]
 För en kropp som roterar runt en axel $ \vec{\omega} $ vet vi att $ \vec{v}(r) = \vec{\omega} \times r $ 
 och man erhåller
 \[
-H_{tot} = \sum_i \; m_i \,  \vec{r_i} \times (\vec{\omega} \times \vec{r_i} )
+H_{0} = \sum_i \; m_i \,  \vec{r_i} \times (\vec{\omega} \times \vec{r_i} )
 \]
 Genom trippel kryss produkt formeln $ A \times ( B \times C) = B (A \cdot C ) - C (A \cdot B ) $.
 får vi
 \[
-H_{tot} = \sum_i \; m_i ( \, \vec{r_i}^2  \vec{\omega} - (\vec{r_i} \cdot \vec{\omega} ) \vec{r_i} )
+H_{0} = \sum_i \; m_i ( \, \vec{r_i}^2  \vec{\omega} - (\vec{r_i} \cdot \vec{\omega} ) \vec{r_i} )
 \]
 I fallet där vi har rotationen $ \vec{\omega} $ längs $ z $ axeln, och kroppen i $ x-y $
 planet blir $ \vec{r_i} \cdot \vec{\omega} = 0 $ och vi får
 \[
-H_{tot} = \sum_i \; m_i \vec{r_i}^2 \vec{\omega} = \vec{\omega} \sum_i \; m_i \vec{r_i}^2 \equiv \vec{\omega} \bar{I}
+H_{0} = \sum_i \; m_i \vec{r_i}^2 \vec{\omega} = \vec{\omega} \sum_i \; m_i \vec{r_i}^2 \equiv \vec{\omega} \bar{I}
 \]
 är $ \bar{I} $ är rörelsemängdsmomentet för kroppen
 \[
@@ -49,19 +49,33 @@ samma beteckning som massan.  Notera nu att
 $ F  = m \dot{v}  $ har sin analog som $ \tau = I \dot{\omega} $, så vi får alltså
 </p>
 <p>
-<table border=1>
-<tr> <th colspan=2> linjär rörelse </th><th colspan=2> roterande rörelse </th></tr> 
-<tr> <td> läge </td><td> x </td> <td> vinkel </td>  <td>  $ \theta $ </td>  </tr>
-<tr> <td> hastighet </td> <td> $ v = \dot{x}  $  </td>  <td> vinkelhastighet </td> <td> $ \omega   = \dot{\theta} $ </td></tr>
-<tr> <td> acceleration</td> <td> $ a = \dot{v}  $  </td>  <td> vinkelacceleratio </td> <td> $ \alpha  = \dot{\omega} $ </td></tr>
-<tr> <td> massa </td> <td> m </td> <td> rörelsemängdsmoment </td><td> $ \bar{I} $ </td></tr>
-<tr> <td> kraft </td><td> F </td> <td> vridmoment </td>  <td>  $ \tau $ </td>  </tr>
-<tr> <td> Newtons </td><td> F = m a  </td> <td>  </td>  <td>  $ \tau  =  \bar{I} \alpha  $ </td>  </tr>
+<table border="1">
+<tr><th colspan="2">linjär rörelse</th><th colspan="2">roterande rörelse</th></tr>
+<tr><td>läge</td><td>x</td><td>vinkel</td><td>$ \theta $</td></tr>
+<tr><td>hastighet</td><td>$ v = \dot{x}  $</td><td>vinkelhastighet</td><td>$ \omega   = \dot{\theta} $</td></tr>
+<tr><td>acceleration</td><td>$ a = \dot{v}  $</td><td>vinkelacceleratio</td><td>$ \alpha  = \dot{\omega} $</td></tr>
+<tr><td>massa</td><td>m</td><td>rörelsemängdsmoment</td><td>$ \bar{I} $</td></tr>
+<tr><td>kraft</td><td>F</td><td>vridmoment</td><td>$ \tau $</td></tr>
+<tr><td>Newtons</td><td>F = m a</td><td></td><td>$ \tau  =  \bar{I} \alpha  $</td></tr>
 </table>
 </p>
+<p>
+Låt oss nu betrakta dessa ekvationer  är vi nu representar läget genom $ \vec{r} + \vec{R} $ där
+rotationen sker genom axeln $ R $. 
 
-
-
-
-
+\[
+\begin{matrix}
+H_{R} &amp; = &amp;  \sum_i ( \vec{r_i} + \vec{R} ) \times p_i \\
+      &amp; = &amp;  \sum_i   \vec{r_i}   \times p_i +   \vec{R}   \times \sum_i p_i \\
+      &amp; = &amp;  \vec{\omega} I + \vec{R} \times \vec{P}_{tot}
+\end{matrix}
+\]
+där $ \vec{P}_{tot} $ är totala rörelsemängden.
+</p>
+<p>
+Om vi nu tar förstaderivatan på detta får vi 
+\[
+\dot{H}_{R} =  \vec{\alpha} \, \bar{I} + \vec{R} \times \dot{P}_{tot}  = \vec{\alpha} \, \bar{I} + M_{tot} \, \vec{R} \times \vec{a}
+\]
+</p>
 </exercise>

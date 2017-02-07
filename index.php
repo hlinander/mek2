@@ -67,7 +67,7 @@ Nedan finns ett <em> inofficiellt schema </em>
 
 
 
-<P CLASS="pagebreak"> <TABLE border=1 width=90%> <TR> <TD colspan=4 bgcolor=LightBlue > Vecka 12  Kapitel 5 - Beskrivning av rörelse i två dimensioner </TD></TR>
+<P CLASS="pagebreak"> <TABLE style="border=1; width=100%" > <TR> <TD colspan=4 bgcolor=LightBlue > Vecka 12  Kapitel 5 - Beskrivning av rörelse i två dimensioner </TD></TR>
 <TR> <TD class=c1> 2017-03-21 </TD><TD class=c2> FÖ 10:00  </TD><TD class=c3><A HREF="FL-01">5.1,5.2, 5.3  </A>  </TD> <TD class=c4> 
 	uppgift 5.30, (se 5.36 ), 5.51
 	</TD> </TR>
@@ -89,20 +89,20 @@ RÖ 5.8
 RÖ  - Kapitel 5
 </TD> </TR>
 <TR> <TD class=c1> 2017-03-28 </TD><TD class=c2> FÖ 13:15   </TD><TD class=c3><A HREF="FL-04">
-6.1, 6.2,6.3, 6.4, 6.5 </A>
+Kraft, massa och acceleration: 6.1, 6.2,6.3, 6.4, 6.5 </A>
  </TD> <TD class=c4> 
 
 </TD> </TR>
-<TR> <TD class=c1> 2017-03-29 </TD><TD class=c2> FÖ 08:00   </TD><TD class=c3><A HREF="FL-05"></A>  
-6.6, 6.7
+<TR> <TD class=c1> 2017-03-29 </TD><TD class=c2> FÖ 08:00   </TD><TD class=c3><A HREF="FL-05">
+Arbete och energi: 6.6, 6.7 </A>
  </TD> <TD class=c4> 
 
 </TD> </TR>
-<TR> <TD class=c1> 2017-03-29 </TD><TD class=c2> RÖ 10:00   </TD><TD class=c3><A HREF="LRO06.html"></A> </TD><TD>
+<TR> <TD class=c1> 2017-03-29 </TD><TD class=c2> RÖ 10:00   </TD><TD class=c3><A HREF="LRO.html"></A> </TD><TD>
 RÖ
 </TD> </TR>
-<TR> <TD class=c1> 2017-03-31 </TD><TD class=c2> FÖ 10:00   </TD><TD class=c3><A HREF="FL-07"></A>  
-6.8,6.9
+<TR> <TD class=c1> 2017-03-31 </TD><TD class=c2> FÖ 10:00   </TD><TD class=c3><A HREF="FL-07">
+Rörelsemängd och Rörelsemängdsmoment: 6.8,6.9 </A>
  </TD> <TD class=c4> 
 
 </TD> </TR>
